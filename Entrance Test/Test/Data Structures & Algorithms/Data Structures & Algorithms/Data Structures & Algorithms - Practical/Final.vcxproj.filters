@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Tactigo\TechTree.cpp">
+      <Filter>Tactigo</Filter>
+    </ClCompile>
+    <ClCompile Include="Tactigo\TechTreeBase\Tech.cpp">
+      <Filter>Tactigo\TechTreeBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Tactigo\TechTreeBase\TechTreeBase.cpp">
+      <Filter>Tactigo\TechTreeBase</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Tactigo">
+      <UniqueIdentifier>{ac9b54d0-a129-4106-b4cf-8a2062ec3b70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tactigo\TechTreeBase">
+      <UniqueIdentifier>{54ea1abf-7d7c-4d95-97f8-2ad2a7f8bf34}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Tactigo\TechTree.h">
+      <Filter>Tactigo</Filter>
+    </ClInclude>
+    <ClInclude Include="Tactigo\TechTreeBase\Tech.h">
+      <Filter>Tactigo\TechTreeBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Tactigo\TechTreeBase\TechTreeBase.h">
+      <Filter>Tactigo\TechTreeBase</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Tactigo\TechTree.png">
+      <Filter>Tactigo</Filter>
+    </Image>
+  </ItemGroup>
+</Project>
