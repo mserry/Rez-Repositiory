@@ -80,7 +80,8 @@
 
 //---------------------------------------------------------------------------------------------------------------------
 // Your notes go here:
-// 
+// QUESTION 1: TODO: For the strategy pattern implementation, Create TileInteractor with method (Interact (Player* entity)) -> subclass it with interactions
+// TODO: then, using templates -> bind interaction to it's tile type -> create tiles properly -> remove class hierarchy. 
 // 
 //---------------------------------------------------------------------------------------------------------------------
 
