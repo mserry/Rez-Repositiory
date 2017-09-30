@@ -5,12 +5,9 @@
 
 using std::cout;
 
-const MimicTile::DamageRange MimicTile::s_damageRange(3, 6);
-
 MimicTile::MimicTile()
-    : m_state(State::k_hidden)
 {
-    //
+	m_state = State::k_hidden;
 }
 
 void MimicTile::Draw()
@@ -21,11 +18,11 @@ void MimicTile::Draw()
             cout << "$";
             break;
 
-        case State::k_revealed:
+        case State::k_active:
             cout << "*";
             break;
 
-        case State::k_exploded:
+        case State::k_dead:
             cout << "#";
             break;
 
@@ -37,10 +34,7 @@ void MimicTile::Draw()
 
 void MimicTile::OnEnter(Player* pPlayer)
 {
-    if (m_state == State::k_hidden || m_state == State::k_revealed)
-    {
-        int damage = (rand() % (s_damageRange.second - s_damageRange.first)) + s_damageRange.first;
-        pPlayer->Damage(damage);
-        m_state = State::k_exploded;
-    }
+    if (m_state != State::k_hidden) return;
+
+	BombTile::OnEnter(pPlayer);
 }

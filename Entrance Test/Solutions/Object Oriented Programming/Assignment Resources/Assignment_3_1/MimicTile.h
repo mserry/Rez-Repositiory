@@ -3,23 +3,10 @@
 #define __MIMICTILE_H__
 
 #include "Tile.h"
-#include <utility>
+#include "BombTile.h"
 
-class MimicTile : public Tile
+class MimicTile : public BombTile
 {
-    typedef std::pair<int, int> DamageRange;
-
-    enum State
-    {
-        k_hidden,
-        k_revealed,
-        k_exploded,
-    };
-
-    static const DamageRange s_damageRange;
-
-    State m_state;
-
 public:
     MimicTile();
     virtual void Draw() override;

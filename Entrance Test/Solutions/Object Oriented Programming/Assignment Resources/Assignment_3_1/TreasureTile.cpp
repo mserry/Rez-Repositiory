@@ -2,13 +2,14 @@
 #include "TreasureTile.h"
 #include "Player.h"
 #include <iostream>
+#include "TreasureInteraction.h"
 
 const TreasureTile::TreasureRange TreasureTile::s_treasureRange(50, 150);
 
 TreasureTile::TreasureTile()
     : m_collected(false)
 {
-    m_amount = (rand() % (s_treasureRange.second - s_treasureRange.first)) + s_treasureRange.first;
+	m_interaction = new TreasureInteraction(this, s_treasureRange);
 }
 
 void TreasureTile::Draw()
@@ -21,10 +22,6 @@ void TreasureTile::Draw()
 
 void TreasureTile::OnEnter(Player* pPlayer)
 {
-    if (!m_collected)
-    {
-        pPlayer->AddGold(m_amount);
-        m_collected = true;
-    }
+	m_interaction->ExecuteOn(*pPlayer);
 }
 

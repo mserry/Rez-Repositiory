@@ -39,6 +39,15 @@
     <ClCompile Include="EndTile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TileInteraction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DamageInteraction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TreasureInteraction.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="World.h">
@@ -63,6 +72,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EndTile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TileInteraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DamageInteraction.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TreasureInteraction.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

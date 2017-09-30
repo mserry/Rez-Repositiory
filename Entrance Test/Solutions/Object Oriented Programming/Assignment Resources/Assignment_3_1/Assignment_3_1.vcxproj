@@ -82,8 +82,11 @@
     <ClCompile Include="BombTile.cpp" />
     <ClCompile Include="EndTile.cpp" />
     <ClCompile Include="FloorTile.cpp" />
+    <ClCompile Include="DamageInteraction.cpp" />
     <ClCompile Include="MimicTile.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="TileInteraction.cpp" />
+    <ClCompile Include="TreasureInteraction.cpp" />
     <ClCompile Include="TreasureTile.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
@@ -91,9 +94,12 @@
     <ClInclude Include="BombTile.h" />
     <ClInclude Include="EndTile.h" />
     <ClInclude Include="FloorTile.h" />
+    <ClInclude Include="DamageInteraction.h" />
     <ClInclude Include="MimicTile.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Tile.h" />
+    <ClInclude Include="TileInteraction.h" />
+    <ClInclude Include="TreasureInteraction.h" />
     <ClInclude Include="TreasureTile.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
