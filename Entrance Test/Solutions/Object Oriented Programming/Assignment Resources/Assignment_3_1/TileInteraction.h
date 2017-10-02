@@ -6,7 +6,7 @@ class Player;
 class TileInteraction
 {
 public:
-	virtual void ExecuteOn(Player& player) = 0;
+	virtual void ExecuteOn(Player* pPlayer) = 0;
 	virtual ~TileInteraction();
 
 protected:

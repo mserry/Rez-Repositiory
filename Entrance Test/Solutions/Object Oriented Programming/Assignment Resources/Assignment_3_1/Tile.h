@@ -30,3 +30,7 @@ inline Tile::~Tile()
 	m_interaction = nullptr;
 }
 
+inline void Tile::OnEnter(Player* pPlayer)
+{
+}
+

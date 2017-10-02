@@ -6,9 +6,9 @@ DamageInteraction::DamageInteraction(Tile* powner, std::pair<int,int> dmgRange) 
 	m_range = dmgRange;
 }
 
-void DamageInteraction::ExecuteOn(Player& player)
+void DamageInteraction::ExecuteOn(Player* pPlayer)
 {
-	player.Damage(GetRndValInRange(m_range));
+	pPlayer->Damage(GetRndValInRange(m_range));
 }
 
 int DamageInteraction::GetRndValInRange(std::pair<int,int> range)

@@ -22,8 +22,18 @@ void BombTile::Draw()
 
 void BombTile::OnEnter(Player* pPlayer)
 {
-	m_interaction->ExecuteOn(*pPlayer);
-	m_state = State::k_dead;
+	switch (m_state)
+	{
+		case State::k_active:
+			m_interaction->ExecuteOn(pPlayer);
+			m_state = State::k_dead;
+	    break;
+
+		case State::k_dead:
+			break;
+		default:
+			break;
+	}
 }
 
 

@@ -22,6 +22,6 @@ void TreasureTile::Draw()
 
 void TreasureTile::OnEnter(Player* pPlayer)
 {
-	m_interaction->ExecuteOn(*pPlayer);
+	m_interaction->ExecuteOn(pPlayer);
 }
 
