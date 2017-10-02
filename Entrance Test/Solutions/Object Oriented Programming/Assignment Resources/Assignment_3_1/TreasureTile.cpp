@@ -17,7 +17,7 @@ void TreasureTile::Draw()
     if (!m_collected)
         std::cout << "$";
     else
-        std::cout << ".";  // floor
+        std::cout << ".";
 }
 
 void TreasureTile::OnEnter(Player* pPlayer)

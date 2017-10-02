@@ -3,6 +3,7 @@
 #include <time.h>
 #include <stdlib.h>
 #include <conio.h>
+#include <vld.h>
 
 //---------------------------------------------------------------------------------------------------------------------
 // Game Design:
@@ -81,8 +82,14 @@
 //---------------------------------------------------------------------------------------------------------------------
 // Your notes go here:
 // QUESTION 1: TODO: For the strategy pattern implementation, Create TileInteraction with method (ExecuteOn (Player* entity)) -> subclass it with interactions
-// TODO: then, using templates -> bind interaction to it's tile type -> create tiles properly -> remove class hierarchy. 
-// 
+// TODO: then, using templates -> bind interaction to it's tile type -> create tiles properly -> remove class hierarchy using a composition pattern.
+//
+// QUESTION 2: No, state is not necessary since the use here is in a different context. the state enum's real value is in the Draw() method. however, from a 
+// behavior point of view, each tile does 1 thing only so there is no 
+// variance in it's behavior based on it's state. therefore, the enum is just fine as it is. Furthermore, we used the strategy pattern to 
+// de-couple behavior from the entities (tiles) and to remove duplication. 
+// should the tiles require to have more than one behavior based on a different state, then the state pattern would be a better choice.
+//
 //---------------------------------------------------------------------------------------------------------------------
 
 

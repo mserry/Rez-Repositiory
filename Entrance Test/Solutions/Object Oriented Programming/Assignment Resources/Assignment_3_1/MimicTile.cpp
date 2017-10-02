@@ -1,6 +1,5 @@
 // MimicTile.cpp
 #include "MimicTile.h"
-#include "Player.h"
 #include <iostream>
 
 using std::cout;
@@ -34,7 +33,8 @@ void MimicTile::Draw()
 
 void MimicTile::OnEnter(Player* pPlayer)
 {
-    if (m_state != State::k_hidden) return;
+	m_state = State::k_active;
 
 	BombTile::OnEnter(pPlayer);
 }
+

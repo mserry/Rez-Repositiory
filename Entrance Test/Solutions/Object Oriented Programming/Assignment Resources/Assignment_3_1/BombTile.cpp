@@ -22,11 +22,9 @@ void BombTile::Draw()
 
 void BombTile::OnEnter(Player* pPlayer)
 {
-    if (m_state == State::k_active)
-    {
-		m_interaction->ExecuteOn(*pPlayer);
-
-        m_state = State::k_dead;
-    }
+	m_interaction->ExecuteOn(*pPlayer);
+	m_state = State::k_dead;
 }
+
+
 

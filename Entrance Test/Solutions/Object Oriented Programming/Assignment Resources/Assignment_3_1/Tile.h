@@ -1,8 +1,7 @@
 // Tile.h
-#ifndef __TILE_H__
-#define __TILE_H__
+#pragma once
+#include "TileInteraction.h"
 
-class TileInteraction;
 class Player;
 
 class Tile
@@ -16,14 +15,18 @@ public:
 		k_revealed,
 	};
 
-    virtual ~Tile() { }  // if your class is being used as a base class, it's best to have a virtual destructor
+	virtual ~Tile(); // if your class is being used as a base class, it's best to have a virtual destructor
     virtual void Draw() = 0;
-    virtual void OnEnter(Player* pPlayer) { }
+	virtual void OnEnter(Player* pPlayer);
 
 protected:
 	TileInteraction* m_interaction;
 	State m_state;
 };
 
-#endif
+inline Tile::~Tile()
+{
+	delete m_interaction;
+	m_interaction = nullptr;
+}
 

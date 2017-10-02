@@ -7,11 +7,11 @@ class TileInteraction
 {
 public:
 	virtual void ExecuteOn(Player& player) = 0;
+	virtual ~TileInteraction();
 
 protected:
 	explicit TileInteraction(Tile* pOwner);
-	~TileInteraction();
-
+	
 	Tile* mp_ownerTile;
 };
 

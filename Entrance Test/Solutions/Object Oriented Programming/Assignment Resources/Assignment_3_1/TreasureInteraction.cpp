@@ -15,5 +15,4 @@ void TreasureInteraction::ExecuteOn(Player& player)
 }
 
 
-TreasureInteraction::~TreasureInteraction()
-{}
+TreasureInteraction::~TreasureInteraction() {}
