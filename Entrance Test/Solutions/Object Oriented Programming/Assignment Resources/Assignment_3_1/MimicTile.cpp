@@ -33,10 +33,9 @@ void MimicTile::Draw()
 
 void MimicTile::OnEnter(Player* pPlayer)
 {
-	if(m_state == State::k_hidden)
-	{
-		m_state = State::k_active;
-		BombTile::OnEnter(pPlayer);
-	}
+	if(m_state != State::k_hidden) return;
+
+	m_state = State::k_active;
+	BombTile::OnEnter(pPlayer);
 }
 

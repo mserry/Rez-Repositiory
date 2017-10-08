@@ -3,6 +3,7 @@
 #define __WORLD_H__
 
 #include <utility>
+#include "InputHandler.h"
 
 class Tile;
 class Player;
@@ -25,6 +26,7 @@ class World
     int m_width, m_height;
     Tile** m_ppGrid;
     Player* m_pPlayer;
+	InputHandler* m_pInputHandler;
     bool m_gameOver;
 
 public:

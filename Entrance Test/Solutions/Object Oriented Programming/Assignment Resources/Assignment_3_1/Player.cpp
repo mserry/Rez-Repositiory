@@ -61,6 +61,10 @@ bool Player::Update()
             Move(1, 0);
             break;
 
+		case 'e':
+	
+			break;
+
         default:
             cout << "Invalid input";
             break;

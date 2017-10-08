@@ -13,6 +13,7 @@ public:
 		k_dead,
 		k_hidden,
 		k_revealed,
+		k_collected,
 	};
 
 	virtual ~Tile(); // if your class is being used as a base class, it's best to have a virtual destructor
@@ -30,7 +31,5 @@ inline Tile::~Tile()
 	m_interaction = nullptr;
 }
 
-inline void Tile::OnEnter(Player* pPlayer)
-{
-}
+inline void Tile::OnEnter(Player* pPlayer) {}
 

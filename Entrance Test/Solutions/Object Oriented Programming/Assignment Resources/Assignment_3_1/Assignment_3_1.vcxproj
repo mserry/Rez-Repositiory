@@ -83,6 +83,7 @@
     <ClCompile Include="EndTile.cpp" />
     <ClCompile Include="FloorTile.cpp" />
     <ClCompile Include="DamageInteraction.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="MimicTile.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="TileInteraction.cpp" />
@@ -95,6 +96,7 @@
     <ClInclude Include="EndTile.h" />
     <ClInclude Include="FloorTile.h" />
     <ClInclude Include="DamageInteraction.h" />
+    <ClInclude Include="InputHandler.h" />
     <ClInclude Include="MimicTile.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Tile.h" />

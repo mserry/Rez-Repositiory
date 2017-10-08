@@ -31,6 +31,7 @@ void BombTile::OnEnter(Player* pPlayer)
 
 		case State::k_dead:
 			break;
+
 		default:
 			break;
 	}

@@ -14,14 +14,26 @@ TreasureTile::TreasureTile()
 
 void TreasureTile::Draw()
 {
-    if (!m_collected)
-        std::cout << "$";
-    else
-        std::cout << ".";
+	switch (m_state)
+	{
+		case State::k_collected:
+			std::cout << ".";
+			break;
+
+		case State::k_active:
+			std::cout << "$";
+			break;
+
+		default:
+			break;
+	}
 }
 
 void TreasureTile::OnEnter(Player* pPlayer)
 {
+	if (m_state == State::k_collected) return;
+
 	m_interaction->ExecuteOn(pPlayer);
+	m_state = State::k_collected;
 }
 

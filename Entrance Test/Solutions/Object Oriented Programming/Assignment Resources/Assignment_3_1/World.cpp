@@ -23,6 +23,7 @@ const World::TileProbability World::s_tileProbabilities[(int)TileType::k_numTile
     World::TileProbability(50, TileType::k_mimic),
 };
 
+//TODO: Messy Class EU (TOO MANY RESPONSIBLITIES..)
 World::World()
     : m_ppGrid(nullptr)
     , m_width(0)
