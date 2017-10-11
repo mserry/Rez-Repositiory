@@ -30,8 +30,8 @@ class World
     bool m_gameOver;
 
 public:
-    World();
-    ~World();
+	World();
+	~World();
 
     // initialization
     void Init(int width, int height);
@@ -42,9 +42,14 @@ public:
     void Draw();
     void Update();
 
-    // end
+	Tile* GetAdjacentTiles(int x, int y);
+
+	// end
     void EndGame();
     bool IsGameOver() const { return m_gameOver; }
+
+	//getters
+	Player* GetPlayer() const;
 };
 
 #endif

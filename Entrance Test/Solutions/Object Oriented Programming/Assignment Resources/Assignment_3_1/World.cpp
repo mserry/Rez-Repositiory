@@ -2,6 +2,7 @@
 #include "World.h"
 #include "Tile.h"
 #include "Player.h"
+#include "InputHandler.h"
 
 #include "FloorTile.h"
 #include "TreasureTile.h"
@@ -46,6 +47,7 @@ World::~World()
     delete m_pPlayer;
     m_pPlayer = nullptr;
 }
+
 
 void World::Init(int width, int height)
 {
@@ -175,6 +177,8 @@ void World::Update()
         return;
     }
 
+	m_pInputHandler->GetInstance().ProcessInput();
+
     int x = m_pPlayer->GetX();
     int y = m_pPlayer->GetY();
 
@@ -191,6 +195,15 @@ void World::Update()
     m_ppGrid[index]->OnEnter(m_pPlayer);
 }
 
+Tile* World::GetAdjacentTiles(int x, int y)
+{
+	int xPos = 0;
+	int yPos = 0;
+	Tile* adjacentTiles = nullptr;
+
+	return adjacentTiles;
+}
+
 void World::EndGame()
 {
     if (!m_pPlayer->IsDead())
@@ -204,4 +217,9 @@ void World::EndGame()
     }
 
     m_gameOver = true;
+}
+
+Player* World::GetPlayer() const
+{
+	return (!m_pPlayer) ? nullptr : m_pPlayer;
 }

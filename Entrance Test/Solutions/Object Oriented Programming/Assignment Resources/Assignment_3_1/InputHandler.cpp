@@ -2,45 +2,48 @@
 #include <iostream>
 
 #include "InputHandler.h"
+#include "World.h"
+#include "Player.h"
+
+extern World* g_pWorld;
 
 
-InputHandler* InputHandler::GetInstance()
+InputHandler& InputHandler::GetInstance()
 {
-	if(!m_instance)
-	{
-		m_instance = new InputHandler();
-	}
+	static InputHandler instance;
 
-	return m_instance;
+	return instance;
 }
 
 void InputHandler::ProcessInput()
 {
 	char input = _getch();
 
+	//this is super ugly but i really dont know how else to do it in CPP :(
 	switch (input)
 	{
 		case 'q':
-			//return false;  // quitting
+			if (::g_pWorld) g_pWorld->EndGame();
+			break;
 
 		case 'w':
-			//Move(0, -1);
+			if (g_pWorld && g_pWorld->GetPlayer()) g_pWorld->GetPlayer()->Move(0, -1);
 			break;
 
 		case 'a':
-			//Move(-1, 0);
+			if (g_pWorld && g_pWorld->GetPlayer()) g_pWorld->GetPlayer()->Move(-1, 0);
 			break;
 
 		case 's':
-			//Move(0, 1);
+			if (g_pWorld && g_pWorld->GetPlayer()) g_pWorld->GetPlayer()->Move(0, 1);
 			break;
 
 		case 'd':
-			//Move(1, 0);
+			if (g_pWorld && g_pWorld->GetPlayer()) g_pWorld->GetPlayer()->Move(1, 0);
 			break;
 
 		case 'e':
-
+			if (g_pWorld && g_pWorld->GetPlayer()) g_pWorld->GetPlayer()->DetectMimics();
 			break;
 
 		default:
@@ -50,14 +53,7 @@ void InputHandler::ProcessInput()
 
 }
 
-int InputHandler::GetMoveCount() const
-{
-	return m_moveCount;
-}
-
-InputHandler::InputHandler(): m_moveCount(0) {}
 
 
-InputHandler::~InputHandler()
-{
-}
+InputHandler::InputHandler()  {}
+InputHandler::~InputHandler() {}

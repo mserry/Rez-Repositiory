@@ -1,9 +1,11 @@
 // Player.cpp
 #include "Player.h"
 #include <iostream>
-#include <conio.h>
+#include "World.h"
 
 using std::cout;
+
+extern World* g_pWorld;
 
 const int Player::k_maxHitPoints = 10;
 
@@ -38,38 +40,6 @@ bool Player::Update()
     if (IsDead())
         return false;
 
-    char input = _getch();
-
-    switch (input)
-    {
-        case 'q':
-            return false;  // quitting
-
-        case 'w':
-            Move(0, -1);
-            break;
-
-        case 'a':
-            Move(-1, 0);
-            break;
-
-        case 's':
-            Move(0, 1);
-            break;
-
-        case 'd':
-            Move(1, 0);
-            break;
-
-		case 'e':
-	
-			break;
-
-        default:
-            cout << "Invalid input";
-            break;
-    }
-
     return true;
 }
 
@@ -86,6 +56,15 @@ void Player::Damage(int amount)
 
     if (m_hitPoints < 0)
         m_hitPoints = 0;
+}
+
+void Player::DetectMimics()
+{
+	//Get Adjacent tiles
+	//Check if any are mimics
+	//Set them to revealed state.
+	//add to mimic detection move
+	//increment move count.
 }
 
 void Player::AddGold(int amount)
