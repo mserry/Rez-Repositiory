@@ -8,3 +8,8 @@ void FloorTile::Draw()
 {
     cout << ".";
 }
+
+Tile::TileType FloorTile::GetType() const
+{
+	return TileType::k_floor;
+}

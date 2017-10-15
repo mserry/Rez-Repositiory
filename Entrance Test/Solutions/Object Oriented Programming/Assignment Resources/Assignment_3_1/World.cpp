@@ -195,11 +195,53 @@ void World::Update()
     m_ppGrid[index]->OnEnter(m_pPlayer);
 }
 
-Tile* World::GetAdjacentTiles(int x, int y)
+std::vector<Tile*> World::GetAdjacentTiles(int currentXPos, int currentYPos)
 {
-	int xPos = 0;
-	int yPos = 0;
-	Tile* adjacentTiles = nullptr;
+	std::vector<Tile*> adjacentTiles;
+
+	//assert center tile is properly placed
+	assert(currentXPos >= 0 && currentXPos < m_width);
+	assert(currentXPos >= 0 && currentYPos < m_height);
+	
+	//forward tile
+	assert(currentYPos - 1 >= 0 && (currentYPos - 1) < m_height);
+	adjacentTiles.push_back(m_ppGrid[currentXPos, currentYPos - 1]);
+
+	//back tile
+	assert(currentYPos + 1 >= 0 && (currentYPos + 1) < m_height);
+	adjacentTiles.push_back(m_ppGrid[currentXPos, currentYPos + 1]);
+
+	//left tile
+	assert(currentXPos - 1 >= 0 && (currentXPos - 1) < m_width);
+	adjacentTiles.push_back(m_ppGrid[currentXPos - 1, currentYPos]);
+
+	//right tile
+	assert(currentXPos + 1 >= 0 && (currentXPos + 1) < m_width);
+	adjacentTiles.push_back(m_ppGrid[currentXPos + 1, currentYPos]);
+
+	//top left tile
+	assert(currentXPos - 1 >= 0 && (currentYPos - 1) < m_width);
+	assert(currentYPos - 1 >= 0 && (currentYPos - 1) < m_height);
+
+	adjacentTiles.push_back(m_ppGrid[currentXPos - 1, currentYPos - 1]);
+
+	//top right tile
+	assert(currentXPos + 1 >= 0 && (currentYPos + 1) < m_width);
+	assert(currentYPos + 1 >= 0 && (currentYPos - 1) < m_height);
+
+	adjacentTiles.push_back(m_ppGrid[currentXPos + 1, currentYPos - 1]);
+
+	//bottom left tile
+	assert(currentXPos - 1 >= 0 && (currentYPos - 1) < m_width);
+	assert(currentYPos + 1 >= 0 && (currentYPos + 1) < m_height);
+
+	adjacentTiles.push_back(m_ppGrid[currentXPos - 1, currentYPos + 1]);
+
+	//bottom right tile
+	assert(currentXPos + 1 >= 0 && (currentYPos + 1) < m_width);
+	assert(currentYPos + 1 >= 0 && (currentYPos + 1) < m_height);
+
+	adjacentTiles.push_back(m_ppGrid[currentXPos + 1, currentYPos + 1]);
 
 	return adjacentTiles;
 }

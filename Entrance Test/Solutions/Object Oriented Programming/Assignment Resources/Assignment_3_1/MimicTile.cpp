@@ -39,3 +39,8 @@ void MimicTile::OnEnter(Player* pPlayer)
 	BombTile::OnEnter(pPlayer);
 }
 
+Tile::TileType MimicTile::GetType() const
+{
+	return TileType::k_mimic;
+}
+

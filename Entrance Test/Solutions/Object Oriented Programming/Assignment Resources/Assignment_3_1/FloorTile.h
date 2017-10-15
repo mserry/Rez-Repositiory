@@ -8,6 +8,7 @@ class FloorTile : public Tile
 {
 public:
     virtual void Draw() override;
+	virtual TileType GetType() const override;
 };
 
 #endif

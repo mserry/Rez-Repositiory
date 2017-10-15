@@ -14,3 +14,8 @@ void EndTile::OnEnter(Player* pPlayer)
 {
     g_pWorld->EndGame();
 }
+
+Tile::TileType EndTile::GetType() const
+{
+	return TileType::k_end;
+}

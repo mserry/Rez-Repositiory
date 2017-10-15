@@ -12,6 +12,12 @@ BombTile::BombTile()
 	m_interaction = new DamageInteraction(this,s_damageRange);
 }
 
+Tile::TileType BombTile::GetType() const
+{
+	return TileType::k_bomb;
+}
+
+
 void BombTile::Draw()
 {
     if (m_state == State::k_active)

@@ -4,6 +4,7 @@
 
 #include <utility>
 #include "InputHandler.h"
+#include <vector>
 
 class Tile;
 class Player;
@@ -42,7 +43,7 @@ public:
     void Draw();
     void Update();
 
-	Tile* GetAdjacentTiles(int x, int y);
+	std::vector<Tile*> GetAdjacentTiles(int x, int y);
 
 	// end
     void EndGame();

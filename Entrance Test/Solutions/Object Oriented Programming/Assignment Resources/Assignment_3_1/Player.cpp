@@ -2,37 +2,32 @@
 #include "Player.h"
 #include <iostream>
 #include "World.h"
+#include "Tile.h"
 
 using std::cout;
 
 extern World* g_pWorld;
 
-const int Player::k_maxHitPoints = 10;
-
+const int Entity::k_maxHitPoints = 10;
 const int Player::k_baseScore = 1000;
 const int Player::k_hitPointsWeight = 100;
 const int Player::k_goldWeight = 10;
 const int Player::k_moveCountWeight = 10;
 
-Player::Player(int x, int y)
-    : m_x(x)
-    , m_y(y)
-    , m_hitPoints(k_maxHitPoints)
-    , m_gold(0)
-    , m_moveCount(0)
-{ }
 
-void Player::Draw() const
-{
-    if (!IsDead())
-        cout << "@";
-    else
-        cout << "~";
-}
+Player::Player(int x, int y): m_moveCount(0), m_mimicMoves(3)  {}
 
 void Player::DrawUi() const
 {
     cout << "HP: " << m_hitPoints << "  Gold: " << m_gold << "  Move Count: " << m_moveCount << "  Score: " << CalculateScore() << "\n\n";
+}
+
+void Player::Draw()
+{
+	if (!IsDead())
+		cout << "@";
+	else
+		cout << "~";
 }
 
 bool Player::Update()
@@ -60,16 +55,21 @@ void Player::Damage(int amount)
 
 void Player::DetectMimics()
 {
-	//Get Adjacent tiles
-	//Check if any are mimics
-	//Set them to revealed state.
-	//add to mimic detection move
-	//increment move count.
-}
+	if (m_mimicMoves <= 0) return;
 
-void Player::AddGold(int amount)
-{
-    m_gold += amount;
+	auto adjacentTiles = g_pWorld->GetAdjacentTiles(m_x, m_y);
+
+	for(int i = 0; i < adjacentTiles.size(); ++ i)
+	{
+		auto tile = adjacentTiles[i];
+		if(tile->GetType() == Tile::TileType::k_mimic)
+		{
+			tile->SetState(Tile::State::k_revealed);
+		}
+	}
+
+	--m_mimicMoves;
+	++m_moveCount;
 }
 
 int Player::CalculateScore() const

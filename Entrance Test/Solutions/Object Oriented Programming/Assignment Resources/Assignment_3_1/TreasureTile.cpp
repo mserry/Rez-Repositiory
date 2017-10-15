@@ -37,3 +37,8 @@ void TreasureTile::OnEnter(Player* pPlayer)
 	m_state = State::k_collected;
 }
 
+Tile::TileType TreasureTile::GetType() const
+{
+	return TileType::k_treasure;
+}
+
