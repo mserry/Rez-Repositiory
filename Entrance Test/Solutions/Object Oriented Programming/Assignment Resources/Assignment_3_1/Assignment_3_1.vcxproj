@@ -86,6 +86,7 @@
     <ClCompile Include="Evader.cpp" />
     <ClCompile Include="FloorTile.cpp" />
     <ClCompile Include="DamageInteraction.cpp" />
+    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="MimicTile.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -102,9 +103,11 @@
     <ClInclude Include="Evader.h" />
     <ClInclude Include="FloorTile.h" />
     <ClInclude Include="DamageInteraction.h" />
+    <ClInclude Include="Renderer.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="MimicTile.h" />
     <ClInclude Include="Player.h" />
+    <ClInclude Include="Singleton.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileInteraction.h" />
     <ClInclude Include="TreasureInteraction.h" />

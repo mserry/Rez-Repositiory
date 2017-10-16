@@ -1,12 +1,10 @@
 #pragma once
+#include "Singleton.h"
 
-class InputHandler
+class InputHandler : public Singleton<InputHandler>
 {
 
 public:
-	//someone said it's better to return it as a reference?
-	static InputHandler& GetInstance();
-
 	void ProcessInput();
 
 private:

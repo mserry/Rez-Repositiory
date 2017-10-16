@@ -5,6 +5,8 @@
 #include <utility>
 #include "InputHandler.h"
 #include <vector>
+#include "Entity.h"
+#include "Renderer.h"
 
 class Tile;
 class Player;
@@ -28,6 +30,8 @@ class World
     Tile** m_ppGrid;
     Player* m_pPlayer;
 	InputHandler* m_pInputHandler;
+	Renderer* m_pRenderer;
+	std::vector<Entity*> m_entities;
     bool m_gameOver;
 
 public:
@@ -37,13 +41,19 @@ public:
     // initialization
     void Init(int width, int height);
     void CreatePlayer(int x = 0, int y = 0);
+	void CreateEntity(int x, int y);
     void GenerateWorld();
 
     // update
+	void GameLoop() const;
     void Draw();
     void Update();
 
+	//getters
 	std::vector<Tile*> GetAdjacentTiles(int x, int y) const;
+	std::vector<Entity*> GetEntities() const;
+	int GetWorldWidth() const;
+	int GetWorldHeight() const;
 
 	// end
     void EndGame();
@@ -51,6 +61,9 @@ public:
 
 	//getters
 	Player* GetPlayer() const;
+
+protected:
+	void GenerateEntities();
 };
 
 #endif

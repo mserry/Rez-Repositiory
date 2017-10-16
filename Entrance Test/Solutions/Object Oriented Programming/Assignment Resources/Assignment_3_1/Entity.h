@@ -19,6 +19,7 @@ public:
 
 	int GetX() const { return m_x; }
 	int GetY() const { return m_y; }
+
 	bool IsDead() const { return (m_hitPoints <= 0); }
 
 protected:

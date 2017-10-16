@@ -31,6 +31,7 @@ World::World()
     , m_height(0)
     , m_pPlayer(nullptr)
     , m_gameOver(false)
+    , m_entities(5)
 {
     //
 }
@@ -46,6 +47,12 @@ World::~World()
 
     delete m_pPlayer;
     m_pPlayer = nullptr;
+
+	//de-allocating entities.
+	for(int j = 0 ;j < m_entities.size(); ++j)
+	{
+		delete m_entities[j];
+	}
 }
 
 
@@ -79,6 +86,14 @@ void World::CreatePlayer(int x, int y)
     assert(x >= 0 && x < m_width);
     assert(y >= 0 && y < m_height);
     m_pPlayer = new Player(x, y);
+}
+
+void World::CreateEntity(int x, int y)
+{
+	assert(x >= 0 && x < m_width);
+	assert(y >= 0 && y < m_height);
+
+
 }
 
 void World::GenerateWorld()
@@ -142,6 +157,27 @@ void World::GenerateWorld()
                 break;
         }
     }
+}
+
+void World::GameLoop() const
+{
+	while(!m_gameOver)
+	{
+		m_pInputHandler->GetInstance().ProcessInput();
+
+		
+		m_pRenderer->GetInstance().Render();
+	}
+	
+	//user input()
+
+	//update(dt)
+		//Process Tiles()
+		//Procces AI()
+
+	//render()
+	//   DrawUI()
+	//   DrawEntities()
 }
 
 void World::Draw()
@@ -247,6 +283,21 @@ std::vector<Tile*> World::GetAdjacentTiles(int currentXPos, int currentYPos) con
 	return adjacentTiles;
 }
 
+std::vector<Entity*> World::GetEntities() const
+{
+	return m_entities;
+}
+
+int World::GetWorldWidth() const
+{
+	return m_width;
+}
+
+int World::GetWorldHeight() const
+{
+	return m_height;
+}
+
 void World::EndGame()
 {
     if (!m_pPlayer->IsDead())
@@ -265,4 +316,9 @@ void World::EndGame()
 Player* World::GetPlayer() const
 {
 	return (!m_pPlayer) ? nullptr : m_pPlayer;
+}
+
+void World::GenerateEntities()
+{
+
 }

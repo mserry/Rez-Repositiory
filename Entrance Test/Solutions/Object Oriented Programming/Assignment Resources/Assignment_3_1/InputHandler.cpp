@@ -7,14 +7,6 @@
 
 extern World* g_pWorld;
 
-
-InputHandler& InputHandler::GetInstance()
-{
-	static InputHandler instance;
-
-	return instance;
-}
-
 void InputHandler::ProcessInput()
 {
 	char input = _getch();
