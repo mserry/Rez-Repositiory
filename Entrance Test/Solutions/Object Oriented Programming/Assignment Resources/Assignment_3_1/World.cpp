@@ -156,6 +156,7 @@ void World::Draw()
         {
             if (m_pPlayer && m_pPlayer->GetX() == x && m_pPlayer->GetY() == y)
             {
+				//TODO: make draw on all entities.
                 m_pPlayer->Draw();
             }
             else
@@ -195,7 +196,7 @@ void World::Update()
     m_ppGrid[index]->OnEnter(m_pPlayer);
 }
 
-std::vector<Tile*> World::GetAdjacentTiles(int currentXPos, int currentYPos)
+std::vector<Tile*> World::GetAdjacentTiles(int currentXPos, int currentYPos) const
 {
 	std::vector<Tile*> adjacentTiles;
 

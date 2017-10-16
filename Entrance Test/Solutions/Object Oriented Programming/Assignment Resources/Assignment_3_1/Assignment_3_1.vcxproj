@@ -80,8 +80,10 @@
   <ItemGroup>
     <ClCompile Include="Assignment_3_1.cpp" />
     <ClCompile Include="BombTile.cpp" />
+    <ClCompile Include="Chaser.cpp" />
     <ClCompile Include="EndTile.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Evader.cpp" />
     <ClCompile Include="FloorTile.cpp" />
     <ClCompile Include="DamageInteraction.cpp" />
     <ClCompile Include="InputHandler.cpp" />
@@ -94,8 +96,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BombTile.h" />
+    <ClInclude Include="Chaser.h" />
     <ClInclude Include="EndTile.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Evader.h" />
     <ClInclude Include="FloorTile.h" />
     <ClInclude Include="DamageInteraction.h" />
     <ClInclude Include="InputHandler.h" />

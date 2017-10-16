@@ -8,7 +8,7 @@ public:
 	static const int k_maxHitPoints;
 
 	Entity();
-	~Entity();
+	virtual ~Entity();
 
 	virtual void Draw() = 0;
 	virtual bool Update() = 0;
@@ -23,7 +23,6 @@ public:
 
 protected:
 	virtual void Move(int xPos, int yPos) = 0;
-	
 
 protected:
 	int m_x;

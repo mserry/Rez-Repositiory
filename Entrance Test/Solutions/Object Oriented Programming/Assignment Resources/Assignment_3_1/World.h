@@ -43,7 +43,7 @@ public:
     void Draw();
     void Update();
 
-	std::vector<Tile*> GetAdjacentTiles(int x, int y);
+	std::vector<Tile*> GetAdjacentTiles(int x, int y) const;
 
 	// end
     void EndGame();
