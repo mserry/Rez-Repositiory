@@ -8,7 +8,7 @@ public:
 	Chaser();
 	~Chaser();
 
-	virtual void Draw() override;
+	virtual void Render() override;
 	virtual bool Update() override;
 	virtual void Damage(int amount) override;
 };

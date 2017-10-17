@@ -14,13 +14,15 @@ class Player : public Entity
 public:
     Player(int x, int y);
 
-    virtual void Draw() override;
-	virtual bool Update() override;
+    virtual void Render() override;
 	virtual void Damage(int amount) override;
+
+	virtual bool Update() override;
+	virtual bool IsDirty() override;
 	
 	void DetectMimics();
 
-	void DrawUi() const;
+	void RenderPlayerUi() const;
     int CalculateScore() const;
 
 protected:

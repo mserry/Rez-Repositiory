@@ -4,7 +4,7 @@
 
 using std::cout;
 
-void FloorTile::Draw()
+void FloorTile::Render()
 {
     cout << ".";
 }

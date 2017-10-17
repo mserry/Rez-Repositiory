@@ -12,7 +12,7 @@ TreasureTile::TreasureTile()
 	m_interaction = new TreasureInteraction(this, s_treasureRange);
 }
 
-void TreasureTile::Draw()
+void TreasureTile::Render()
 {
 	switch (m_state)
 	{

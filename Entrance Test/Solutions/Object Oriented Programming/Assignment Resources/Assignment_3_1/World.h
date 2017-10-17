@@ -3,13 +3,11 @@
 #define __WORLD_H__
 
 #include <utility>
-#include "InputHandler.h"
 #include <vector>
-#include "Entity.h"
-#include "Renderer.h"
 
 class Tile;
 class Player;
+class Entity;
 
 class World
 {
@@ -29,8 +27,6 @@ class World
     int m_width, m_height;
     Tile** m_ppGrid;
     Player* m_pPlayer;
-	InputHandler* m_pInputHandler;
-	Renderer* m_pRenderer;
 	std::vector<Entity*> m_entities;
     bool m_gameOver;
 
@@ -44,8 +40,6 @@ public:
 	void CreateEntity(int x, int y);
     void GenerateWorld();
 
-    // update
-	void GameLoop() const;
     void Draw();
     void Update();
 
@@ -61,6 +55,7 @@ public:
 
 	//getters
 	Player* GetPlayer() const;
+	Tile** GetTiles() const;
 
 protected:
 	void GenerateEntities();

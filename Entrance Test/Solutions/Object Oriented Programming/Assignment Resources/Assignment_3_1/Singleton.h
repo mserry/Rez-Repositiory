@@ -1,33 +1,24 @@
 #pragma once
 
-template<class T>
+template<typename T>
 class Singleton
 {
 public:
-	static Singleton<T&> GetInstance();
+	static T& GetInstance();
+
+	Singleton(Singleton const&) = delete;
+	Singleton& operator= (Singleton const&) = delete;
 
 protected:
-	Singleton();
-	~Singleton();
+	Singleton() = delete;
+	~Singleton() = delete;
 };
 
 
-
 template <typename T>
-Singleton<T&> Singleton<T>::GetInstance()
+T& Singleton<T>::GetInstance()
 {
-	static Singleton<T> instance;
+	static T instance;
 
 	return instance;
 }
-
-template<typename T>
-Singleton<T>::Singleton() {}
-
-template<typename T>
-Singleton<T>::~Singleton()
-{
-}
-
-
-

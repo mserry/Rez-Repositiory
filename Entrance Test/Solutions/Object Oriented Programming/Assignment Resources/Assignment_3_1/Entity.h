@@ -3,16 +3,16 @@
 
 class Entity
 {
-	
 public:
 	static const int k_maxHitPoints;
 
 	Entity();
 	virtual ~Entity();
 
-	virtual void Draw() = 0;
-	virtual bool Update() = 0;
+	virtual void Render() = 0;
 	virtual void Damage(int amount) = 0;
+	virtual bool Update() = 0;
+	virtual bool IsDirty() = 0;
 
 	void AddGold(int amount);
 	void Kill() { m_hitPoints = 0; }
@@ -30,5 +30,7 @@ protected:
 	int m_y;
 	int m_hitPoints;
 	int m_gold;
+
+	bool m_isDirty;
 };
 

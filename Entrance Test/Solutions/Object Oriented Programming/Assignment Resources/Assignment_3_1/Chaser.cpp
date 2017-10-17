@@ -12,7 +12,7 @@ Chaser::~Chaser()
 }
 
 
-void Chaser::Draw()
+void Chaser::Render()
 {
 	if (!IsDead())
 		cout << "!";

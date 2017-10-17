@@ -18,7 +18,7 @@ Tile::TileType BombTile::GetType() const
 }
 
 
-void BombTile::Draw()
+void BombTile::Render()
 {
     if (m_state == State::k_active)
         std::cout << "*";

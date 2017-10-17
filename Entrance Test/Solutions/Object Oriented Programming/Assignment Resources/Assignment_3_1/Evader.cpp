@@ -7,7 +7,7 @@ using std::cout;
 Evader::Evader() {}
 Evader::~Evader() {}
 
-void Evader::Draw()
+void Evader::Render()
 {
 	if (!IsDead())
 		cout << "?";

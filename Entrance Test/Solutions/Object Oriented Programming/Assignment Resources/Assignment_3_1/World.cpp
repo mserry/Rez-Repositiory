@@ -9,12 +9,16 @@
 #include "BombTile.h"
 #include "MimicTile.h"
 #include "EndTile.h"
+#include "Singleton.h"
 
 #include <iostream>
 #include <assert.h>
 
 using std::cout;
 using std::endl;
+
+using SRenderer = ::Singleton<Renderer>;
+using SInputHandler = ::Singleton<InputHandler>;
 
 const World::TileProbability World::s_tileProbabilities[(int)TileType::k_numTiles] =
 {
@@ -86,6 +90,8 @@ void World::CreatePlayer(int x, int y)
     assert(x >= 0 && x < m_width);
     assert(y >= 0 && y < m_height);
     m_pPlayer = new Player(x, y);
+
+	m_entities.push_back(m_pPlayer);
 }
 
 void World::CreateEntity(int x, int y)
@@ -163,10 +169,9 @@ void World::GameLoop() const
 {
 	while(!m_gameOver)
 	{
-		m_pInputHandler->GetInstance().ProcessInput();
+		SInputHandler::GetInstance().ProcessInput();
 
-		
-		m_pRenderer->GetInstance().Render();
+		SRenderer::GetInstance().Render();
 	}
 	
 	//user input()
@@ -184,21 +189,22 @@ void World::Draw()
 {
     system("cls");
 
-    m_pPlayer->DrawUi();
-
+	//TODO: Render Entites.
+	//TODO: Spawn Entities.
+	//TODO: Add Entity State Machines / PF.
+	
     for (int y = 0; y < m_height; ++y)
     {
         for (int x = 0; x < m_width; ++x)
         {
             if (m_pPlayer && m_pPlayer->GetX() == x && m_pPlayer->GetY() == y)
             {
-				//TODO: make draw on all entities.
-                m_pPlayer->Draw();
+                m_pPlayer->Render();
             }
             else
             {
                 int index = (y * m_height) + x;
-                m_ppGrid[index]->Draw();
+                m_ppGrid[index]->Render();
             }
         }
         cout << endl;
@@ -214,7 +220,7 @@ void World::Update()
         return;
     }
 
-	m_pInputHandler->GetInstance().ProcessInput();
+	//m_pInputHandler->GetInstance().ProcessInput();
 
     int x = m_pPlayer->GetX();
     int y = m_pPlayer->GetY();
@@ -234,7 +240,7 @@ void World::Update()
 
 std::vector<Tile*> World::GetAdjacentTiles(int currentXPos, int currentYPos) const
 {
-	std::vector<Tile*> adjacentTiles;
+	std::vector<Tile*> adjacentTiles(8);
 
 	//assert center tile is properly placed
 	assert(currentXPos >= 0 && currentXPos < m_width);
@@ -242,44 +248,44 @@ std::vector<Tile*> World::GetAdjacentTiles(int currentXPos, int currentYPos) con
 	
 	//forward tile
 	assert(currentYPos - 1 >= 0 && (currentYPos - 1) < m_height);
-	adjacentTiles.push_back(m_ppGrid[currentXPos, currentYPos - 1]);
+	adjacentTiles.push_back(&m_ppGrid[currentXPos][currentYPos - 1]);
 
 	//back tile
 	assert(currentYPos + 1 >= 0 && (currentYPos + 1) < m_height);
-	adjacentTiles.push_back(m_ppGrid[currentXPos, currentYPos + 1]);
+	adjacentTiles.push_back(&m_ppGrid[currentXPos][currentYPos + 1]);
 
 	//left tile
 	assert(currentXPos - 1 >= 0 && (currentXPos - 1) < m_width);
-	adjacentTiles.push_back(m_ppGrid[currentXPos - 1, currentYPos]);
+	adjacentTiles.push_back(&m_ppGrid[currentXPos - 1][currentYPos]);
 
 	//right tile
 	assert(currentXPos + 1 >= 0 && (currentXPos + 1) < m_width);
-	adjacentTiles.push_back(m_ppGrid[currentXPos + 1, currentYPos]);
+	adjacentTiles.push_back(&m_ppGrid[currentXPos + 1][currentYPos]);
 
 	//top left tile
 	assert(currentXPos - 1 >= 0 && (currentYPos - 1) < m_width);
 	assert(currentYPos - 1 >= 0 && (currentYPos - 1) < m_height);
 
-	adjacentTiles.push_back(m_ppGrid[currentXPos - 1, currentYPos - 1]);
+	adjacentTiles.push_back(&m_ppGrid[currentXPos - 1][currentYPos - 1]);
 
 	//top right tile
 	assert(currentXPos + 1 >= 0 && (currentYPos + 1) < m_width);
 	assert(currentYPos + 1 >= 0 && (currentYPos - 1) < m_height);
 
-	adjacentTiles.push_back(m_ppGrid[currentXPos + 1, currentYPos - 1]);
+	adjacentTiles.push_back(&m_ppGrid[currentXPos + 1][currentYPos - 1]);
 
 	//bottom left tile
 	assert(currentXPos - 1 >= 0 && (currentYPos - 1) < m_width);
 	assert(currentYPos + 1 >= 0 && (currentYPos + 1) < m_height);
 
-	adjacentTiles.push_back(m_ppGrid[currentXPos - 1, currentYPos + 1]);
+	adjacentTiles.push_back(&m_ppGrid[currentXPos - 1][currentYPos + 1]);
 
 	//bottom right tile
 	assert(currentXPos + 1 >= 0 && (currentYPos + 1) < m_width);
 	assert(currentYPos + 1 >= 0 && (currentYPos + 1) < m_height);
 
-	adjacentTiles.push_back(m_ppGrid[currentXPos + 1, currentYPos + 1]);
-
+	adjacentTiles.push_back(&m_ppGrid[currentXPos + 1][currentYPos + 1]);
+	
 	return adjacentTiles;
 }
 
@@ -318,7 +324,12 @@ Player* World::GetPlayer() const
 	return (!m_pPlayer) ? nullptr : m_pPlayer;
 }
 
+Tile** World::GetTiles() const
+{
+	return (!m_ppGrid) ? nullptr : m_ppGrid;
+}
+
 void World::GenerateEntities()
 {
-
+	//TODO: Spawn Entities.
 }

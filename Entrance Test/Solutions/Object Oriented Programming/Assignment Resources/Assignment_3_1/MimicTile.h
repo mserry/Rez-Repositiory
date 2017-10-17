@@ -9,9 +9,10 @@ class MimicTile : public BombTile
 {
 public:
     MimicTile();
-    virtual void Draw() override;
+    virtual void Render() override;
     virtual void OnEnter(Player* pPlayer) override;
 	virtual TileType GetType() const override;
+	virtual bool IsDirty() const override;
 };
 
 #endif

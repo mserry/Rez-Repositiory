@@ -1,5 +1,6 @@
 // Tile.h
 #pragma once
+
 #include "TileInteraction.h"
 
 class Player;
@@ -28,17 +29,22 @@ public:
 	};
 
 	virtual ~Tile(); // if your class is being used as a base class, it's best to have a virtual destructor
-    virtual void Draw() = 0;
+    virtual void Render() = 0;
+
 	virtual void OnEnter(Player* pPlayer);
+
 	virtual TileType GetType() const;
+	virtual bool IsDirty() const;
 	
 	void SetState(State newState);
 	State GetState() const;
+
 
 protected:
 	TileInteraction* m_interaction;
 	State m_state;
 	TileType m_type;
+	bool m_dirty;
 };
 
 inline Tile::~Tile()
@@ -63,5 +69,10 @@ inline void Tile::SetState(State newState)
 inline Tile::State Tile::GetState() const
 {
 	return m_state;
+}
+
+inline bool Tile::IsDirty() const
+{
+	return true;
 }
 

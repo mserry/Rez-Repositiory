@@ -1,8 +1,11 @@
 #pragma once
-#include "Singleton.h"
 
-class InputHandler : public Singleton<InputHandler>
+template <typename T>
+class Singleton<T>;
+
+class InputHandler
 {
+	friend Singleton<InputHandler>;
 
 public:
 	void ProcessInput();
@@ -10,6 +13,5 @@ public:
 private:
 	InputHandler();
 	~InputHandler();
-
 };
 

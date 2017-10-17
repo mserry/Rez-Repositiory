@@ -13,7 +13,7 @@ class BombTile : public Tile
 
 public:
     BombTile();
-    virtual void Draw() override;
+    virtual void Render() override;
     virtual void OnEnter(Player* pPlayer) override;
 	virtual TileType GetType() const override;
 };

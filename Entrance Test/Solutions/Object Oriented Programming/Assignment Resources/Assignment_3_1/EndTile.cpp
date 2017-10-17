@@ -5,7 +5,7 @@
 
 extern World* g_pWorld;  // let's us access a global variable declared in another CPP
 
-void EndTile::Draw()
+void EndTile::Render()
 {
     std::cout << "H";
 }

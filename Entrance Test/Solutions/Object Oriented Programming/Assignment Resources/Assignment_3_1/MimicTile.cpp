@@ -7,10 +7,13 @@ using std::cout;
 MimicTile::MimicTile()
 {
 	m_state = State::k_hidden;
+	m_dirty = true;
 }
 
-void MimicTile::Draw()
+void MimicTile::Render()
 {
+	if (!IsDirty()) return;
+
     switch (m_state)
     {
         case State::k_hidden:
@@ -42,5 +45,10 @@ void MimicTile::OnEnter(Player* pPlayer)
 Tile::TileType MimicTile::GetType() const
 {
 	return TileType::k_mimic;
+}
+
+bool MimicTile::IsDirty() const
+{
+	return m_state != State::k_hidden; 
 }
 

@@ -17,12 +17,12 @@ const int Player::k_moveCountWeight = 10;
 
 Player::Player(int x, int y): m_moveCount(0), m_mimicMoves(3)  {}
 
-void Player::DrawUi() const
+void Player::RenderPlayerUi() const
 {
     cout << "HP: " << m_hitPoints << "  Gold: " << m_gold << "  Move Count: " << m_moveCount << "  Score: " << CalculateScore() << "\n\n";
 }
 
-void Player::Draw()
+void Player::Render()
 {
 	if (!IsDead())
 		cout << "@";
@@ -42,6 +42,7 @@ void Player::Move(int deltaX, int deltaY)
 {
     m_x += deltaX;
     m_y += deltaY;
+
     ++m_moveCount;
 }
 
@@ -74,6 +75,5 @@ void Player::DetectMimics()
 
 int Player::CalculateScore() const
 {
-    int score = k_baseScore + (m_hitPoints * k_hitPointsWeight) + (m_gold * k_goldWeight) - (m_moveCount * k_moveCountWeight);
-    return score;
+	return k_baseScore + (m_hitPoints * k_hitPointsWeight) + (m_gold * k_goldWeight) - (m_moveCount * k_moveCountWeight);
 }
