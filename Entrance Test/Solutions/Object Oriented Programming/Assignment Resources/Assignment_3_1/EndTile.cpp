@@ -10,7 +10,7 @@ void EndTile::Render()
     std::cout << "H";
 }
 
-void EndTile::OnEnter(Player* pPlayer)
+void EndTile::OnEnter(Entity* pEntity)
 {
     g_pWorld->EndGame();
 }

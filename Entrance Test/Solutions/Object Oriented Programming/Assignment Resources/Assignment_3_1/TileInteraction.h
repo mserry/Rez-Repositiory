@@ -1,17 +1,13 @@
 #pragma once
 
-class Tile;
-class Player;
+class Entity;
 
 class TileInteraction
 {
 public:
-	virtual void ExecuteOn(Player* pPlayer) = 0;
+	TileInteraction();
 	virtual ~TileInteraction();
 
-protected:
-	explicit TileInteraction(Tile* pOwner);
-	
-	Tile* mp_ownerTile;
+	virtual void ExecuteOn(Entity* pEntity) = 0;
 };
 

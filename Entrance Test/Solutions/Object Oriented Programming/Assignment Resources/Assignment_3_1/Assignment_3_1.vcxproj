@@ -90,6 +90,7 @@
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="MimicTile.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Tile.cpp" />
     <ClCompile Include="TileInteraction.cpp" />
     <ClCompile Include="TreasureInteraction.cpp" />
     <ClCompile Include="TreasureTile.cpp" />

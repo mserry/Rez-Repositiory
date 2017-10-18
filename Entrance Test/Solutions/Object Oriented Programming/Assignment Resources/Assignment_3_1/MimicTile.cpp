@@ -1,19 +1,18 @@
 // MimicTile.cpp
-#include "MimicTile.h"
 #include <iostream>
+
+#include "MimicTile.h"
+
 
 using std::cout;
 
 MimicTile::MimicTile()
 {
 	m_state = State::k_hidden;
-	m_dirty = true;
 }
 
 void MimicTile::Render()
 {
-	if (!IsDirty()) return;
-
     switch (m_state)
     {
         case State::k_hidden:
@@ -34,21 +33,15 @@ void MimicTile::Render()
     }
 }
 
-void MimicTile::OnEnter(Player* pPlayer)
+void MimicTile::OnEnter(Entity* pEntity)
 {
 	if(m_state != State::k_hidden) return;
 
 	m_state = State::k_active;
-	BombTile::OnEnter(pPlayer);
+	BombTile::OnEnter(pEntity);
 }
 
 Tile::TileType MimicTile::GetType() const
 {
 	return TileType::k_mimic;
 }
-
-bool MimicTile::IsDirty() const
-{
-	return m_state != State::k_hidden; 
-}
-

@@ -48,15 +48,14 @@ public:
 	std::vector<Entity*> GetEntities() const;
 	int GetWorldWidth() const;
 	int GetWorldHeight() const;
+	Player* GetPlayer() const;
+	Tile** GetTiles() const;
 
 	// end
     void EndGame();
     bool IsGameOver() const { return m_gameOver; }
 
-	//getters
-	Player* GetPlayer() const;
-	Tile** GetTiles() const;
-
+	
 protected:
 	void GenerateEntities();
 };

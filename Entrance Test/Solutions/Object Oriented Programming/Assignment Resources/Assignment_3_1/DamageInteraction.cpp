@@ -1,14 +1,12 @@
 #include "DamageInteraction.h"
-#include "Player.h"
+#include "Entity.h"
 
-DamageInteraction::DamageInteraction(Tile* powner, std::pair<int,int> dmgRange) : TileInteraction(powner)
-{
-	m_range = dmgRange;
-}
+DamageInteraction::DamageInteraction(std::pair<int,int> dmgRange) : m_range(dmgRange) {}
+DamageInteraction::~DamageInteraction() {}
 
-void DamageInteraction::ExecuteOn(Player* pPlayer)
+void DamageInteraction::ExecuteOn(Entity* pEntity)
 {
-	pPlayer->Damage(GetRndValInRange(m_range));
+	pEntity->Damage(GetRndValInRange(m_range));
 }
 
 int DamageInteraction::GetRndValInRange(std::pair<int,int> range)

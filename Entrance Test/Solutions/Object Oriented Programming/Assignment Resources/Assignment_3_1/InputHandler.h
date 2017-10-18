@@ -1,7 +1,6 @@
 #pragma once
+#include "Singleton.h"
 
-template <typename T>
-class Singleton<T>;
 
 class InputHandler
 {

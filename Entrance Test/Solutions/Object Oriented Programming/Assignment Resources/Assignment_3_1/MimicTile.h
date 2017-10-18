@@ -10,9 +10,8 @@ class MimicTile : public BombTile
 public:
     MimicTile();
     virtual void Render() override;
-    virtual void OnEnter(Player* pPlayer) override;
+    virtual void OnEnter(Entity* pEntity) override;
 	virtual TileType GetType() const override;
-	virtual bool IsDirty() const override;
 };
 
 #endif

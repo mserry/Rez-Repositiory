@@ -1,8 +1,10 @@
 // Player.h
 #ifndef __PLAYER_H__
 #define __PLAYER_H__
-#include "InputHandler.h"
+
 #include "Entity.h"
+
+class InputHandler;
 
 class Player : public Entity
 {
@@ -16,18 +18,16 @@ public:
 
     virtual void Render() override;
 	virtual void Damage(int amount) override;
-
 	virtual bool Update() override;
-	virtual bool IsDirty() override;
 	
 	void DetectMimics();
 
+	//getters
 	void RenderPlayerUi() const;
     int CalculateScore() const;
 
 protected:
 	virtual void Move(int xPos, int yPos) override;
-
 
 private:
 	int m_moveCount;

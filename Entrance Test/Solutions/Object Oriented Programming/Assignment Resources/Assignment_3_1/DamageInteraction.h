@@ -1,14 +1,17 @@
 #pragma once
 
-#include "TileInteraction.h"
 #include <utility>
+#include "TileInteraction.h"
+
+class Entity;
 
 class DamageInteraction : public TileInteraction
 {
 public:
-	DamageInteraction(Tile* powner, std::pair<int,int> dmgRange);
+	DamageInteraction(std::pair<int,int> dmgRange);
+	virtual ~DamageInteraction();
 
-	void ExecuteOn(Player* pPlayer) override;
+	void ExecuteOn(Entity* pEntity) override;
 
 protected:
 	int GetRndValInRange(std::pair<int,int> range);

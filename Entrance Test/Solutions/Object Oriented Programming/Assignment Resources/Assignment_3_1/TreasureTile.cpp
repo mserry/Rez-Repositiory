@@ -1,15 +1,14 @@
 // TreasureTile.cpp
-#include "TreasureTile.h"
-#include "Player.h"
 #include <iostream>
+
+#include "TreasureTile.h"
 #include "TreasureInteraction.h"
 
 const TreasureTile::TreasureRange TreasureTile::s_treasureRange(50, 150);
 
 TreasureTile::TreasureTile()
-    : m_collected(false)
 {
-	m_interaction = new TreasureInteraction(this, s_treasureRange);
+	m_interaction = new TreasureInteraction(s_treasureRange);
 }
 
 void TreasureTile::Render()
@@ -29,11 +28,11 @@ void TreasureTile::Render()
 	}
 }
 
-void TreasureTile::OnEnter(Player* pPlayer)
+void TreasureTile::OnEnter(Entity* pEntity)
 {
 	if (m_state == State::k_collected) return;
 
-	m_interaction->ExecuteOn(pPlayer);
+	m_interaction->ExecuteOn(pEntity);
 	m_state = State::k_collected;
 }
 

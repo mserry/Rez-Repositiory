@@ -9,7 +9,6 @@ class FloorTile : public Tile
 public:
     virtual void Render() override;
 	virtual TileType GetType() const override;
-	virtual bool IsDirty() const override;
 };
 
 #endif

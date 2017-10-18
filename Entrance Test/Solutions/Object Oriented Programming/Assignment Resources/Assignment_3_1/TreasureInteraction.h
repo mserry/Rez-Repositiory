@@ -5,12 +5,9 @@
 class TreasureInteraction : public DamageInteraction
 {
 public:
-	TreasureInteraction(Tile* powner, std::pair<int,int> treasureRange);
+	TreasureInteraction(std::pair<int,int> treasureRange);
 	virtual ~TreasureInteraction();
 
-	virtual void ExecuteOn(Player* pPlayer) override;
-
-private:
-	bool m_collectedTreasure;
+	virtual void ExecuteOn(Entity* pEntity) override;
 };
 

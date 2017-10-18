@@ -1,9 +1,8 @@
 // Tile.h
 #pragma once
 
-#include "TileInteraction.h"
-
-class Player;
+class TileInteraction;
+class Entity;
 
 class Tile
 {
@@ -17,7 +16,7 @@ public:
 		k_collected,
 	};
 
-	enum class TileType
+	enum TileType
 	{
 		k_floor,
 		k_mimic,
@@ -28,14 +27,13 @@ public:
 		k_default,
 	};
 
-	virtual ~Tile(); // if your class is being used as a base class, it's best to have a virtual destructor
+	virtual ~Tile();
+
     virtual void Render() = 0;
-
-	virtual void OnEnter(Player* pPlayer);
-
+	virtual void OnEnter(Entity* pEntity);
 	virtual TileType GetType() const;
-	virtual bool IsDirty() const;
 	
+	//getters and setters.
 	void SetState(State newState);
 	State GetState() const;
 
@@ -44,35 +42,4 @@ protected:
 	TileInteraction* m_interaction;
 	State m_state;
 	TileType m_type;
-	bool m_dirty;
 };
-
-inline Tile::~Tile()
-{
-	delete m_interaction;
-	m_interaction = nullptr;
-}
-
-
-inline void Tile::OnEnter(Player* pPlayer) {}
-
-inline Tile::TileType Tile::GetType() const
-{
-	return TileType::k_default;
-}
-
-inline void Tile::SetState(State newState)
-{
-	m_state = newState;
-}
-
-inline Tile::State Tile::GetState() const
-{
-	return m_state;
-}
-
-inline bool Tile::IsDirty() const
-{
-	return true;
-}
-

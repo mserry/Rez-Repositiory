@@ -28,9 +28,9 @@ void Renderer::RenderEntities() const
 {
 	const auto entities = g_pWorld->GetEntities();
 
-	for (int i = 0; i < entities.size(); ++i)
+	for (size_t i = 0; i < entities.size(); ++i)
 	{
-		if(entities[i] && entities[i]->IsDirty())
+		if(entities[i])
 		{
 			entities[i]->Render();
 		}
@@ -49,7 +49,7 @@ void Renderer::RenderObjects() const
 		{
 			int index = (j * worldHeight) + i;
 		
-			if(tiles[index] && tiles[index]->IsDirty())
+			if(tiles[index])
 			{
 				tiles[index]->Render();
 			}

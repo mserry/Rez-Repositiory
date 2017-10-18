@@ -1,10 +1,13 @@
 // Player.cpp
-#include "Player.h"
 #include <iostream>
+
+#include "Player.h"
 #include "World.h"
 #include "Tile.h"
 
 using std::cout;
+
+using TileState = Tile::State;
 
 extern World* g_pWorld;
 
@@ -13,7 +16,6 @@ const int Player::k_baseScore = 1000;
 const int Player::k_hitPointsWeight = 100;
 const int Player::k_goldWeight = 10;
 const int Player::k_moveCountWeight = 10;
-
 
 Player::Player(int x, int y): m_moveCount(0), m_mimicMoves(3)  {}
 
@@ -59,13 +61,14 @@ void Player::DetectMimics()
 	if (m_mimicMoves <= 0) return;
 
 	auto adjacentTiles = g_pWorld->GetAdjacentTiles(m_x, m_y);
-
-	for(int i = 0; i < adjacentTiles.size(); ++ i)
+	for(auto pAdjTile : adjacentTiles)
 	{
-		auto tile = adjacentTiles[i];
-		if(tile->GetType() == Tile::TileType::k_mimic)
+		if(pAdjTile)
 		{
-			tile->SetState(Tile::State::k_revealed);
+			if(pAdjTile->GetType() == Tile::TileType::k_mimic)
+			{
+				pAdjTile->SetState(TileState::k_revealed);
+			}
 		}
 	}
 

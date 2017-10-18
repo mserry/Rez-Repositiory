@@ -8,16 +8,13 @@
 class TreasureTile : public Tile
 {
     typedef std::pair<int, int> TreasureRange;
-
     static const TreasureRange s_treasureRange;
-
-    int m_amount;
-    bool m_collected;
 
 public:
     TreasureTile();
+
     virtual void Render() override;
-    virtual void OnEnter(Player* pPlayer) override;
+    virtual void OnEnter(Entity* pEntity) override;
 	virtual TileType GetType() const override;
 };
 

@@ -17,9 +17,6 @@
 using std::cout;
 using std::endl;
 
-using SRenderer = ::Singleton<Renderer>;
-using SInputHandler = ::Singleton<InputHandler>;
-
 const World::TileProbability World::s_tileProbabilities[(int)TileType::k_numTiles] =
 {
     World::TileProbability(800, TileType::k_floor),
@@ -53,10 +50,12 @@ World::~World()
     m_pPlayer = nullptr;
 
 	//de-allocating entities.
+	/*
 	for(int j = 0 ;j < m_entities.size(); ++j)
 	{
 		delete m_entities[j];
 	}
+	*/
 }
 
 
@@ -74,8 +73,8 @@ void World::Init(int width, int height)
     }
 
     // create and fill the grid with nothing
-    m_ppGrid = new Tile*[width*height];
-    for (int i = 0; i < width*height; ++i)
+    m_ppGrid = new Tile* [width * height];
+    for (int i = 0; i < width * height; ++i)
     {
         m_ppGrid[i] = nullptr;
     }
@@ -165,26 +164,6 @@ void World::GenerateWorld()
     }
 }
 
-void World::GameLoop() const
-{
-	while(!m_gameOver)
-	{
-		SInputHandler::GetInstance().ProcessInput();
-
-		SRenderer::GetInstance().Render();
-	}
-	
-	//user input()
-
-	//update(dt)
-		//Process Tiles()
-		//Procces AI()
-
-	//render()
-	//   DrawUI()
-	//   DrawEntities()
-}
-
 void World::Draw()
 {
     system("cls");
@@ -193,6 +172,8 @@ void World::Draw()
 	//TODO: Spawn Entities.
 	//TODO: Add Entity State Machines / PF.
 	
+	m_pPlayer->RenderPlayerUi();
+
     for (int y = 0; y < m_height; ++y)
     {
         for (int x = 0; x < m_width; ++x)
@@ -220,7 +201,7 @@ void World::Update()
         return;
     }
 
-	//m_pInputHandler->GetInstance().ProcessInput();
+	Singleton<InputHandler>::GetInstance().ProcessInput();
 
     int x = m_pPlayer->GetX();
     int y = m_pPlayer->GetY();
@@ -238,16 +219,17 @@ void World::Update()
     m_ppGrid[index]->OnEnter(m_pPlayer);
 }
 
+//Not sure if i was supposed to return a copy or not. i was surprised at how complex things got when i returned a std::vector<Tile*>
 std::vector<Tile*> World::GetAdjacentTiles(int currentXPos, int currentYPos) const
 {
-	std::vector<Tile*> adjacentTiles(8);
+	std::vector<Tile*> adjacentTiles;
 
 	//assert center tile is properly placed
 	assert(currentXPos >= 0 && currentXPos < m_width);
-	assert(currentXPos >= 0 && currentYPos < m_height);
+	assert(currentYPos >= 0 && currentYPos < m_height);
 	
 	//forward tile
-	assert(currentYPos - 1 >= 0 && (currentYPos - 1) < m_height);
+	assert(currentXPos >= 0 && (currentYPos - 1) < m_height);
 	adjacentTiles.push_back(&m_ppGrid[currentXPos][currentYPos - 1]);
 
 	//back tile
@@ -274,6 +256,7 @@ std::vector<Tile*> World::GetAdjacentTiles(int currentXPos, int currentYPos) con
 
 	adjacentTiles.push_back(&m_ppGrid[currentXPos + 1][currentYPos - 1]);
 
+	
 	//bottom left tile
 	assert(currentXPos - 1 >= 0 && (currentYPos - 1) < m_width);
 	assert(currentYPos + 1 >= 0 && (currentYPos + 1) < m_height);
@@ -285,7 +268,7 @@ std::vector<Tile*> World::GetAdjacentTiles(int currentXPos, int currentYPos) con
 	assert(currentYPos + 1 >= 0 && (currentYPos + 1) < m_height);
 
 	adjacentTiles.push_back(&m_ppGrid[currentXPos + 1][currentYPos + 1]);
-	
+
 	return adjacentTiles;
 }
 
