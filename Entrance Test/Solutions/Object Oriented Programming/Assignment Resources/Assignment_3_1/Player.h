@@ -19,12 +19,16 @@ public:
     virtual void Render() override;
 	virtual void Damage(int amount) override;
 	virtual bool Update() override;
-	
-	void DetectMimics();
 
 	//getters
 	void RenderPlayerUi() const;
     int CalculateScore() const;
+	int GetMimicMoves() const;
+	int GetMoveCount() const;
+
+	//setters
+	void DecrMimicMoves();
+	void IncrementMoveCount();
 
 protected:
 	virtual void Move(int xPos, int yPos) override;

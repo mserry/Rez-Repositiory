@@ -42,14 +42,17 @@ public:
 
     void Draw();
     void Update();
+	void DetectMimicTile(Tile& tile) const;
 
 	//getters
-	std::vector<Tile*> GetAdjacentTiles(int x, int y) const;
 	std::vector<Entity*> GetEntities() const;
 	int GetWorldWidth() const;
 	int GetWorldHeight() const;
 	Player* GetPlayer() const;
 	Tile** GetTiles() const;
+	
+	//methods
+	void DetectAdjacentMimics() const;
 
 	// end
     void EndGame();
@@ -58,6 +61,7 @@ public:
 	
 protected:
 	void GenerateEntities();
+	std::vector<Tile*> GetNeighbourTiles(int x, int y) const;
 };
 
 #endif

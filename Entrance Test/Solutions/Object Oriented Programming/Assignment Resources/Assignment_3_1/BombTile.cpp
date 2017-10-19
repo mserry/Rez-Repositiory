@@ -8,13 +8,20 @@ const BombTile::DamageRange BombTile::s_damageRange(3, 6);
 
 BombTile::BombTile()
 {
+	m_type = k_bomb;
 	m_state = State::k_active;
 	m_interaction = new DamageInteraction(s_damageRange);
 }
 
+BombTile::~BombTile()
+{
+	delete m_interaction;
+	m_interaction = nullptr;
+}
+
 Tile::TileType BombTile::GetType() const
 {
-	return TileType::k_bomb;
+	return m_type;
 }
 
 void BombTile::Render()

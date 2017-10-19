@@ -35,7 +35,7 @@ void InputHandler::ProcessInput()
 			break;
 
 		case 'e':
-			if (g_pWorld && g_pWorld->GetPlayer()) g_pWorld->GetPlayer()->DetectMimics();
+			if (g_pWorld) g_pWorld->DetectAdjacentMimics();
 			break;
 
 		default:

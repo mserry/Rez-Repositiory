@@ -56,27 +56,28 @@ void Player::Damage(int amount)
         m_hitPoints = 0;
 }
 
-void Player::DetectMimics()
-{
-	if (m_mimicMoves <= 0) return;
-
-	auto adjacentTiles = g_pWorld->GetAdjacentTiles(m_x, m_y);
-	for(auto pAdjTile : adjacentTiles)
-	{
-		if(pAdjTile)
-		{
-			if(pAdjTile->GetType() == Tile::TileType::k_mimic)
-			{
-				pAdjTile->SetState(TileState::k_revealed);
-			}
-		}
-	}
-
-	--m_mimicMoves;
-	++m_moveCount;
-}
 
 int Player::CalculateScore() const
 {
 	return k_baseScore + (m_hitPoints * k_hitPointsWeight) + (m_gold * k_goldWeight) - (m_moveCount * k_moveCountWeight);
+}
+
+int Player::GetMimicMoves() const
+{
+	return m_mimicMoves;
+}
+
+int Player::GetMoveCount() const
+{
+	return m_moveCount;
+}
+
+void Player::DecrMimicMoves()
+{
+	--m_mimicMoves;
+}
+
+void Player::IncrementMoveCount()
+{
+	++m_moveCount;
 }

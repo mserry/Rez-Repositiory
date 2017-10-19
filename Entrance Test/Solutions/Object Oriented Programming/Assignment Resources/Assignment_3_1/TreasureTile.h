@@ -12,6 +12,7 @@ class TreasureTile : public Tile
 
 public:
     TreasureTile();
+	virtual ~TreasureTile();
 
     virtual void Render() override;
     virtual void OnEnter(Entity* pEntity) override;

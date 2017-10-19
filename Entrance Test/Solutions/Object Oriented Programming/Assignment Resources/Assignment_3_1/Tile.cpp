@@ -1,13 +1,12 @@
 #include "Tile.h"
-#include "TileInteraction.h"
 
-Tile::~Tile()
+Tile::Tile(): m_interaction(nullptr), m_state(State::k_ready), m_type(TileType::k_default) {}
+Tile::~Tile() {}
+
+void Tile::OnEnter(Entity* pEntity)
 {
-	delete m_interaction;
-	m_interaction = nullptr;
+	
 }
-
-void Tile::OnEnter(Entity* pPlayer) {}
 
 Tile::TileType Tile::GetType() const
 {

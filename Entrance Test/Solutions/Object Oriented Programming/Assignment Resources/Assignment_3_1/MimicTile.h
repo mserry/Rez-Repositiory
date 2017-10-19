@@ -9,6 +9,8 @@ class MimicTile : public BombTile
 {
 public:
     MimicTile();
+	virtual ~MimicTile();
+
     virtual void Render() override;
     virtual void OnEnter(Entity* pEntity) override;
 	virtual TileType GetType() const override;

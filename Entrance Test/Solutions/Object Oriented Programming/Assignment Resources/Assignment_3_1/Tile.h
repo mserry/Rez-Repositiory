@@ -14,6 +14,7 @@ public:
 		k_hidden,
 		k_revealed,
 		k_collected,
+		k_ready,
 	};
 
 	enum TileType
@@ -27,9 +28,11 @@ public:
 		k_default,
 	};
 
-	virtual ~Tile();
+	Tile();
+	virtual ~Tile() = 0;
 
     virtual void Render() = 0;
+
 	virtual void OnEnter(Entity* pEntity);
 	virtual TileType GetType() const;
 	

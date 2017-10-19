@@ -8,7 +8,15 @@ const TreasureTile::TreasureRange TreasureTile::s_treasureRange(50, 150);
 
 TreasureTile::TreasureTile()
 {
+	m_state = State::k_active;
+	m_type = k_treasure;
 	m_interaction = new TreasureInteraction(s_treasureRange);
+}
+
+TreasureTile::~TreasureTile()
+{
+	delete m_interaction;
+	m_interaction = nullptr;
 }
 
 void TreasureTile::Render()
@@ -38,6 +46,6 @@ void TreasureTile::OnEnter(Entity* pEntity)
 
 Tile::TileType TreasureTile::GetType() const
 {
-	return TileType::k_treasure;
+	return m_type;
 }
 

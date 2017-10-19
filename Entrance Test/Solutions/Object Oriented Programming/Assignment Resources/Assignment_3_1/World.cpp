@@ -201,6 +201,7 @@ void World::Update()
         return;
     }
 
+	//why?
 	Singleton<InputHandler>::GetInstance().ProcessInput();
 
     int x = m_pPlayer->GetX();
@@ -217,59 +218,6 @@ void World::Update()
     // process the tile the player is on
     int index = (y * m_width) + x;
     m_ppGrid[index]->OnEnter(m_pPlayer);
-}
-
-//Not sure if i was supposed to return a copy or not. i was surprised at how complex things got when i returned a std::vector<Tile*>
-std::vector<Tile*> World::GetAdjacentTiles(int currentXPos, int currentYPos) const
-{
-	std::vector<Tile*> adjacentTiles;
-
-	//assert center tile is properly placed
-	assert(currentXPos >= 0 && currentXPos < m_width);
-	assert(currentYPos >= 0 && currentYPos < m_height);
-	
-	//forward tile
-	assert(currentXPos >= 0 && (currentYPos - 1) < m_height);
-	adjacentTiles.push_back(&m_ppGrid[currentXPos][currentYPos - 1]);
-
-	//back tile
-	assert(currentYPos + 1 >= 0 && (currentYPos + 1) < m_height);
-	adjacentTiles.push_back(&m_ppGrid[currentXPos][currentYPos + 1]);
-
-	//left tile
-	assert(currentXPos - 1 >= 0 && (currentXPos - 1) < m_width);
-	adjacentTiles.push_back(&m_ppGrid[currentXPos - 1][currentYPos]);
-
-	//right tile
-	assert(currentXPos + 1 >= 0 && (currentXPos + 1) < m_width);
-	adjacentTiles.push_back(&m_ppGrid[currentXPos + 1][currentYPos]);
-
-	//top left tile
-	assert(currentXPos - 1 >= 0 && (currentYPos - 1) < m_width);
-	assert(currentYPos - 1 >= 0 && (currentYPos - 1) < m_height);
-
-	adjacentTiles.push_back(&m_ppGrid[currentXPos - 1][currentYPos - 1]);
-
-	//top right tile
-	assert(currentXPos + 1 >= 0 && (currentYPos + 1) < m_width);
-	assert(currentYPos + 1 >= 0 && (currentYPos - 1) < m_height);
-
-	adjacentTiles.push_back(&m_ppGrid[currentXPos + 1][currentYPos - 1]);
-
-	
-	//bottom left tile
-	assert(currentXPos - 1 >= 0 && (currentYPos - 1) < m_width);
-	assert(currentYPos + 1 >= 0 && (currentYPos + 1) < m_height);
-
-	adjacentTiles.push_back(&m_ppGrid[currentXPos - 1][currentYPos + 1]);
-
-	//bottom right tile
-	assert(currentXPos + 1 >= 0 && (currentYPos + 1) < m_width);
-	assert(currentYPos + 1 >= 0 && (currentYPos + 1) < m_height);
-
-	adjacentTiles.push_back(&m_ppGrid[currentXPos + 1][currentYPos + 1]);
-
-	return adjacentTiles;
 }
 
 std::vector<Entity*> World::GetEntities() const
@@ -311,6 +259,63 @@ Tile** World::GetTiles() const
 {
 	return (!m_ppGrid) ? nullptr : m_ppGrid;
 }
+
+std::vector<Tile*> World::GetNeighbourTiles(int x, int y) const
+{
+	//ensure central tile is properly placed.
+	assert(x >= 0 && x < m_width);
+	assert(y >= 0 && y < m_height);
+
+	std::vector<Tile*> neighbourTiles;
+
+	for(int gridRow = y - 1; gridRow <= y + 1 && gridRow < m_width; ++gridRow)
+	{
+		for(int gridCol = x - 1; gridCol <= x + 1 && gridCol < m_height; ++gridCol)
+		{
+			//skip center tile.
+			if (gridCol == x && gridRow == y) continue;
+
+			//dont understand this at all.
+			int tilePos = (gridRow * m_width) + gridCol;
+			Tile* pGridTile = m_ppGrid[tilePos];
+
+			if(pGridTile != nullptr)
+			{
+				neighbourTiles.push_back(pGridTile);
+			}
+		}
+	}
+
+	return neighbourTiles;
+}
+
+void World::DetectAdjacentMimics() const
+{
+	if (m_pPlayer->GetMimicMoves() <= 0) return;
+
+	int x = m_pPlayer->GetX();
+	int y = m_pPlayer->GetY();
+
+	for (Tile* pNeighbourTile : GetNeighbourTiles(x,y))
+	{
+		assert(pNeighbourTile);
+
+		if (pNeighbourTile != nullptr)
+		{
+			if (pNeighbourTile->GetType() == Tile::TileType::k_mimic)
+			{
+				cout << "Mimic Detected !";
+
+				pNeighbourTile->SetState(Tile::State::k_revealed);
+			}
+		}
+	}
+
+
+	m_pPlayer->DecrMimicMoves();
+	m_pPlayer->IncrementMoveCount();
+}
+
 
 void World::GenerateEntities()
 {

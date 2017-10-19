@@ -9,7 +9,10 @@ using std::cout;
 MimicTile::MimicTile()
 {
 	m_state = State::k_hidden;
+	m_type = k_mimic;
 }
+
+MimicTile::~MimicTile() {}
 
 void MimicTile::Render()
 {
@@ -43,5 +46,5 @@ void MimicTile::OnEnter(Entity* pEntity)
 
 Tile::TileType MimicTile::GetType() const
 {
-	return TileType::k_mimic;
+	return m_type;
 }

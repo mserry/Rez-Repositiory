@@ -4,6 +4,15 @@
 
 using std::cout;
 
+FloorTile::FloorTile()
+{
+	m_state = State::k_ready;
+	m_type = k_floor;
+	m_interaction = nullptr;
+}
+
+FloorTile::~FloorTile() {}
+
 void FloorTile::Render()
 {
     cout << ".";
@@ -11,5 +20,5 @@ void FloorTile::Render()
 
 Tile::TileType FloorTile::GetType() const
 {
-	return TileType::k_floor;
+	return m_type;
 }

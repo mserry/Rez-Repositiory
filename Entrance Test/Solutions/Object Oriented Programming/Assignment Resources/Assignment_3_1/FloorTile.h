@@ -7,6 +7,9 @@
 class FloorTile : public Tile
 {
 public:
+	FloorTile();
+	virtual ~FloorTile();
+
     virtual void Render() override;
 	virtual TileType GetType() const override;
 };
