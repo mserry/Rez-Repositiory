@@ -17,7 +17,7 @@
 using std::cout;
 using std::endl;
 
-const World::TileProbability World::s_tileProbabilities[(int)TileType::k_numTiles] =
+const World::TileProbability World::s_tileProbabilities[static_cast<int>(TileType::k_numTiles)] =
 {
     World::TileProbability(800, TileType::k_floor),
     World::TileProbability(75, TileType::k_bomb),
@@ -27,12 +27,12 @@ const World::TileProbability World::s_tileProbabilities[(int)TileType::k_numTile
 
 //TODO: Messy Class EU (TOO MANY RESPONSIBLITIES..)
 World::World()
-    : m_ppGrid(nullptr)
-    , m_width(0)
+    : m_width(0)
     , m_height(0)
+    , m_ppGrid(nullptr)
     , m_pPlayer(nullptr)
-    , m_gameOver(false)
     , m_entities(5)
+    , m_gameOver(false)
 {
     //
 }
@@ -268,14 +268,13 @@ std::vector<Tile*> World::GetNeighbourTiles(int x, int y) const
 
 	std::vector<Tile*> neighbourTiles;
 
-	for(int gridRow = y - 1; gridRow <= y + 1 && gridRow < m_width; ++gridRow)
+	for(int gridRow = y - 1; gridRow <= y + 1 && gridRow < m_height; ++gridRow)
 	{
-		for(int gridCol = x - 1; gridCol <= x + 1 && gridCol < m_height; ++gridCol)
+		for(int gridCol = x - 1; gridCol <= x + 1 && gridCol < m_width; ++gridCol)
 		{
 			//skip center tile.
 			if (gridCol == x && gridRow == y) continue;
 
-			//dont understand this at all.
 			int tilePos = (gridRow * m_width) + gridCol;
 			Tile* pGridTile = m_ppGrid[tilePos];
 
@@ -304,9 +303,7 @@ void World::DetectAdjacentMimics() const
 		{
 			if (pNeighbourTile->GetType() == Tile::TileType::k_mimic)
 			{
-				cout << "Mimic Detected !";
-
-				pNeighbourTile->SetState(Tile::State::k_revealed);
+				pNeighbourTile->SetState(Tile::State::k_active);
 			}
 		}
 	}

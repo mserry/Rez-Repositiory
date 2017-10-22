@@ -3,7 +3,6 @@
 
 using std::cout;
 
-
 Evader::Evader() {}
 Evader::~Evader() {}
 

@@ -22,6 +22,7 @@ void MimicTile::Render()
             cout << "$";
             break;
 
+		case State::k_revealed:
         case State::k_active:
             cout << "*";
             break;
@@ -29,18 +30,14 @@ void MimicTile::Render()
         case State::k_dead:
             cout << "#";
             break;
-
-        default:
-            cout << "ERROR: Invalid state in MimiTile";
-            break;
     }
 }
 
 void MimicTile::OnEnter(Entity* pEntity)
 {
-	if(m_state != State::k_hidden) return;
+	if (m_state == State::k_hidden)
+		m_state = State::k_active;
 
-	m_state = State::k_active;
 	BombTile::OnEnter(pEntity);
 }
 

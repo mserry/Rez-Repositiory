@@ -6,7 +6,7 @@ class Chaser : public Entity
 {
 public:
 	Chaser();
-	~Chaser();
+	virtual ~Chaser();
 
 	virtual void Render() override;
 	virtual bool Update() override;

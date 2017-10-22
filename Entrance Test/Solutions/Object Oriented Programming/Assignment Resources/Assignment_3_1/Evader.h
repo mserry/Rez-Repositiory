@@ -6,7 +6,7 @@ class Evader : public Entity
 {
 public:
 	Evader();
-	~Evader();
+	virtual ~Evader();
 
 	virtual void Render() override;
 	virtual bool Update() override;

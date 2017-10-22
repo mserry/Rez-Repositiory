@@ -3,14 +3,8 @@
 
 using std::cout;
 
-Chaser::Chaser()
-{
-}
-
-Chaser::~Chaser()
-{
-}
-
+Chaser::Chaser() {}
+Chaser::~Chaser() {}
 
 void Chaser::Render()
 {
