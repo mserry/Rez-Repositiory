@@ -1,9 +1,15 @@
-#include "Evader.h"
 #include <iostream>
+
+
+#include "Evader.h"
 
 using std::cout;
 
-Evader::Evader() {}
+Evader::Evader(int x, int y) : Entity(x,y)
+{
+	m_hitPoints = 5;
+}
+
 Evader::~Evader() {}
 
 void Evader::Render()
@@ -24,4 +30,10 @@ void Evader::Damage(int amount)
 	if (m_hitPoints <= 0) return;
 
 	m_hitPoints -= amount;
+}
+
+void Evader::Move(int xPos, int yPos)
+{
+	m_x += xPos;
+	m_y += yPos;
 }

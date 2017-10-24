@@ -20,11 +20,21 @@ class World
         k_numTiles,
     };
 
+	enum class EntityType
+	{
+		k_evader,
+		k_chaser,
+		k_default,
+	};
+
     typedef std::pair<int, TileType> TileProbability;
 
-    static const TileProbability s_tileProbabilities[(int)TileType::k_numTiles];
+    static const TileProbability s_tileProbabilities[static_cast<int>(TileType::k_numTiles)];
+
+	static const int s_evaderEntityProbability;
+	static const int s_chaserEntityProbability;
     
-    int m_width, m_height;
+	int m_width, m_height, m_entityCount;
     Tile** m_ppGrid;
     Player* m_pPlayer;
 	std::vector<Entity*> m_entities;
@@ -35,14 +45,13 @@ public:
 	~World();
 
     // initialization
-    void Init(int width, int height);
+    void Init(int width, int height, int entitiesCount);
     void CreatePlayer(int x = 0, int y = 0);
-	void CreateEntity(int x, int y);
     void GenerateWorld();
+	void GenerateEntities();
 
     void Draw();
     void Update();
-	void DetectMimicTile(Tile& tile) const;
 
 	//getters
 	std::vector<Entity*> GetEntities() const;
@@ -60,7 +69,7 @@ public:
 
 	
 protected:
-	void GenerateEntities();
+	Entity* CreateEntity(int x, int y, EntityType type) const;
 	std::vector<Tile*> GetNeighbourTiles(int x, int y) const;
 };
 

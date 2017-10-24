@@ -4,6 +4,7 @@
 
 #include "Entity.h"
 
+
 class InputHandler;
 
 class Player : public Entity

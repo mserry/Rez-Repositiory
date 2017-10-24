@@ -95,6 +95,7 @@
 
 const int k_worldWidth = 20;
 const int k_worldHeight = 20;
+const int k_maxEntities = 3;
 
 World* g_pWorld = nullptr;
 
@@ -104,13 +105,16 @@ void main()
 
     // create the world
     g_pWorld = new World;
-    g_pWorld->Init(k_worldWidth, k_worldHeight);
+    g_pWorld->Init(k_worldWidth, k_worldHeight, k_maxEntities);
 
     // create the player
     g_pWorld->CreatePlayer();
 
     // now that the player has been placed, generate the world
     g_pWorld->GenerateWorld();
+
+	//generate enemies for the player;
+	g_pWorld->GenerateEntities();
 
     // main game loop
     while (!g_pWorld->IsGameOver())

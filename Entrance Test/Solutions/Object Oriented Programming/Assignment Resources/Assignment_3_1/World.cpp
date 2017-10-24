@@ -1,4 +1,5 @@
 // World.cpp
+
 #include "World.h"
 #include "Tile.h"
 #include "Player.h"
@@ -13,6 +14,8 @@
 
 #include <iostream>
 #include <assert.h>
+#include "Chaser.h"
+#include "Evader.h"
 
 using std::cout;
 using std::endl;
@@ -25,16 +28,18 @@ const World::TileProbability World::s_tileProbabilities[static_cast<int>(TileTyp
     World::TileProbability(50, TileType::k_mimic),
 };
 
+const int World::s_chaserEntityProbability = 30;
+const int World::s_evaderEntityProbability = 70;
+
 //TODO: Messy Class EU (TOO MANY RESPONSIBLITIES..)
 World::World()
-    : m_width(0)
-    , m_height(0)
-    , m_ppGrid(nullptr)
-    , m_pPlayer(nullptr)
-    , m_entities(5)
-    , m_gameOver(false)
+	: m_width(0)
+	  , m_height(0)
+	  , m_entityCount(0), m_ppGrid(nullptr)
+	  , m_pPlayer(nullptr)
+	  , m_gameOver(false)
 {
-    //
+	//
 }
 
 World::~World()
@@ -50,16 +55,14 @@ World::~World()
     m_pPlayer = nullptr;
 
 	//de-allocating entities.
-	/*
 	for(int j = 0 ;j < m_entities.size(); ++j)
 	{
 		delete m_entities[j];
 	}
-	*/
 }
 
 
-void World::Init(int width, int height)
+void World::Init(int width, int height, int entitiesCount)
 {
     // if we have a grid, destroy it
     if (m_ppGrid)
@@ -82,6 +85,8 @@ void World::Init(int width, int height)
     // set the width & height
     m_width = width;
     m_height = height;
+	m_entityCount = entitiesCount;
+
 }
 
 void World::CreatePlayer(int x, int y)
@@ -89,16 +94,21 @@ void World::CreatePlayer(int x, int y)
     assert(x >= 0 && x < m_width);
     assert(y >= 0 && y < m_height);
     m_pPlayer = new Player(x, y);
-
-	m_entities.push_back(m_pPlayer);
 }
 
-void World::CreateEntity(int x, int y)
+Entity* World::CreateEntity(int x, int y, EntityType type) const
 {
 	assert(x >= 0 && x < m_width);
 	assert(y >= 0 && y < m_height);
 
+	switch(type)
+	{
+		case EntityType::k_chaser:
+			return new Chaser(x,y);
 
+		case EntityType::k_evader:
+			return new Evader(x,y);
+	}
 }
 
 void World::GenerateWorld()
@@ -167,10 +177,6 @@ void World::GenerateWorld()
 void World::Draw()
 {
     system("cls");
-
-	//TODO: Render Entites.
-	//TODO: Spawn Entities.
-	//TODO: Add Entity State Machines / PF.
 	
 	m_pPlayer->RenderPlayerUi();
 
@@ -187,6 +193,14 @@ void World::Draw()
                 int index = (y * m_height) + x;
                 m_ppGrid[index]->Render();
             }
+
+			for (Entity* pEntity : m_entities)
+			{
+				if (pEntity && pEntity->GetX() == x && pEntity->GetY() == y)
+				{
+					pEntity->Render();
+				}
+			}
         }
         cout << endl;
     }
@@ -218,6 +232,21 @@ void World::Update()
     // process the tile the player is on
     int index = (y * m_width) + x;
     m_ppGrid[index]->OnEnter(m_pPlayer);
+
+	//process entities.
+	for (Entity* pEntity : m_entities)
+	{
+		const int xPos = pEntity->GetX();
+		const int yPos = pEntity->GetY();
+
+		if (!pEntity->Update() || (xPos < 0 || yPos < 0 || xPos >= m_width || yPos >= m_height))
+		{
+			pEntity->Kill();
+		}
+
+		int tileIndex = (yPos * m_width) + xPos;
+		m_ppGrid[tileIndex]->OnEnter(pEntity);
+	}
 }
 
 std::vector<Entity*> World::GetEntities() const
@@ -316,5 +345,20 @@ void World::DetectAdjacentMimics() const
 
 void World::GenerateEntities()
 {
-	//TODO: Spawn Entities.
+	//Generating Entities.
+	for (int i = 0; i < m_entityCount; ++i)
+	{
+		int roll = rand() % 100;
+		EntityType spawnedEntityType = roll > s_evaderEntityProbability ? EntityType::k_evader : EntityType::k_chaser;
+
+		int rndXPos = rand() % m_width;
+		int rndYPos = rand() % m_height;
+
+		Entity* newEntity = CreateEntity(rndXPos, rndYPos, spawnedEntityType);
+		if (newEntity)
+		{
+			m_entities.push_back(newEntity);
+			cout << "Added Entities !";
+		}
+	}
 }

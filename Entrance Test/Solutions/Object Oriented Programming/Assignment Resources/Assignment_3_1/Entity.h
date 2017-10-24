@@ -6,6 +6,7 @@ public:
 	static const int k_maxHitPoints;
 
 	Entity();
+	Entity(int x, int y);
 	virtual ~Entity();
 
 	virtual void Render() = 0;
