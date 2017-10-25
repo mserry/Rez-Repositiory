@@ -68,9 +68,10 @@ public:
     bool IsGameOver() const { return m_gameOver; }
 
 	
-protected:
+private:
 	Entity* CreateEntity(int x, int y, EntityType type) const;
 	std::vector<Tile*> GetNeighbourTiles(int x, int y) const;
+	Entity* GetEntityOnTile(int xPos, int yPos) const;
 };
 
 #endif

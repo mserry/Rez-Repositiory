@@ -93,7 +93,9 @@ void World::CreatePlayer(int x, int y)
 {
     assert(x >= 0 && x < m_width);
     assert(y >= 0 && y < m_height);
+
     m_pPlayer = new Player(x, y);
+	m_entities.push_back(m_pPlayer);
 }
 
 Entity* World::CreateEntity(int x, int y, EntityType type) const
@@ -184,23 +186,17 @@ void World::Draw()
     {
         for (int x = 0; x < m_width; ++x)
         {
-            if (m_pPlayer && m_pPlayer->GetX() == x && m_pPlayer->GetY() == y)
+			Entity* pEntity = GetEntityOnTile(x, y);
+
+            if (pEntity != nullptr)
             {
-                m_pPlayer->Render();
+               pEntity->Render();
             }
             else
             {
                 int index = (y * m_height) + x;
                 m_ppGrid[index]->Render();
             }
-
-			for (Entity* pEntity : m_entities)
-			{
-				if (pEntity && pEntity->GetX() == x && pEntity->GetY() == y)
-				{
-					pEntity->Render();
-				}
-			}
         }
         cout << endl;
     }
@@ -317,6 +313,21 @@ std::vector<Tile*> World::GetNeighbourTiles(int x, int y) const
 	return neighbourTiles;
 }
 
+Entity* World::GetEntityOnTile(int xPos, int yPos) const
+{
+	for(int i = 0; i < m_entities.size(); ++i)
+	{
+		const bool IsOnTile = m_entities[i]->GetX() == xPos && m_entities[i]->GetY() == yPos;
+
+		if(IsOnTile)
+		{
+			return m_entities[i];
+		}
+	}
+	return nullptr;
+}
+
+
 void World::DetectAdjacentMimics() const
 {
 	if (m_pPlayer->GetMimicMoves() <= 0) return;
@@ -324,7 +335,16 @@ void World::DetectAdjacentMimics() const
 	int x = m_pPlayer->GetX();
 	int y = m_pPlayer->GetY();
 
-	for (Tile* pNeighbourTile : GetNeighbourTiles(x,y))
+	std::vector<Tile*> neighbourTiles = GetNeighbourTiles(x, y);
+
+	//find better way.
+	if(neighbourTiles.size() < 7)
+	{
+		cout << "Not Enough Adjacent Tiles !";
+		return;
+	}
+
+	for (Tile* pNeighbourTile : neighbourTiles)
 	{
 		assert(pNeighbourTile);
 
