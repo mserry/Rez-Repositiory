@@ -1,5 +1,8 @@
 #pragma once
 
+
+
+
 class Entity
 {
 public:
@@ -10,8 +13,9 @@ public:
 	virtual ~Entity();
 
 	virtual void Render() = 0;
-	virtual void Damage(int amount) = 0;
 	virtual bool Update() = 0;
+
+	virtual void Damage(int amount);
 
 	void AddGold(int amount);
 	void Kill() { m_hitPoints = 0; }

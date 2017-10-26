@@ -6,6 +6,13 @@ Entity::Entity(int x, int y): m_x(x), m_y(y), m_hitPoints(k_maxHitPoints), m_gol
 Entity::~Entity() {}
 
 
+void Entity::Damage(int amount)
+{
+	if (m_hitPoints <= 0) return;
+
+	m_hitPoints -= amount;
+}
+
 void Entity::AddGold(int amount)
 {
 	m_gold += amount;

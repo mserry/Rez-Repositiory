@@ -78,6 +78,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AIEntity.cpp" />
     <ClCompile Include="Assignment_3_1.cpp" />
     <ClCompile Include="BombTile.cpp" />
     <ClCompile Include="Chaser.cpp" />
@@ -97,6 +98,7 @@
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AIEntity.h" />
     <ClInclude Include="BombTile.h" />
     <ClInclude Include="Chaser.h" />
     <ClInclude Include="EndTile.h" />
@@ -104,7 +106,6 @@
     <ClInclude Include="Evader.h" />
     <ClInclude Include="FloorTile.h" />
     <ClInclude Include="DamageInteraction.h" />
-    <ClInclude Include="IState.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="MimicTile.h" />

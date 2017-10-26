@@ -1,13 +1,16 @@
 #pragma once
 
 class IState
-{	
-	virtual void OnUpdate() = 0;
-	virtual void OnEnter() = 0;
-	virtual void OnExit() = 0;
+{
+public:
+	IState();
+	virtual ~IState();
 
-protected:
-	IState() = delete;
-	~IState() = delete;
+	virtual void OnUpdate() = 0;
+	virtual void OnEnter()  = 0;
+	virtual void OnExit()   = 0;
 };
+
+inline IState::IState() {}
+inline IState::~IState() {}
 

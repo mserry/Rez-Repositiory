@@ -59,6 +59,7 @@ World::~World()
 	{
 		delete m_entities[j];
 	}
+	m_entities.clear();
 }
 
 
