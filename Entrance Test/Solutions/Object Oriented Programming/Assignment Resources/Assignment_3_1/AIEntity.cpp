@@ -1,18 +1,21 @@
 #include "AIEntity.h"
+#include "FSM.h"
 
+AIEntity::AIEntity(): m_entityFsm(nullptr) {}
 
-AIEntity::AIEntity(): m_state(EntityState::k_idle) {}
-AIEntity::AIEntity(int x, int y) : Entity(x, y), m_state(EntityState::k_idle) {}
-AIEntity::~AIEntity() {}
+AIEntity::AIEntity(int x, int y) : Entity(x, y), m_entityFsm(nullptr) {}
 
-void AIEntity::SetState(EntityState newState)
+AIEntity::~AIEntity()
 {
-	m_state = newState;
+	//clearing state stack
+	delete m_entityFsm;
 }
 
-EntityState AIEntity::GetState() const
+
+
+const FSM& AIEntity::GetEntityStateMachine() const
 {
-	return m_state;
+	return *m_entityFsm;
 }
 
 void AIEntity::Move(int xPos, int yPos)

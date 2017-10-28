@@ -2,14 +2,7 @@
 
 #include "Entity.h"
 
-enum class EntityState
-{
-	k_idle,
-	k_wandering,
-	k_chasing,
-	k_evading,
-	k_dead,
-};
+class FSM;
 
 class AIEntity : public Entity
 {
@@ -21,13 +14,12 @@ public:
 	virtual void Render() override = 0;
 	virtual bool Update() override = 0;
 
-	void SetState(EntityState newState);
-	EntityState GetState() const;
+	const FSM& GetEntityStateMachine() const;
 
 protected:
 	virtual void Move(int xPos, int yPos) override;
 
 protected:
-	EntityState m_state;
+	FSM* m_entityFsm;
 };
 

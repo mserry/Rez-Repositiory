@@ -80,41 +80,52 @@
   <ItemGroup>
     <ClCompile Include="AIEntity.cpp" />
     <ClCompile Include="Assignment_3_1.cpp" />
+    <ClCompile Include="BlackBoard.cpp" />
     <ClCompile Include="BombTile.cpp" />
     <ClCompile Include="Chaser.cpp" />
+    <ClCompile Include="ChaseState.cpp" />
     <ClCompile Include="EndTile.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Evader.cpp" />
     <ClCompile Include="FloorTile.cpp" />
     <ClCompile Include="DamageInteraction.cpp" />
+    <ClCompile Include="FSM.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="MimicTile.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="StateTransition.cpp" />
     <ClCompile Include="Tile.cpp" />
     <ClCompile Include="TileInteraction.cpp" />
     <ClCompile Include="TreasureInteraction.cpp" />
     <ClCompile Include="TreasureTile.cpp" />
+    <ClCompile Include="WanderState.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AIEntity.h" />
+    <ClInclude Include="BlackBoard.h" />
     <ClInclude Include="BombTile.h" />
     <ClInclude Include="Chaser.h" />
+    <ClInclude Include="ChaseState.h" />
     <ClInclude Include="EndTile.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Evader.h" />
     <ClInclude Include="FloorTile.h" />
     <ClInclude Include="DamageInteraction.h" />
+    <ClInclude Include="FSM.h" />
+    <ClInclude Include="IState.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="MimicTile.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="StateTransition.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileInteraction.h" />
     <ClInclude Include="TreasureInteraction.h" />
     <ClInclude Include="TreasureTile.h" />
+    <ClInclude Include="WanderState.h" />
     <ClInclude Include="World.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

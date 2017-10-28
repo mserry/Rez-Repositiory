@@ -1,5 +1,7 @@
-#include "Chaser.h"
 #include <iostream>
+
+#include "Chaser.h"
+
 
 using std::cout;
 
@@ -25,7 +27,9 @@ void Chaser::Render()
 
 bool Chaser::Update()
 {
-	return false;
+	ProcessStateStack();
+
+	return IsDead();
 }
 
 

@@ -16,6 +16,7 @@
 #include <assert.h>
 #include "Chaser.h"
 #include "Evader.h"
+#include "BlackBoard.h"
 
 using std::cout;
 using std::endl;
@@ -212,6 +213,8 @@ void World::Update()
         return;
     }
 
+	
+
 	//why?
 	Singleton<InputHandler>::GetInstance().ProcessInput();
 
@@ -229,6 +232,8 @@ void World::Update()
     // process the tile the player is on
     int index = (y * m_width) + x;
     m_ppGrid[index]->OnEnter(m_pPlayer);
+
+	BlackBoard::GetInstance().SetPlayerTileIndex(index);
 
 	//process entities.
 	for (Entity* pEntity : m_entities)
