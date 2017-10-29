@@ -12,5 +12,7 @@ public:
 	virtual void OnUpdate() override;
 	virtual void OnEnter() override;
 	virtual void OnExit() override;
+	bool GetTransitionCondition() override;
+	EntityState GetTransitionStateName() override;
 };
 

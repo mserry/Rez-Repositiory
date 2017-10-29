@@ -12,6 +12,19 @@ AIEntity::~AIEntity()
 }
 
 
+bool AIEntity::Update()
+{
+	if(!IsDead())
+	{
+		m_entityFsm->Update();
+	}
+	else
+	{
+		m_entityFsm->End();
+	}
+
+	return IsDead();
+}
 
 const FSM& AIEntity::GetEntityStateMachine() const
 {

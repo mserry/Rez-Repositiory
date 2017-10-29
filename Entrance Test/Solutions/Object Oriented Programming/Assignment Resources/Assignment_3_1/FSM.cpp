@@ -1,11 +1,12 @@
 #include "FSM.h"
 #include "IState.h"
 
+#include "WanderState.h"
+#include "ChaseState.h"
+#include "EvadeState.h"
 
-FSM::FSM()
-{
-}
 
+FSM::FSM() {}
 
 FSM::~FSM()
 {
@@ -24,6 +25,17 @@ void FSM::Init()
 
 }
 
+void FSM::TransitionToNewState()
+{
+	auto nextState = GetNextState(m_states.top()->GetTransitionStateName());
+
+	if(nextState != nullptr)
+	{
+		m_states.pop();
+		m_states.push(nextState);
+	}
+}
+
 void FSM::Update()
 {
 	if (m_states.empty()) return;
@@ -40,11 +52,30 @@ void FSM::Update()
 	else
 	{
 		m_states.top()->OnExit();
-		m_states.push(m_states.top()->GetTransitionState());
+		
+		TransitionToNewState();
 	}
 }
 
 void FSM::End()
 {
 
+}
+
+
+IState* FSM::GetNextState(EntityState stateName) const
+{
+	switch (stateName)
+	{
+		case EntityState::k_wandering:
+			return new WanderState;
+
+		case EntityState::k_chasing:
+			return new ChaseState;
+		
+		case EntityState::k_evading: 
+			return new EvadeState;
+	}
+
+	return nullptr;
 }

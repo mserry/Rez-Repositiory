@@ -19,7 +19,7 @@ public:
 
 	virtual bool GetTransitionCondition() = 0;
 	virtual EntityState GetStateName()    = 0;
-	virtual IState* GetTransitionState()  = 0;
+	virtual EntityState GetTransitionStateName()  = 0;
 
 	virtual void OnUpdate() = 0;
 	virtual void OnEnter()  = 0;

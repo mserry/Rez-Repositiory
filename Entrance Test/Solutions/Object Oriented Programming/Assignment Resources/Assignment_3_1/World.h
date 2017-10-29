@@ -8,24 +8,27 @@
 class Tile;
 class Player;
 class Entity;
+class BlackBoard;
+
+enum class TileType
+{
+	k_floor,
+	k_bomb,
+	k_treasure,
+	k_mimic,
+	k_numTiles,
+};
+
+enum class EntityType
+{
+	k_evader,
+	k_chaser,
+	k_default,
+};
 
 class World
 {
-    enum class TileType
-    {
-        k_floor,
-        k_bomb,
-        k_treasure,
-        k_mimic,
-        k_numTiles,
-    };
-
-	enum class EntityType
-	{
-		k_evader,
-		k_chaser,
-		k_default,
-	};
+	friend BlackBoard;
 
     typedef std::pair<int, TileType> TileProbability;
 
@@ -69,9 +72,10 @@ public:
 
 	
 private:
-	Entity* CreateEntity(int x, int y, EntityType type) const;
-	std::vector<Tile*> GetNeighbourTiles(int x, int y) const;
-	Entity* GetEntityOnTile(int xPos, int yPos) const;
+	Entity* CreateEntity(int x, int y, EntityType type)   const;
+	std::vector<Tile*>  GetNeighbourTiles(int x, int y)   const;
+	std::vector<Tile*>   GetAdjacentTiles(int x, int y)   const;
+	Entity*         GetEntityOnTile(int xPos, int yPos)   const;
 };
 
 #endif

@@ -7,10 +7,16 @@ class IState;
 class StateTransition
 {
 public:
-	StateTransition();
+	StateTransition(IState* startState, IState* endState);
 	virtual ~StateTransition();
 
-	virtual bool TransitionCondition() = 0;
-	virtual EntityState TransitionToState() = 0;
+	bool IsValid() const;
+
+	IState* GetStartState() const;
+	IState* GetEndState() const;
+
+private:
+	IState* m_pStartState;
+	IState* m_pEndState;
 };
 

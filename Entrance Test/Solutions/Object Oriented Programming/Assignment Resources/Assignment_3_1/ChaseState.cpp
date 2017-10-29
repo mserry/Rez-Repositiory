@@ -23,3 +23,13 @@ void ChaseState::OnExit()
 {
 
 }
+
+bool ChaseState::GetTransitionCondition()
+{
+	return false;
+}
+
+EntityState ChaseState::GetTransitionStateName()
+{
+	return EntityState::k_wandering;
+}

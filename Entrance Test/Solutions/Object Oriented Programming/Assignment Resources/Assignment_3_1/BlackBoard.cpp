@@ -1,5 +1,10 @@
 #include "BlackBoard.h"
+#include "World.h"
 
+extern World* g_pWorld;
+
+BlackBoard::BlackBoard() {}
+BlackBoard::~BlackBoard() {}
 
 BlackBoard& BlackBoard::GetInstance()
 {
@@ -13,11 +18,9 @@ int BlackBoard::GetPlayerTileIndex()
 	return m_playerTileIndex;
 }
 
-BlackBoard::BlackBoard() {}
-
-
-BlackBoard::~BlackBoard()
+std::vector<Tile*> BlackBoard::GetAdjTiles(int x, int y) const
 {
+	return g_pWorld->GetAdjacentTiles(x, y);
 }
 
 void BlackBoard::SetPlayerTileIndex(int index)

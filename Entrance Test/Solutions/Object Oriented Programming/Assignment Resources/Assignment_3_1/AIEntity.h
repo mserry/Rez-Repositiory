@@ -12,7 +12,7 @@ public:
 	virtual ~AIEntity();
 
 	virtual void Render() override = 0;
-	virtual bool Update() override = 0;
+	virtual bool Update() override;
 
 	const FSM& GetEntityStateMachine() const;
 

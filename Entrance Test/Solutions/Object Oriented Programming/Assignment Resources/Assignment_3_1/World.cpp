@@ -319,6 +319,29 @@ std::vector<Tile*> World::GetNeighbourTiles(int x, int y) const
 	return neighbourTiles;
 }
 
+std::vector<Tile*> World::GetAdjacentTiles(int x, int y) const
+{
+	//ensure central tile is properly placed.
+	assert(x >= 0 && x < m_width);
+	assert(y >= 0 && y < m_height);
+
+	std::vector<Tile*> adjTiles;
+
+	int topTileIndex = ((y - 1) * m_height) + x;
+	adjTiles.push_back(m_ppGrid[topTileIndex]);
+
+	int botTileIndex = ((y + 1) * m_height) + x;
+	adjTiles.push_back(m_ppGrid[botTileIndex]);
+
+	int leftTileIndex = (y * m_height) + (x - 1);
+	adjTiles.push_back(m_ppGrid[leftTileIndex]);
+
+	int rightTileIndex = (y * m_height) + (x + 1);
+	adjTiles.push_back(m_ppGrid[rightTileIndex]);
+
+	return adjTiles;
+}
+
 Entity* World::GetEntityOnTile(int xPos, int yPos) const
 {
 	for(int i = 0; i < m_entities.size(); ++i)

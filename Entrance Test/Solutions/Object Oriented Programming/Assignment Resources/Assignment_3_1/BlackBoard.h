@@ -1,5 +1,7 @@
 #pragma once
+#include <vector>
 
+class Tile;
 class World;
 
 class BlackBoard
@@ -10,7 +12,8 @@ public:
 	static BlackBoard& GetInstance();
 
 	int GetPlayerTileIndex();
-	
+
+	std::vector<Tile*> GetAdjTiles(int x, int y) const;
 
 private:
 	BlackBoard();

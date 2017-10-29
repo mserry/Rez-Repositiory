@@ -1,6 +1,5 @@
 #include <iostream>
 
-
 #include "Evader.h"
 
 using std::cout;
@@ -18,22 +17,4 @@ void Evader::Render()
 		cout << "?";
 	else
 		cout << "~";
-}
-
-bool Evader::Update()
-{
-	return false;
-}
-
-void Evader::Damage(int amount)
-{
-	if (m_hitPoints <= 0) return;
-
-	m_hitPoints -= amount;
-}
-
-void Evader::Move(int xPos, int yPos)
-{
-	m_x += xPos;
-	m_y += yPos;
 }

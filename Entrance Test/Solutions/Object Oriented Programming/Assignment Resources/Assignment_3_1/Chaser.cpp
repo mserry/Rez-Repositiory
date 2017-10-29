@@ -5,7 +5,6 @@
 
 using std::cout;
 
-Chaser::Chaser() {}
 
 Chaser::Chaser(int x, int y) : AIEntity(x,y)
 {
@@ -23,13 +22,6 @@ void Chaser::Render()
 		cout << "!";
 	else
 		cout << "~";
-}
-
-bool Chaser::Update()
-{
-	ProcessStateStack();
-
-	return IsDead();
 }
 
 
