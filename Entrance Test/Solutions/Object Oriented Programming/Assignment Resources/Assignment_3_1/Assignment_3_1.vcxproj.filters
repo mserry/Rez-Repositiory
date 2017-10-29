@@ -78,10 +78,10 @@
     <ClCompile Include="WanderState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StateTransition.cpp">
+    <ClCompile Include="FSM.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FSM.cpp">
+    <ClCompile Include="EvadeState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -152,10 +152,10 @@
     <ClInclude Include="WanderState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="StateTransition.h">
+    <ClInclude Include="FSM.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FSM.h">
+    <ClInclude Include="EvadeState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
