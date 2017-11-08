@@ -1,20 +1,24 @@
 #pragma once
+
 #include "IState.h"
 
-class WanderState : public IState
+class Tile;
+
+class WanderState : public IState 
 {
 public:
 	WanderState();
 	virtual ~WanderState();
 
-	//getters
-	bool GetTransitionCondition()        override;
-	EntityState GetStateName()           override;
-	EntityState GetTransitionStateName() override;
+	virtual void OnUpdate(AIEntity* pOwnerEntity) override;
+	virtual void OnEnter() override;
+	virtual void OnExit() override;
 
-	//methods
-	void OnUpdate()  override;
-	void OnEnter ()  override;
-	void OnExit  ()  override;
+	void MoveToAdjTile(AIEntity* pOwnerEntity, Tile* pAdjTile);
+
+protected:
+	virtual void ExecuteBehavior() override;
+
+	virtual bool IsCorrectTile(Tile* pAdjTile);
+	bool IsPlayerDetected() const;
 };
-

@@ -9,6 +9,8 @@ enum class EntityState
 	k_dead,
 };
 
+class AIEntity;
+
 class IState
 {
 public:
@@ -17,13 +19,12 @@ public:
 
 	bool IsInit() const { return m_isInit; };
 
-	virtual bool GetTransitionCondition() = 0;
-	virtual EntityState GetStateName()    = 0;
-	virtual EntityState GetTransitionStateName()  = 0;
-
-	virtual void OnUpdate() = 0;
+	virtual void OnUpdate(AIEntity* pOwnerEntity) = 0;
 	virtual void OnEnter()  = 0;
 	virtual void OnExit()   = 0;
+
+protected:
+	virtual void ExecuteBehavior() = 0;
 	
 protected:
 	bool m_isInit;

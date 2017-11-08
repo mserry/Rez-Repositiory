@@ -1,34 +1,37 @@
 #include "AIEntity.h"
-#include "FSM.h"
+#include "IState.h"
 
-AIEntity::AIEntity(): m_entityFsm(nullptr) {}
+AIEntity::AIEntity(): m_pCurrentState(nullptr) {}
 
-AIEntity::AIEntity(int x, int y) : Entity(x, y), m_entityFsm(nullptr) {}
+AIEntity::AIEntity(int x, int y) : Entity(x, y), m_pCurrentState(nullptr) {}
 
 AIEntity::~AIEntity()
 {
-	//clearing state stack
-	delete m_entityFsm;
+	delete m_pCurrentState;
+	m_pCurrentState = nullptr;
 }
-
 
 bool AIEntity::Update()
 {
-	if(!IsDead())
+	if (!m_pCurrentState->IsInit()) 
 	{
-		m_entityFsm->Update();
+		m_pCurrentState->OnEnter();
 	}
-	else
-	{
-		m_entityFsm->End();
-	}
+
+	m_pCurrentState->OnUpdate(this);
+
+	if (IsDead())
+		m_pCurrentState->OnExit();
 
 	return IsDead();
 }
 
-const FSM& AIEntity::GetEntityStateMachine() const
+void AIEntity::ChangeState(IState* pNewState)
 {
-	return *m_entityFsm;
+	delete m_pCurrentState;
+
+	m_pCurrentState = nullptr;
+	m_pCurrentState = pNewState;
 }
 
 void AIEntity::Move(int xPos, int yPos)

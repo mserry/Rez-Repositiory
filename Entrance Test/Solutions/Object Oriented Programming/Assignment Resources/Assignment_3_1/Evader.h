@@ -1,8 +1,8 @@
 #pragma once
-#include "Entity.h"
+#include "AIEntity.h"
 
 
-class Evader : public Entity
+class Evader : public AIEntity
 {
 public:
 	Evader(int x, int y);

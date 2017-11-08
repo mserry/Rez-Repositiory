@@ -60,25 +60,16 @@
     <ClCompile Include="Evader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Renderer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Tile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="AIEntity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BlackBoard.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ChaseState.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="WanderState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FSM.cpp">
+    <ClCompile Include="ChaseState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="EvadeState.cpp">
@@ -131,28 +122,16 @@
     <ClInclude Include="Evader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Renderer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Singleton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="AIEntity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="IState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="BlackBoard.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ChaseState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="WanderState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FSM.h">
+    <ClInclude Include="ChaseState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="EvadeState.h">

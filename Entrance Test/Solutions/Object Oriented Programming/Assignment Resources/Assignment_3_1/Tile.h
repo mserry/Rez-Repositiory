@@ -29,6 +29,7 @@ public:
 	};
 
 	Tile();
+	Tile(int xPos, int yPos);
 	virtual ~Tile() = 0;
 
     virtual void Render() = 0;
@@ -40,9 +41,15 @@ public:
 	void SetState(State newState);
 	State GetState() const;
 
+	int GetX() const;
+	int GetY() const;
+
 
 protected:
 	TileInteraction* m_interaction;
 	State m_state;
 	TileType m_type;
+
+	int m_xPos;
+	int m_yPos;
 };

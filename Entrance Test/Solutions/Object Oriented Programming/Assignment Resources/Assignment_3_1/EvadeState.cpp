@@ -1,7 +1,6 @@
 #include "EvadeState.h"
 
 
-
 EvadeState::EvadeState()
 {
 }
@@ -11,22 +10,7 @@ EvadeState::~EvadeState()
 {
 }
 
-bool EvadeState::GetTransitionCondition()
-{
-	return false;
-}
-
-EntityState EvadeState::GetStateName()
-{
-	return EntityState::k_evading;
-}
-
-EntityState EvadeState::GetTransitionStateName()
-{
-	return EntityState::k_wandering;
-}
-
-void EvadeState::OnUpdate()
+void EvadeState::OnUpdate(AIEntity* pThisEntity)
 {
 }
 
@@ -36,4 +20,13 @@ void EvadeState::OnEnter()
 
 void EvadeState::OnExit()
 {
+}
+
+void EvadeState::ExecuteBehavior()
+{
+}
+
+bool EvadeState::IsCorrectTile(Tile* pAdjTile)
+{
+	return false;
 }

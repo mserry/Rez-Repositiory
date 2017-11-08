@@ -80,7 +80,6 @@
   <ItemGroup>
     <ClCompile Include="AIEntity.cpp" />
     <ClCompile Include="Assignment_3_1.cpp" />
-    <ClCompile Include="BlackBoard.cpp" />
     <ClCompile Include="BombTile.cpp" />
     <ClCompile Include="Chaser.cpp" />
     <ClCompile Include="ChaseState.cpp" />
@@ -90,8 +89,6 @@
     <ClCompile Include="EvadeState.cpp" />
     <ClCompile Include="FloorTile.cpp" />
     <ClCompile Include="DamageInteraction.cpp" />
-    <ClCompile Include="FSM.cpp" />
-    <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="MimicTile.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -104,7 +101,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AIEntity.h" />
-    <ClInclude Include="BlackBoard.h" />
     <ClInclude Include="BombTile.h" />
     <ClInclude Include="Chaser.h" />
     <ClInclude Include="ChaseState.h" />
@@ -114,13 +110,10 @@
     <ClInclude Include="EvadeState.h" />
     <ClInclude Include="FloorTile.h" />
     <ClInclude Include="DamageInteraction.h" />
-    <ClInclude Include="FSM.h" />
     <ClInclude Include="IState.h" />
-    <ClInclude Include="Renderer.h" />
     <ClInclude Include="InputHandler.h" />
     <ClInclude Include="MimicTile.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Singleton.h" />
     <ClInclude Include="Tile.h" />
     <ClInclude Include="TileInteraction.h" />
     <ClInclude Include="TreasureInteraction.h" />

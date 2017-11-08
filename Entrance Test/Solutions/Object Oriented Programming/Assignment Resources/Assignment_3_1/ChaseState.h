@@ -1,18 +1,17 @@
 #pragma once
+#include "WanderState.h"
 
-#include "IState.h"
-
-class ChaseState : public IState
+class ChaseState : public WanderState
 {
 public:
 	ChaseState();
 	virtual ~ChaseState();
 
-	virtual EntityState GetStateName() override;
-	virtual void OnUpdate() override;
+	virtual void OnUpdate(AIEntity* pThisEntity) override;
 	virtual void OnEnter() override;
 	virtual void OnExit() override;
-	bool GetTransitionCondition() override;
-	EntityState GetTransitionStateName() override;
+
+protected:
+	virtual bool IsCorrectTile(Tile* pAdjTile) override;
 };
 

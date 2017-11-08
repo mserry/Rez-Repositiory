@@ -2,7 +2,7 @@
 
 #include "Entity.h"
 
-class FSM;
+class IState;
 
 class AIEntity : public Entity
 {
@@ -13,13 +13,11 @@ public:
 
 	virtual void Render() override = 0;
 	virtual bool Update() override;
-
-	const FSM& GetEntityStateMachine() const;
-
-protected:
 	virtual void Move(int xPos, int yPos) override;
 
+	void ChangeState(IState* pNewState);
+	
 protected:
-	FSM* m_entityFsm;
+	IState* m_pCurrentState;
 };
 

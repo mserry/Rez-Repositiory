@@ -1,35 +1,26 @@
 #include "ChaseState.h"
 
-ChaseState::ChaseState() {}
-
-ChaseState::~ChaseState() {}
-
-EntityState ChaseState::GetStateName()
+ChaseState::ChaseState()
 {
-	return EntityState::k_chasing;
 }
 
-void ChaseState::OnUpdate()
+ChaseState::~ChaseState()
 {
+}
 
+void ChaseState::OnUpdate(AIEntity* pThisEntity)
+{
 }
 
 void ChaseState::OnEnter()
 {
-
 }
 
 void ChaseState::OnExit()
 {
-
 }
 
-bool ChaseState::GetTransitionCondition()
+bool ChaseState::IsCorrectTile(Tile* pAdjTile)
 {
 	return false;
-}
-
-EntityState ChaseState::GetTransitionStateName()
-{
-	return EntityState::k_wandering;
 }

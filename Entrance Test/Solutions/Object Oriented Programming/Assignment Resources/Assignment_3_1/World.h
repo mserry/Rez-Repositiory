@@ -8,7 +8,6 @@
 class Tile;
 class Player;
 class Entity;
-class BlackBoard;
 
 enum class TileType
 {
@@ -28,8 +27,6 @@ enum class EntityType
 
 class World
 {
-	friend BlackBoard;
-
     typedef std::pair<int, TileType> TileProbability;
 
     static const TileProbability s_tileProbabilities[static_cast<int>(TileType::k_numTiles)];
@@ -65,6 +62,7 @@ public:
 	
 	//methods
 	void DetectAdjacentMimics() const;
+	std::vector<Tile*> GetAdjacentTiles(int x, int y) const;
 
 	// end
     void EndGame();
@@ -74,7 +72,7 @@ public:
 private:
 	Entity* CreateEntity(int x, int y, EntityType type)   const;
 	std::vector<Tile*>  GetNeighbourTiles(int x, int y)   const;
-	std::vector<Tile*>   GetAdjacentTiles(int x, int y)   const;
+	
 	Entity*         GetEntityOnTile(int xPos, int yPos)   const;
 };
 

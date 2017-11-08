@@ -4,7 +4,7 @@
 
 using std::cout;
 
-Evader::Evader(int x, int y) : Entity(x,y)
+Evader::Evader(int x, int y) : AIEntity(x,y)
 {
 	m_hitPoints = 5;
 }

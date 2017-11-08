@@ -10,13 +10,11 @@
 #include "BombTile.h"
 #include "MimicTile.h"
 #include "EndTile.h"
-#include "Singleton.h"
 
 #include <iostream>
 #include <assert.h>
 #include "Chaser.h"
 #include "Evader.h"
-#include "BlackBoard.h"
 
 using std::cout;
 using std::endl;
@@ -213,10 +211,8 @@ void World::Update()
         return;
     }
 
-	
 
-	//why?
-	Singleton<InputHandler>::GetInstance().ProcessInput();
+	InputHandler::ProcessInput();
 
     int x = m_pPlayer->GetX();
     int y = m_pPlayer->GetY();
@@ -233,7 +229,6 @@ void World::Update()
     int index = (y * m_width) + x;
     m_ppGrid[index]->OnEnter(m_pPlayer);
 
-	BlackBoard::GetInstance().SetPlayerTileIndex(index);
 
 	//process entities.
 	for (Entity* pEntity : m_entities)
