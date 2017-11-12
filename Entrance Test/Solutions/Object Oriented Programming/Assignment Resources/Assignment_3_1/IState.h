@@ -22,9 +22,6 @@ public:
 	virtual void OnUpdate(AIEntity* pOwnerEntity) = 0;
 	virtual void OnEnter()  = 0;
 	virtual void OnExit()   = 0;
-
-protected:
-	virtual void ExecuteBehavior() = 0;
 	
 protected:
 	bool m_isInit;

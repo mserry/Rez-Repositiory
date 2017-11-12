@@ -226,8 +226,8 @@ void World::Update()
     }
 
     // process the tile the player is on
-    int index = (y * m_width) + x;
-    m_ppGrid[index]->OnEnter(m_pPlayer);
+    m_playerTileIndex = (y * m_width) + x;
+    m_ppGrid[m_playerTileIndex]->OnEnter(m_pPlayer);
 
 
 	//process entities.
@@ -284,6 +284,11 @@ Player* World::GetPlayer() const
 Tile** World::GetTiles() const
 {
 	return (!m_ppGrid) ? nullptr : m_ppGrid;
+}
+
+int World::GetPlayerTileIndex() const
+{
+	return m_playerTileIndex;
 }
 
 std::vector<Tile*> World::GetNeighbourTiles(int x, int y) const

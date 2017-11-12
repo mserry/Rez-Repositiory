@@ -59,6 +59,7 @@ public:
 	int GetWorldHeight() const;
 	Player* GetPlayer() const;
 	Tile** GetTiles() const;
+	int GetPlayerTileIndex() const;
 	
 	//methods
 	void DetectAdjacentMimics() const;
@@ -72,8 +73,10 @@ public:
 private:
 	Entity* CreateEntity(int x, int y, EntityType type)   const;
 	std::vector<Tile*>  GetNeighbourTiles(int x, int y)   const;
-	
 	Entity*         GetEntityOnTile(int xPos, int yPos)   const;
+
+private:
+	int m_playerTileIndex;
 };
 
 #endif

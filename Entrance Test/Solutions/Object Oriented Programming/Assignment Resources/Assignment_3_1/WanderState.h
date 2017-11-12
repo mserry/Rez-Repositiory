@@ -14,11 +14,7 @@ public:
 	virtual void OnEnter() override;
 	virtual void OnExit() override;
 
-	void MoveToAdjTile(AIEntity* pOwnerEntity, Tile* pAdjTile);
-
 protected:
-	virtual void ExecuteBehavior() override;
+	bool IsPlayerDetectedForEntity(AIEntity* pOwnerEntity) const;
 
-	virtual bool IsCorrectTile(Tile* pAdjTile);
-	bool IsPlayerDetected() const;
 };
