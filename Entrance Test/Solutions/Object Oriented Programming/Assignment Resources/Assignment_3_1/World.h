@@ -60,6 +60,8 @@ public:
 	Player* GetPlayer() const;
 	Tile** GetTiles() const;
 	int GetPlayerTileIndex() const;
+	int GetPlayerXPos() const;
+	int GetPlayerYPos() const;
 	
 	//methods
 	void DetectAdjacentMimics() const;

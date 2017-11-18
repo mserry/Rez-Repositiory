@@ -291,6 +291,16 @@ int World::GetPlayerTileIndex() const
 	return m_playerTileIndex;
 }
 
+int World::GetPlayerXPos() const
+{
+	return m_pPlayer->GetX();
+}
+
+int World::GetPlayerYPos() const
+{
+	return m_pPlayer->GetY();
+}
+
 std::vector<Tile*> World::GetNeighbourTiles(int x, int y) const
 {
 	//ensure central tile is properly placed.
