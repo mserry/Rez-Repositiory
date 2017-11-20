@@ -1,29 +1,39 @@
 #include "ChaseState.h"
 #include "AIEntity.h"
 
-ChaseState::ChaseState()
+
+ChaseState::ChaseState()  {}
+ChaseState::~ChaseState() {}
+
+EntityState ChaseState::GetStateName()
 {
+	return EntityState::k_chasing;
 }
 
-ChaseState::~ChaseState()
+void ChaseState::OnUpdate(AIEntity* pOwnerEntity)
 {
-}
-
-void ChaseState::OnUpdate(AIEntity* pThisEntity)
-{
-	if (pThisEntity->IsDead()) return;
-
-
+	if (pOwnerEntity->IsDead()) return;
+	
+	if(IsPlayerDetectedForEntity(pOwnerEntity)) 
+	{
+		Chase(pOwnerEntity);
+	}
+	else 
+	{
+		pOwnerEntity->HandleStateTransition(GetStateName());
+	}
 }
 
 void ChaseState::OnEnter()
 {
+	m_isInit = true;
 }
 
 void ChaseState::OnExit()
 {
 }
 
-void ChaseState::TransitionToNextState()
+void ChaseState::Chase(AIEntity* pThisEntity)
 {
+
 }

@@ -9,7 +9,11 @@ Evader::Evader(int x, int y) : AIEntity(x,y)
 	m_hitPoints = 5;
 }
 
-Evader::~Evader() {}
+Evader::~Evader() 
+{
+	delete m_pCurrentState;
+	m_pCurrentState = nullptr;
+}
 
 void Evader::Render()
 {

@@ -86,7 +86,6 @@
     <ClCompile Include="EndTile.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Evader.cpp" />
-    <ClCompile Include="EvadeState.cpp" />
     <ClCompile Include="FloorTile.cpp" />
     <ClCompile Include="DamageInteraction.cpp" />
     <ClCompile Include="InputHandler.cpp" />
@@ -107,7 +106,6 @@
     <ClInclude Include="EndTile.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Evader.h" />
-    <ClInclude Include="EvadeState.h" />
     <ClInclude Include="FloorTile.h" />
     <ClInclude Include="DamageInteraction.h" />
     <ClInclude Include="IState.h" />

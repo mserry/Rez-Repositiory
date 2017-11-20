@@ -2,14 +2,9 @@
 #include "IState.h"
 
 AIEntity::AIEntity(): m_pCurrentState(nullptr) {}
-
 AIEntity::AIEntity(int x, int y) : Entity(x, y), m_pCurrentState(nullptr) {}
+AIEntity::~AIEntity() {}
 
-AIEntity::~AIEntity()
-{
-	delete m_pCurrentState;
-	m_pCurrentState = nullptr;
-}
 
 bool AIEntity::Update()
 {
@@ -26,16 +21,21 @@ bool AIEntity::Update()
 	return IsDead();
 }
 
-void AIEntity::ChangeState(IState* pNewState)
+void AIEntity::ChangeState()
 {
-	delete m_pCurrentState;
 
-	m_pCurrentState = nullptr;
-	m_pCurrentState = pNewState;
 }
 
 void AIEntity::Move(int xPos, int yPos)
 {
 	m_x += xPos;
 	m_y += yPos;
+}
+
+void AIEntity::SetState(IState* pNewState)
+{
+	delete m_pCurrentState;
+	m_pCurrentState = nullptr;
+
+	m_pCurrentState = pNewState;
 }

@@ -12,11 +12,14 @@ public:
 	virtual ~AIEntity();
 
 	virtual void Render() override = 0;
+	virtual void HandleStateTransition(EntityState currentState) = 0;
+
 	virtual bool Update() override;
 	virtual void Move(int xPos, int yPos) override;
 
-	void ChangeState(IState* pNewState);
-	
+protected:
+	void SetState(IState* pNewState);
+
 protected:
 	IState* m_pCurrentState;
 };

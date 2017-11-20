@@ -10,6 +10,7 @@ public:
 	WanderState();
 	virtual ~WanderState();
 
+	virtual EntityState GetStateName() override;
 	virtual void OnUpdate(AIEntity* pOwnerEntity) override;
 	
 	virtual void OnEnter() override;
@@ -19,5 +20,5 @@ protected:
 	bool IsPlayerDetectedForEntity(AIEntity* pOwnerEntity) const;
 
 private:
-	void Wander(AIEntity * pThisEntity);
+	void Wander(AIEntity* pThisEntity);
 };

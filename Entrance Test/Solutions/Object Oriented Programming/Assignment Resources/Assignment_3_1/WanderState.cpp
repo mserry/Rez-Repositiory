@@ -5,20 +5,23 @@
 
 extern World* g_pWorld;
 
-//Thurs 11/9
 
 //TODO: add new states (Finish imp.)
-//TODO: add x, y pos for tiles.
 //TODO: figure out which state to push.
+//TODO: testing & Fixes (entities currently just die?)
 
-//TODO: testing & Fixes.
+WanderState::WanderState() {}
+WanderState::~WanderState(){}
 
-WanderState::WanderState()
+
+void WanderState::OnEnter()
 {
+	m_isInit = true;
 }
 
-WanderState::~WanderState()
+EntityState WanderState::GetStateName()
 {
+	return EntityState::k_wandering;
 }
 
 void WanderState::OnUpdate(AIEntity* pThisEntity)
@@ -31,36 +34,29 @@ void WanderState::OnUpdate(AIEntity* pThisEntity)
 	}
 	else 
 	{
-		TransitionToNextState();
+		pThisEntity->HandleStateTransition(GetStateName());
 	}
 }
+
+
+void WanderState::OnExit() {}
 
 void WanderState::Wander(AIEntity* pThisEntity)
 {
 	auto adjTiles = g_pWorld->GetAdjacentTiles(pThisEntity->GetX(), pThisEntity->GetY());
-	std::vector<int> floorTiles;
+	std::vector<int> floorTileIndices;
 
 	for (int i = 0; i < adjTiles.size(); ++i) 
 	{
 		if (adjTiles[i]->GetType() != Tile::TileType::k_floor) continue;
 
-		floorTiles.push_back(i);
+		floorTileIndices.push_back(i);
 	}
 
-	int selectedIndex = rand() % floorTiles.size();
+	int selectedIndex = rand() % floorTileIndices.size();
 	pThisEntity->Move(adjTiles[selectedIndex]->GetX(), adjTiles[selectedIndex]->GetY());
 }
 
-
-void WanderState::OnEnter()
-{
-	m_isInit = true;
-}
-
-void WanderState::OnExit()
-{
-
-}
 
 //explaination in document. 
 bool WanderState::IsPlayerDetectedForEntity(AIEntity* pOwnerEntity) const
