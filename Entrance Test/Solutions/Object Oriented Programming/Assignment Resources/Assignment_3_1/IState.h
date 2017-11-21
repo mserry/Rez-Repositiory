@@ -1,6 +1,6 @@
 #pragma once
 
-enum class EntityState
+enum class EntityStateName
 {
 	k_wandering,
 	k_chasing,
@@ -17,7 +17,7 @@ public:
 
 	bool IsInit() const { return m_isInit; };
 
-	virtual EntityState GetStateName() = 0;
+	virtual EntityStateName GetStateName() = 0;
 	virtual void OnUpdate(AIEntity* pOwnerEntity) = 0;
 	virtual void OnEnter()  = 0;
 	virtual void OnExit()   = 0;

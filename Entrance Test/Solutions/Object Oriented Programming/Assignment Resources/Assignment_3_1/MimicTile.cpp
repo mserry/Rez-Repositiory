@@ -8,7 +8,7 @@ using std::cout;
 
 MimicTile::MimicTile()
 {
-	m_state = State::k_hidden;
+	m_state = TileState::k_hidden;
 	m_type = k_mimic;
 }
 
@@ -18,16 +18,16 @@ void MimicTile::Render()
 {
     switch (m_state)
     {
-        case State::k_hidden:
+        case TileState::k_hidden:
             cout << "$";
             break;
 
-		case State::k_revealed:
-        case State::k_active:
+		case TileState::k_revealed:
+        case TileState::k_active:
             cout << "*";
             break;
 
-        case State::k_dead:
+        case TileState::k_dead:
             cout << "#";
             break;
     }
@@ -35,8 +35,8 @@ void MimicTile::Render()
 
 void MimicTile::OnEnter(Entity* pEntity)
 {
-	if (m_state == State::k_hidden)
-		m_state = State::k_active;
+	if (m_state == TileState::k_hidden)
+		m_state = TileState::k_active;
 
 	BombTile::OnEnter(pEntity);
 }

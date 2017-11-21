@@ -8,7 +8,7 @@ extern World* g_pWorld;  // let's us access a global variable declared in anothe
 EndTile::EndTile()
 {
 	m_type = k_end;
-	m_state = State::k_ready;
+	m_state = TileState::k_ready;
 	m_interaction = nullptr;
 }
 

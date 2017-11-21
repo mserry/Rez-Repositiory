@@ -7,7 +7,7 @@ class Entity;
 class Tile
 {
 public:
-	enum class State
+	enum class TileState
 	{
 		k_active,
 		k_dead,
@@ -38,8 +38,8 @@ public:
 	virtual TileType GetType() const;
 	
 	//getters and setters.
-	void SetState(State newState);
-	State GetState() const;
+	void SetState(TileState newState);
+	TileState GetState() const;
 
 	int GetX() const;
 	int GetY() const;
@@ -47,7 +47,7 @@ public:
 
 protected:
 	TileInteraction* m_interaction;
-	State m_state;
+	TileState m_state;
 	TileType m_type;
 
 	int m_xPos;

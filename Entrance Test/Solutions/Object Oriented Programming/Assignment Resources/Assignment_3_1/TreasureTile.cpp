@@ -8,7 +8,7 @@ const TreasureTile::TreasureRange TreasureTile::s_treasureRange(50, 150);
 
 TreasureTile::TreasureTile()
 {
-	m_state = State::k_active;
+	m_state = TileState::k_active;
 	m_type = k_treasure;
 	m_interaction = new TreasureInteraction(s_treasureRange);
 }
@@ -23,11 +23,11 @@ void TreasureTile::Render()
 {
 	switch (m_state)
 	{
-		case State::k_collected:
+		case TileState::k_collected:
 			std::cout << ".";
 			break;
 
-		case State::k_active:
+		case TileState::k_active:
 			std::cout << "$";
 			break;
 
@@ -38,10 +38,10 @@ void TreasureTile::Render()
 
 void TreasureTile::OnEnter(Entity* pEntity)
 {
-	if (m_state == State::k_collected) return;
+	if (m_state == TileState::k_collected) return;
 
 	m_interaction->ExecuteOn(pEntity);
-	m_state = State::k_collected;
+	m_state = TileState::k_collected;
 }
 
 Tile::TileType TreasureTile::GetType() const

@@ -6,7 +6,7 @@ using std::cout;
 
 FloorTile::FloorTile()
 {
-	m_state = State::k_ready;
+	m_state = TileState::k_ready;
 	m_type = k_floor;
 	m_interaction = nullptr;
 }

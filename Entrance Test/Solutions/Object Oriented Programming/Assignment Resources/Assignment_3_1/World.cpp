@@ -391,7 +391,7 @@ void World::DetectAdjacentMimics() const
 		{
 			if (pNeighbourTile->GetType() == Tile::TileType::k_mimic)
 			{
-				pNeighbourTile->SetState(Tile::State::k_active);
+				pNeighbourTile->SetState(Tile::TileState::k_active);
 			}
 		}
 	}

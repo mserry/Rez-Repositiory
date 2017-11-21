@@ -9,7 +9,7 @@ public:
 	Chaser(int x, int y);
 	virtual ~Chaser();
 
-	virtual void HandleStateTransition(EntityState currentState) override;
+	virtual void HandleStateTransition(EntityStateName currentState) override;
 	virtual void Render() override;
 };
 

@@ -19,15 +19,15 @@ Chaser::~Chaser()
 	m_pCurrentState = nullptr;
 }
 
-void Chaser::HandleStateTransition(EntityState currentState)
+void Chaser::HandleStateTransition(EntityStateName currentState)
 {
 	switch(currentState) 
 	{
-		case EntityState::k_wandering:
+		case EntityStateName::k_wandering:
 			SetState(new ChaseState);
 			break;
 
-		case EntityState::k_chasing:
+		case EntityStateName::k_chasing:
 			SetState(new WanderState);
 			break;
 	}

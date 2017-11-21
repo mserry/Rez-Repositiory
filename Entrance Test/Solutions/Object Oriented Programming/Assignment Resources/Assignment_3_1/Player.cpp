@@ -7,7 +7,7 @@
 
 using std::cout;
 
-using TileState = Tile::State;
+using TileState = Tile::TileState;
 
 extern World* g_pWorld;
 

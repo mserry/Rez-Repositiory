@@ -1,18 +1,19 @@
 #pragma once
-#include "WanderState.h"
-class ChaseState : public WanderState
+#include "IState.h"
+
+class ChaseState : public IState
 {
 public:
 	ChaseState();
-	~ChaseState();
+	virtual ~ChaseState();
 
-	virtual EntityState GetStateName() override;
+	virtual EntityStateName GetStateName() override;
 	virtual void OnUpdate(AIEntity* pOwnerEntity) override;
 
 	virtual void OnEnter() override;
 	virtual void OnExit() override;
 
-protected:
+private:
 	void Chase(AIEntity* pThisEntity);
 };
 
