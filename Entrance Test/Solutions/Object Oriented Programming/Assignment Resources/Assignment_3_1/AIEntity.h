@@ -2,8 +2,8 @@
 
 #include "Entity.h"
 
+enum class EntityStateName;
 class IState;
-extern enum class EntityStateName;
 
 class AIEntity : public Entity
 {

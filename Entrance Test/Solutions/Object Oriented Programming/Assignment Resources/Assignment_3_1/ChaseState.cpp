@@ -43,12 +43,12 @@ void ChaseState::Chase(AIEntity* pThisEntity)
 	int playerYPos = StateUtils::GetPlayerYPos();
 	auto adjTiles  = StateUtils::GetTilesAroundEntity(pThisEntity->GetX(), pThisEntity->GetY());
 
-	if(adjTiles.size > 0) 
+	if(adjTiles.size() > 0) 
 	{
 		float distToPlayer = 0.0f;
 		int closestTileIndex = 0;
 
-		for(int i = 0; i < adjTiles.size(); ++i) 
+		for(size_t i = 0; i < adjTiles.size(); ++i) 
 		{
 			float tempDist = StateUtils::GetSqrDist(thisEntityXPos, playerXPos, thisEntityYPos, playerYPos);
 			

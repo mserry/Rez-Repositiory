@@ -21,11 +21,6 @@ bool AIEntity::Update()
 	return IsDead();
 }
 
-void AIEntity::ChangeState()
-{
-
-}
-
 void AIEntity::Move(int xPos, int yPos)
 {
 	m_x += xPos;

@@ -43,7 +43,7 @@ std::vector<Tile*> StateUtils::GetTilesAroundEntity(int entityXPos, int entityYP
 
 float StateUtils::GetSqrDist(int x1, int y1, int x2, int y2)
 {
-	return pow((y2 - y1), 2.0) - pow((x2 - x1), 2.0);
+	return pow((y2 - y1), 2.0f) - pow((x2 - x1), 2.0f);
 }
 
 int StateUtils::GetPlayerXPos()
@@ -54,13 +54,4 @@ int StateUtils::GetPlayerXPos()
 int StateUtils::GetPlayerYPos()
 {
 	return g_pWorld->GetPlayerYPos();
-}
-
-StateUtils::StateUtils()
-{
-}
-
-
-StateUtils::~StateUtils()
-{
 }
