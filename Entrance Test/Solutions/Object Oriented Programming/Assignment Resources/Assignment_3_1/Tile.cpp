@@ -8,7 +8,7 @@ void Tile::OnEnter(Entity* pEntity) {}
 
 Tile::TileType Tile::GetType() const
 {
-	return TileType::k_default;
+	return k_default;
 }
 
 void Tile::SetState(TileState newState)

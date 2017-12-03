@@ -41,7 +41,7 @@ void ChaseState::Chase(AIEntity* pThisEntity)
 
 	int playerXPos = StateUtils::GetPlayerXPos();
 	int playerYPos = StateUtils::GetPlayerYPos();
-	auto adjTiles  = StateUtils::GetTilesAroundEntity(pThisEntity->GetX(), pThisEntity->GetY());
+	std::vector<Tile*> adjTiles = StateUtils::GetTilesAroundEntity(pThisEntity->GetX(), pThisEntity->GetY());
 
 	if(adjTiles.size() > 0) 
 	{

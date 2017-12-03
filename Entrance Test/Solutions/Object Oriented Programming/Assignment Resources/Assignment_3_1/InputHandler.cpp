@@ -7,6 +7,7 @@
 
 extern World* g_pWorld;
 
+//TODO: replace and refactor into world class.s
 void InputHandler::ProcessInput()
 {
 	char input = _getch();

@@ -36,7 +36,7 @@ World::World()
 	  , m_height(0)
 	  , m_entityCount(0), m_ppGrid(nullptr)
 	  , m_pPlayer(nullptr)
-	  , m_gameOver(false)
+	  , m_gameOver(false), m_playerTileIndex(0)
 {
 	//
 }
@@ -54,7 +54,7 @@ World::~World()
     m_pPlayer = nullptr;
 
 	//de-allocating entities.
-	for(int j = 0 ;j < m_entities.size(); ++j)
+	for(size_t j = 0 ;j < m_entities.size(); ++j)
 	{
 		delete m_entities[j];
 	}
@@ -98,7 +98,7 @@ void World::CreatePlayer(int x, int y)
 	m_entities.push_back(m_pPlayer);
 }
 
-Entity* World::CreateEntity(int x, int y, EntityType type) const
+Entity* World::CreateEntity(int x, int y, const EntityType type) const
 {
 	assert(x >= 0 && x < m_width);
 	assert(y >= 0 && y < m_height);
@@ -110,7 +110,11 @@ Entity* World::CreateEntity(int x, int y, EntityType type) const
 
 		case EntityType::k_evader:
 			return new Evader(x,y);
+
+		default: ;
 	}
+
+	return nullptr;
 }
 
 void World::GenerateWorld()
@@ -124,13 +128,13 @@ void World::GenerateWorld()
 
     // create the start and end tiles
     int lastIndex = (m_width * m_height) - 1;
-    m_ppGrid[lastIndex] = new EndTile;  // special tile for ending the level; there is only one of these
-    m_ppGrid[0] = new FloorTile;  // guarantee that the starting location is open
+	m_ppGrid[lastIndex] = new EndTile(m_height * m_width, m_height * m_width);  // special tile for ending the level; there is only one of these
+    m_ppGrid[0] = new FloorTile(0,0);  // guarantee that the starting location is open
 
     // guarantee at least one mimic
     int randomTile = (rand() % (lastIndex - 1)) + 1;
     assert(m_ppGrid[randomTile] == nullptr);  // if this fires, it means our math is wrong
-    m_ppGrid[randomTile] = new MimicTile;
+    m_ppGrid[randomTile] = new MimicTile();
 
     // populate the rest of the world
     for (int tileIndex = 1; tileIndex < (m_width * m_height) - 1; ++tileIndex)
@@ -354,7 +358,7 @@ std::vector<Tile*> World::GetAdjacentTiles(int x, int y) const
 
 Entity* World::GetEntityOnTile(int xPos, int yPos) const
 {
-	for(int i = 0; i < m_entities.size(); ++i)
+	for(size_t i = 0; i < m_entities.size(); ++i)
 	{
 		const bool IsOnTile = m_entities[i]->GetX() == xPos && m_entities[i]->GetY() == yPos;
 

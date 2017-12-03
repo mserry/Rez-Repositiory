@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>assignment_3_1.cpp</FILENAME>
+      <LINE>134</LINE>
+      <COLUMN>10</COLUMN>
+    </SFA>
+    <DEFECTCODE>6031</DEFECTCODE>
+    <DESCRIPTION>Return value ignored: '_getch'.</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>108</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>assignment_3_1.cpp</FILENAME>
+      <LINE>113</LINE>
+      <COLUMN>15</COLUMN>
+    </SFA>
+    <DEFECTCODE>26409</DEFECTCODE>
+    <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>108</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>assignment_3_1.cpp</FILENAME>
+      <LINE>110</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26493</DEFECTCODE>
+    <DESCRIPTION>Don't use C-style casts that would perform a static_cast downcast, const_cast, or reinterpret_cast. (type.4: http://go.microsoft.com/fwlink/p/?LinkID=620420)</DESCRIPTION>
+    <FUNCTION>main</FUNCTION>
+    <DECORATED>main</DECORATED>
+    <FUNCLINE>108</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

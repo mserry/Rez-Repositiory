@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>evader.cpp</FILENAME>
+      <LINE>33</LINE>
+      <COLUMN>12</COLUMN>
+    </SFA>
+    <DEFECTCODE>26409</DEFECTCODE>
+    <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
+    <FUNCTION>Evader::HandleStateTransition</FUNCTION>
+    <DECORATED>?HandleStateTransition@Evader@@UAEXW4EntityStateName@@@Z</DECORATED>
+    <FUNCLINE>28</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>evader.cpp</FILENAME>
+      <LINE>37</LINE>
+      <COLUMN>12</COLUMN>
+    </SFA>
+    <DEFECTCODE>26409</DEFECTCODE>
+    <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
+    <FUNCTION>Evader::HandleStateTransition</FUNCTION>
+    <DECORATED>?HandleStateTransition@Evader@@UAEXW4EntityStateName@@@Z</DECORATED>
+    <FUNCLINE>28</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

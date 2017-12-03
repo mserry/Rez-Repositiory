@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>chaser.cpp</FILENAME>
+      <LINE>27</LINE>
+      <COLUMN>12</COLUMN>
+    </SFA>
+    <DEFECTCODE>26409</DEFECTCODE>
+    <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
+    <FUNCTION>Chaser::HandleStateTransition</FUNCTION>
+    <DECORATED>?HandleStateTransition@Chaser@@UAEXW4EntityStateName@@@Z</DECORATED>
+    <FUNCLINE>22</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>chaser.cpp</FILENAME>
+      <LINE>31</LINE>
+      <COLUMN>12</COLUMN>
+    </SFA>
+    <DEFECTCODE>26409</DEFECTCODE>
+    <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
+    <FUNCTION>Chaser::HandleStateTransition</FUNCTION>
+    <DECORATED>?HandleStateTransition@Chaser@@UAEXW4EntityStateName@@@Z</DECORATED>
+    <FUNCLINE>22</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

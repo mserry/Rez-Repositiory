@@ -90,6 +90,12 @@
 // de-couple behavior from the entities (tiles) and to remove duplication. 
 // should the tiles require to have more than one behavior based on a different state, then the state pattern would be a better choice.
 //
+// REMAINING TASKS:
+// 1. DEBUGGING / FIXES: Q5 (Get Enemies to Work and behave properly).
+// 2. DEBUGGING: Memory Leaks.
+// 3. Q6: REFACTORING ARCHITECTURE (REMOVE DUPLICATION, FORMAT CODE ACCORDING TO STANDARD)
+// 4. Q7: TELEPORTER TILES IMP. / FIXES.
+// 5. DOC: Q5,6,7, Post-mortem.
 //---------------------------------------------------------------------------------------------------------------------
 
 

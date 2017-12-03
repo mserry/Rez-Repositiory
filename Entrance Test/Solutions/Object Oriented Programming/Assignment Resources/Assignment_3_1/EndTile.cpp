@@ -12,6 +12,12 @@ EndTile::EndTile()
 	m_interaction = nullptr;
 }
 
+EndTile::EndTile(int xPos, int yPos)
+{
+	m_xPos = xPos;
+	m_yPos = yPos;
+}
+
 EndTile::~EndTile() {}
 
 void EndTile::Render()

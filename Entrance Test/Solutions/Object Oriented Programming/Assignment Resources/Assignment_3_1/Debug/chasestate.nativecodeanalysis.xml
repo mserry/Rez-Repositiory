@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DEFECTS>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>chasestate.cpp</FILENAME>
+      <LINE>42</LINE>
+      <COLUMN>5</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'playerXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>ChaseState::Chase</FUNCTION>
+    <DECORATED>?Chase@ChaseState@@AAEXPAVAIEntity@@@Z</DECORATED>
+    <FUNCLINE>37</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>chasestate.cpp</FILENAME>
+      <LINE>39</LINE>
+      <COLUMN>5</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'thisEntityXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>ChaseState::Chase</FUNCTION>
+    <DECORATED>?Chase@ChaseState@@AAEXPAVAIEntity@@@Z</DECORATED>
+    <FUNCLINE>37</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>chasestate.cpp</FILENAME>
+      <LINE>40</LINE>
+      <COLUMN>5</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'thisEntityYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>ChaseState::Chase</FUNCTION>
+    <DECORATED>?Chase@ChaseState@@AAEXPAVAIEntity@@@Z</DECORATED>
+    <FUNCLINE>37</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>chasestate.cpp</FILENAME>
+      <LINE>43</LINE>
+      <COLUMN>5</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'playerYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>ChaseState::Chase</FUNCTION>
+    <DECORATED>?Chase@ChaseState@@AAEXPAVAIEntity@@@Z</DECORATED>
+    <FUNCLINE>37</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>chasestate.cpp</FILENAME>
+      <LINE>53</LINE>
+      <COLUMN>9</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'tempDist' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>ChaseState::Chase</FUNCTION>
+    <DECORATED>?Chase@ChaseState@@AAEXPAVAIEntity@@@Z</DECORATED>
+    <FUNCLINE>37</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+</DEFECTS>

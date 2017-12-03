@@ -11,6 +11,12 @@ FloorTile::FloorTile()
 	m_interaction = nullptr;
 }
 
+FloorTile::FloorTile(int xPos, int yPos)
+{
+	m_xPos = xPos;
+	m_yPos = yPos;
+}
+
 FloorTile::~FloorTile() {}
 
 void FloorTile::Render()
