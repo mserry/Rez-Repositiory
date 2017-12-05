@@ -31,3 +31,13 @@ int Tile::GetY() const
 	return m_yPos;
 }
 
+void Tile::SetX(int x)
+{
+	m_xPos = x;
+}
+
+void Tile::SetY(int y)
+{
+	m_yPos = y;
+}
+

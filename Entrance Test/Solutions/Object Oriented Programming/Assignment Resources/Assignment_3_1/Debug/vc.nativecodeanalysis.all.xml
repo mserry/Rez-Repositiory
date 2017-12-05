@@ -54,53 +54,40 @@
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>chaser.cpp</FILENAME>
-      <LINE>27</LINE>
-      <COLUMN>12</COLUMN>
+      <LINE>15</LINE>
+      <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26409</DEFECTCODE>
     <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
-    <FUNCTION>Chaser::HandleStateTransition</FUNCTION>
-    <DECORATED>?HandleStateTransition@Chaser@@UAEXW4EntityStateName@@@Z</DECORATED>
-    <FUNCLINE>22</FUNCLINE>
+    <FUNCTION>Chaser::{ctor}</FUNCTION>
+    <DECORATED>??0Chaser@@QAE@HH@Z</DECORATED>
+    <FUNCLINE>11</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>chaser.cpp</FILENAME>
-      <LINE>31</LINE>
+      <LINE>29</LINE>
       <COLUMN>12</COLUMN>
     </SFA>
     <DEFECTCODE>26409</DEFECTCODE>
     <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
     <FUNCTION>Chaser::HandleStateTransition</FUNCTION>
     <DECORATED>?HandleStateTransition@Chaser@@UAEXW4EntityStateName@@@Z</DECORATED>
-    <FUNCLINE>22</FUNCLINE>
+    <FUNCLINE>24</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>chasestate.cpp</FILENAME>
-      <LINE>42</LINE>
-      <COLUMN>5</COLUMN>
+      <FILENAME>chaser.cpp</FILENAME>
+      <LINE>33</LINE>
+      <COLUMN>12</COLUMN>
     </SFA>
-    <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'playerXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
-    <FUNCTION>ChaseState::Chase</FUNCTION>
-    <DECORATED>?Chase@ChaseState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>37</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT><DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>chasestate.cpp</FILENAME>
-      <LINE>39</LINE>
-      <COLUMN>5</COLUMN>
-    </SFA>
-    <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'thisEntityXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
-    <FUNCTION>ChaseState::Chase</FUNCTION>
-    <DECORATED>?Chase@ChaseState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>37</FUNCLINE>
+    <DEFECTCODE>26409</DEFECTCODE>
+    <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
+    <FUNCTION>Chaser::HandleStateTransition</FUNCTION>
+    <DECORATED>?HandleStateTransition@Chaser@@UAEXW4EntityStateName@@@Z</DECORATED>
+    <FUNCLINE>24</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
@@ -110,62 +97,127 @@
       <COLUMN>5</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'thisEntityYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <DESCRIPTION>Variable 'playerXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>ChaseState::Chase</FUNCTION>
     <DECORATED>?Chase@ChaseState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>37</FUNCLINE>
+    <FUNCLINE>35</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>chasestate.cpp</FILENAME>
-      <LINE>43</LINE>
+      <LINE>37</LINE>
+      <COLUMN>5</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'thisEntityXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>ChaseState::Chase</FUNCTION>
+    <DECORATED>?Chase@ChaseState@@AAEXPAVAIEntity@@@Z</DECORATED>
+    <FUNCLINE>35</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>chasestate.cpp</FILENAME>
+      <LINE>38</LINE>
+      <COLUMN>5</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'thisEntityYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>ChaseState::Chase</FUNCTION>
+    <DECORATED>?Chase@ChaseState@@AAEXPAVAIEntity@@@Z</DECORATED>
+    <FUNCLINE>35</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>chasestate.cpp</FILENAME>
+      <LINE>41</LINE>
       <COLUMN>5</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'playerYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>ChaseState::Chase</FUNCTION>
     <DECORATED>?Chase@ChaseState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>37</FUNCLINE>
+    <FUNCLINE>35</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>chasestate.cpp</FILENAME>
-      <LINE>53</LINE>
+      <LINE>51</LINE>
       <COLUMN>9</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'tempDist' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>ChaseState::Chase</FUNCTION>
     <DECORATED>?Chase@ChaseState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>37</FUNCLINE>
+    <FUNCLINE>35</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>evader.cpp</FILENAME>
-      <LINE>33</LINE>
+      <LINE>13</LINE>
+      <COLUMN>19</COLUMN>
+    </SFA>
+    <DEFECTCODE>26409</DEFECTCODE>
+    <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
+    <FUNCTION>Evader::{ctor}</FUNCTION>
+    <DECORATED>??0Evader@@QAE@HH@Z</DECORATED>
+    <FUNCLINE>9</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>evader.cpp</FILENAME>
+      <LINE>35</LINE>
       <COLUMN>12</COLUMN>
     </SFA>
     <DEFECTCODE>26409</DEFECTCODE>
     <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
     <FUNCTION>Evader::HandleStateTransition</FUNCTION>
     <DECORATED>?HandleStateTransition@Evader@@UAEXW4EntityStateName@@@Z</DECORATED>
-    <FUNCLINE>28</FUNCLINE>
+    <FUNCLINE>30</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>evader.cpp</FILENAME>
-      <LINE>37</LINE>
+      <LINE>39</LINE>
       <COLUMN>12</COLUMN>
     </SFA>
     <DEFECTCODE>26409</DEFECTCODE>
     <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
     <FUNCTION>Evader::HandleStateTransition</FUNCTION>
     <DECORATED>?HandleStateTransition@Evader@@UAEXW4EntityStateName@@@Z</DECORATED>
-    <FUNCLINE>28</FUNCLINE>
+    <FUNCLINE>30</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>evadestate.cpp</FILENAME>
+      <LINE>44</LINE>
+      <COLUMN>5</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'thisEntityXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>EvadeState::Evade</FUNCTION>
+    <DECORATED>?Evade@EvadeState@@AAEXPAVAIEntity@@@Z</DECORATED>
+    <FUNCLINE>42</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>evadestate.cpp</FILENAME>
+      <LINE>47</LINE>
+      <COLUMN>5</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'playerXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>EvadeState::Evade</FUNCTION>
+    <DECORATED>?Evade@EvadeState@@AAEXPAVAIEntity@@@Z</DECORATED>
+    <FUNCLINE>42</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
@@ -175,10 +227,10 @@
       <COLUMN>5</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'thisEntityXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <DESCRIPTION>Variable 'thisEntityYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>EvadeState::Evade</FUNCTION>
     <DECORATED>?Evade@EvadeState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>43</FUNCLINE>
+    <FUNCLINE>42</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
@@ -188,62 +240,36 @@
       <COLUMN>5</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'playerXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
-    <FUNCTION>EvadeState::Evade</FUNCTION>
-    <DECORATED>?Evade@EvadeState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>43</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT><DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>evadestate.cpp</FILENAME>
-      <LINE>46</LINE>
-      <COLUMN>5</COLUMN>
-    </SFA>
-    <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'thisEntityYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
-    <FUNCTION>EvadeState::Evade</FUNCTION>
-    <DECORATED>?Evade@EvadeState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>43</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT><DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>evadestate.cpp</FILENAME>
-      <LINE>49</LINE>
-      <COLUMN>5</COLUMN>
-    </SFA>
-    <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'playerYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>EvadeState::Evade</FUNCTION>
     <DECORATED>?Evade@EvadeState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>43</FUNCLINE>
+    <FUNCLINE>42</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>evadestate.cpp</FILENAME>
-      <LINE>60</LINE>
+      <LINE>59</LINE>
       <COLUMN>9</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'tempDist' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>EvadeState::Evade</FUNCTION>
     <DECORATED>?Evade@EvadeState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>43</FUNCLINE>
+    <FUNCLINE>42</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>inputhandler.cpp</FILENAME>
-      <LINE>12</LINE>
+      <LINE>13</LINE>
       <COLUMN>6</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'input' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>InputHandler::ProcessInput</FUNCTION>
     <DECORATED>?ProcessInput@InputHandler@@SAXXZ</DECORATED>
-    <FUNCLINE>10</FUNCLINE>
+    <FUNCLINE>11</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
@@ -588,7 +614,7 @@
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
       <LINE>131</LINE>
-      <COLUMN>26</COLUMN>
+      <COLUMN>34</COLUMN>
     </SFA>
     <DEFECTCODE>26409</DEFECTCODE>
     <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
@@ -601,7 +627,7 @@
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
       <LINE>132</LINE>
-      <COLUMN>18</COLUMN>
+      <COLUMN>31</COLUMN>
     </SFA>
     <DEFECTCODE>26409</DEFECTCODE>
     <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
@@ -614,7 +640,7 @@
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
       <LINE>137</LINE>
-      <COLUMN>27</COLUMN>
+      <COLUMN>40</COLUMN>
     </SFA>
     <DEFECTCODE>26409</DEFECTCODE>
     <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
@@ -678,19 +704,6 @@
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>124</LINE>
-      <COLUMN>22</COLUMN>
-    </SFA>
-    <DEFECTCODE>26493</DEFECTCODE>
-    <DESCRIPTION>Don't use C-style casts that would perform a static_cast downcast, const_cast, or reinterpret_cast. (type.4: http://go.microsoft.com/fwlink/p/?LinkID=620420)</DESCRIPTION>
-    <FUNCTION>World::GenerateWorld</FUNCTION>
-    <DECORATED>?GenerateWorld@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>120</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT><DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>world.cpp</FILENAME>
       <LINE>126</LINE>
       <COLUMN>23</COLUMN>
     </SFA>
@@ -705,7 +718,7 @@
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
       <LINE>131</LINE>
-      <COLUMN>24</COLUMN>
+      <COLUMN>21</COLUMN>
     </SFA>
     <DEFECTCODE>26481</DEFECTCODE>
     <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
@@ -847,208 +860,247 @@
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>202</LINE>
+      <LINE>190</LINE>
+      <COLUMN>28</COLUMN>
+    </SFA>
+    <DEFECTCODE>26481</DEFECTCODE>
+    <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
+    <FUNCTION>World::GenerateWorld</FUNCTION>
+    <DECORATED>?GenerateWorld@World@@QAEXXZ</DECORATED>
+    <FUNCLINE>120</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>191</LINE>
+      <COLUMN>28</COLUMN>
+    </SFA>
+    <DEFECTCODE>26481</DEFECTCODE>
+    <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
+    <FUNCTION>World::GenerateWorld</FUNCTION>
+    <DECORATED>?GenerateWorld@World@@QAEXXZ</DECORATED>
+    <FUNCLINE>120</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>124</LINE>
+      <COLUMN>22</COLUMN>
+    </SFA>
+    <DEFECTCODE>26493</DEFECTCODE>
+    <DESCRIPTION>Don't use C-style casts that would perform a static_cast downcast, const_cast, or reinterpret_cast. (type.4: http://go.microsoft.com/fwlink/p/?LinkID=620420)</DESCRIPTION>
+    <FUNCTION>World::GenerateWorld</FUNCTION>
+    <DECORATED>?GenerateWorld@World@@QAEXXZ</DECORATED>
+    <FUNCLINE>120</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>215</LINE>
       <COLUMN>39</COLUMN>
     </SFA>
     <DEFECTCODE>26481</DEFECTCODE>
     <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
     <FUNCTION>World::Draw</FUNCTION>
     <DECORATED>?Draw@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>183</FUNCLINE>
+    <FUNCLINE>196</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>234</LINE>
+      <LINE>247</LINE>
       <COLUMN>40</COLUMN>
     </SFA>
     <DEFECTCODE>26481</DEFECTCODE>
     <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
     <FUNCTION>World::Update</FUNCTION>
     <DECORATED>?Update@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>209</FUNCLINE>
+    <FUNCLINE>222</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>249</LINE>
+      <LINE>262</LINE>
       <COLUMN>30</COLUMN>
     </SFA>
     <DEFECTCODE>26481</DEFECTCODE>
     <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
     <FUNCTION>World::Update</FUNCTION>
     <DECORATED>?Update@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>209</FUNCLINE>
+    <FUNCLINE>222</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>222</LINE>
-      <COLUMN>8</COLUMN>
-    </SFA>
-    <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'y' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
-    <FUNCTION>World::Update</FUNCTION>
-    <DECORATED>?Update@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>209</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT><DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>world.cpp</FILENAME>
-      <LINE>221</LINE>
+      <LINE>234</LINE>
       <COLUMN>8</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'x' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>World::Update</FUNCTION>
     <DECORATED>?Update@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>209</FUNCLINE>
+    <FUNCLINE>222</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>324</LINE>
+      <LINE>235</LINE>
+      <COLUMN>8</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'y' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>World::Update</FUNCTION>
+    <DECORATED>?Update@World@@QAEXXZ</DECORATED>
+    <FUNCLINE>222</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>337</LINE>
       <COLUMN>37</COLUMN>
     </SFA>
     <DEFECTCODE>26481</DEFECTCODE>
     <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
     <FUNCTION>World::GetNeighbourTiles</FUNCTION>
     <DECORATED>?GetNeighbourTiles@World@@ABE?AV?$vector@PAVTile@@V?$allocator@PAVTile@@@std@@@std@@HH@Z</DECORATED>
-    <FUNCLINE>308</FUNCLINE>
+    <FUNCLINE>321</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>345</LINE>
+      <LINE>358</LINE>
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26481</DEFECTCODE>
     <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
     <FUNCTION>World::GetAdjacentTiles</FUNCTION>
     <DECORATED>?GetAdjacentTiles@World@@QBE?AV?$vector@PAVTile@@V?$allocator@PAVTile@@@std@@@std@@HH@Z</DECORATED>
-    <FUNCLINE>336</FUNCLINE>
+    <FUNCLINE>349</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>348</LINE>
+      <LINE>361</LINE>
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26481</DEFECTCODE>
     <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
     <FUNCTION>World::GetAdjacentTiles</FUNCTION>
     <DECORATED>?GetAdjacentTiles@World@@QBE?AV?$vector@PAVTile@@V?$allocator@PAVTile@@@std@@@std@@HH@Z</DECORATED>
-    <FUNCLINE>336</FUNCLINE>
+    <FUNCLINE>349</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>351</LINE>
+      <LINE>364</LINE>
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26481</DEFECTCODE>
     <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
     <FUNCTION>World::GetAdjacentTiles</FUNCTION>
     <DECORATED>?GetAdjacentTiles@World@@QBE?AV?$vector@PAVTile@@V?$allocator@PAVTile@@@std@@@std@@HH@Z</DECORATED>
-    <FUNCLINE>336</FUNCLINE>
+    <FUNCLINE>349</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>354</LINE>
+      <LINE>367</LINE>
       <COLUMN>19</COLUMN>
     </SFA>
     <DEFECTCODE>26481</DEFECTCODE>
     <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
     <FUNCTION>World::GetAdjacentTiles</FUNCTION>
     <DECORATED>?GetAdjacentTiles@World@@QBE?AV?$vector@PAVTile@@V?$allocator@PAVTile@@@std@@@std@@HH@Z</DECORATED>
-    <FUNCLINE>336</FUNCLINE>
+    <FUNCLINE>349</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>378</LINE>
-      <COLUMN>5</COLUMN>
-    </SFA>
-    <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'x' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
-    <FUNCTION>World::DetectAdjacentMimics</FUNCTION>
-    <DECORATED>?DetectAdjacentMimics@World@@QBEXXZ</DECORATED>
-    <FUNCLINE>374</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT><DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>world.cpp</FILENAME>
-      <LINE>379</LINE>
+      <LINE>392</LINE>
       <COLUMN>5</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'y' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>World::DetectAdjacentMimics</FUNCTION>
     <DECORATED>?DetectAdjacentMimics@World@@QBEXXZ</DECORATED>
-    <FUNCLINE>374</FUNCLINE>
+    <FUNCLINE>387</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>418</LINE>
-      <COLUMN>6</COLUMN>
+      <LINE>391</LINE>
+      <COLUMN>5</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'rndYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
-    <FUNCTION>World::GenerateEntities</FUNCTION>
-    <DECORATED>?GenerateEntities@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>409</FUNCLINE>
+    <DESCRIPTION>Variable 'x' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>World::DetectAdjacentMimics</FUNCTION>
+    <DECORATED>?DetectAdjacentMimics@World@@QBEXXZ</DECORATED>
+    <FUNCLINE>387</FUNCLINE>
     <PATH></PATH>
   </DEFECT><DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>417</LINE>
-      <COLUMN>6</COLUMN>
-    </SFA>
-    <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'rndXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
-    <FUNCTION>World::GenerateEntities</FUNCTION>
-    <DECORATED>?GenerateEntities@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>409</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT><DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>world.cpp</FILENAME>
-      <LINE>415</LINE>
-      <COLUMN>13</COLUMN>
-    </SFA>
-    <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'spawnedEntityType' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
-    <FUNCTION>World::GenerateEntities</FUNCTION>
-    <DECORATED>?GenerateEntities@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>409</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT><DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>world.cpp</FILENAME>
-      <LINE>414</LINE>
+      <LINE>427</LINE>
       <COLUMN>6</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'roll' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>World::GenerateEntities</FUNCTION>
     <DECORATED>?GenerateEntities@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>409</FUNCLINE>
+    <FUNCLINE>422</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>428</LINE>
+      <COLUMN>13</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'spawnedEntityType' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>World::GenerateEntities</FUNCTION>
+    <DECORATED>?GenerateEntities@World@@QAEXXZ</DECORATED>
+    <FUNCLINE>422</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>430</LINE>
+      <COLUMN>6</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'rndXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>World::GenerateEntities</FUNCTION>
+    <DECORATED>?GenerateEntities@World@@QAEXXZ</DECORATED>
+    <FUNCLINE>422</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT><DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>431</LINE>
+      <COLUMN>6</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'rndYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>World::GenerateEntities</FUNCTION>
+    <DECORATED>?GenerateEntities@World@@QAEXXZ</DECORATED>
+    <FUNCLINE>422</FUNCLINE>
     <PATH></PATH>
   </DEFECT></DEFECTS>

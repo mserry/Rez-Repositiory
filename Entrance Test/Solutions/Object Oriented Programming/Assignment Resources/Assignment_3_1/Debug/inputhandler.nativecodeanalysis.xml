@@ -4,14 +4,14 @@
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>inputhandler.cpp</FILENAME>
-      <LINE>12</LINE>
+      <LINE>13</LINE>
       <COLUMN>6</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'input' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>InputHandler::ProcessInput</FUNCTION>
     <DECORATED>?ProcessInput@InputHandler@@SAXXZ</DECORATED>
-    <FUNCLINE>10</FUNCLINE>
+    <FUNCLINE>11</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
 </DEFECTS>

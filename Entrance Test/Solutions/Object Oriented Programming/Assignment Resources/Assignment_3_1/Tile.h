@@ -44,6 +44,9 @@ public:
 	int GetX() const;
 	int GetY() const;
 
+	void SetX(int x);
+	void SetY(int y);
+
 
 protected:
 	TileInteraction* m_interaction;

@@ -178,6 +178,19 @@ void World::GenerateWorld()
                 break;
         }
     }
+
+
+	//set tile world positions
+	for(int y = 0; y < m_height; ++y)
+	{
+		for(int x = 0; x < m_width; ++x)
+		{
+			int tileIndex = (y * m_width) + x;
+
+			m_ppGrid[tileIndex]->SetX(x);
+			m_ppGrid[tileIndex]->SetY(y);
+		}
+	}
 }
 
 void World::Draw()

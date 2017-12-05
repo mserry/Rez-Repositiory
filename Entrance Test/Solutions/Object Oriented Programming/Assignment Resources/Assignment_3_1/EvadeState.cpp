@@ -3,7 +3,6 @@
 #include "AIEntity.h"
 #include "Tile.h"
 
-//TODO: implement X,Y Pos for tiles.
 //TODO: Debugging -> sudden doom.
 //TODO: debugging -> States.
 //TODO: Debugging -> behaviors. 

@@ -9,6 +9,8 @@ using std::cout;
 Evader::Evader(int x, int y) : AIEntity(x,y)
 {
 	m_hitPoints = 5;
+
+	m_pCurrentState = new WanderState;
 }
 
 Evader::~Evader() 

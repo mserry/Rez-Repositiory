@@ -1,5 +1,3 @@
-#include <cmath>
-
 #include "ChaseState.h"
 #include "AIEntity.h"
 #include "StateUtils.h"
