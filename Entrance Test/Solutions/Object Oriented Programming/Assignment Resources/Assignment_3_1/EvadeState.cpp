@@ -23,7 +23,7 @@ void EvadeState::OnUpdate(AIEntity* pOwnerEntity)
 	}
 	else 
 	{
-		pOwnerEntity->HandleStateTransition(GetStateName());
+		pOwnerEntity->TransitionToState(GetStateName());
 	}
 }
 
@@ -37,6 +37,10 @@ void EvadeState::OnExit()
 
 }
 
+bool EvadeState::ShouldExitState(AIEntity* pOwnerEntity)
+{
+	return StateUtils::IsPlayerDetectedForEntity(pOwnerEntity) != true;
+}
 
 //TODO: refactor, duplicate code between evade and chase, check some patterns.
 void EvadeState::Evade(AIEntity* pThisEntity)

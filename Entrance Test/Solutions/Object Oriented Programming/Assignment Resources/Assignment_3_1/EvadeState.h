@@ -13,6 +13,8 @@ public:
 	virtual void OnEnter() override;
 	virtual void OnExit() override;
 
+	virtual bool ShouldExitState(AIEntity* pOwnerEntity) override;
+
 private:
 	void Evade(AIEntity* pThisEntity);
 };

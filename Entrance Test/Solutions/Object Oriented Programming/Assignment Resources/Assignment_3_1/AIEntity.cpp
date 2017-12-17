@@ -15,8 +15,12 @@ bool AIEntity::Update()
 
 	m_pCurrentState->OnUpdate(this);
 
-	if (IsDead())
+	//exit state.
+	if(m_pCurrentState->ShouldExitState(this))
+	{
 		m_pCurrentState->OnExit();
+		TransitionToState(m_pCurrentState->GetStateName());
+	}
 
 	return IsDead();
 }

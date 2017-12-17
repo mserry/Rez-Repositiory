@@ -27,7 +27,7 @@ void Evader::Render()
 		cout << "~";
 }
 
-void Evader::HandleStateTransition(EntityStateName currentState)
+void Evader::TransitionToState(EntityStateName currentState)
 {
 	switch (currentState)
 	{

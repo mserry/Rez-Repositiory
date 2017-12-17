@@ -19,10 +19,6 @@ void ChaseState::OnUpdate(AIEntity* pOwnerEntity)
 	{
 		Chase(pOwnerEntity);
 	}
-	else 
-	{
-		pOwnerEntity->HandleStateTransition(GetStateName());
-	}
 }
 
 void ChaseState::OnEnter()
@@ -31,6 +27,11 @@ void ChaseState::OnEnter()
 }
 
 void ChaseState::OnExit() {}
+
+bool ChaseState::ShouldExitState(AIEntity* pOwnerEntity)
+{
+	return StateUtils::IsPlayerDetectedForEntity(pOwnerEntity) != true;
+}
 
 void ChaseState::Chase(AIEntity* pThisEntity)
 {

@@ -128,13 +128,13 @@ void World::GenerateWorld()
 
     // create the start and end tiles
     int lastIndex = (m_width * m_height) - 1;
-	m_ppGrid[lastIndex] = new EndTile(m_height * m_width, m_height * m_width);  // special tile for ending the level; there is only one of these
-    m_ppGrid[0] = new FloorTile(0,0);  // guarantee that the starting location is open
+	m_ppGrid[lastIndex] = new EndTile;  // special tile for ending the level; there is only one of these
+    m_ppGrid[0] = new FloorTile;  // guarantee that the starting location is open
 
     // guarantee at least one mimic
     int randomTile = (rand() % (lastIndex - 1)) + 1;
     assert(m_ppGrid[randomTile] == nullptr);  // if this fires, it means our math is wrong
-    m_ppGrid[randomTile] = new MimicTile();
+    m_ppGrid[randomTile] = new MimicTile;
 
     // populate the rest of the world
     for (int tileIndex = 1; tileIndex < (m_width * m_height) - 1; ++tileIndex)
@@ -258,8 +258,12 @@ void World::Update()
 			pEntity->Kill();
 		}
 
+
 		int tileIndex = (yPos * m_width) + xPos;
-		m_ppGrid[tileIndex]->OnEnter(pEntity);
+		if(m_ppGrid[tileIndex] != nullptr && tileIndex < (m_width * m_height))
+		{
+			m_ppGrid[tileIndex]->OnEnter(pEntity);
+		}
 	}
 }
 
@@ -353,19 +357,31 @@ std::vector<Tile*> World::GetAdjacentTiles(int x, int y) const
 	assert(y >= 0 && y < m_height);
 
 	std::vector<Tile*> adjTiles;
+		
+	if(x >= 0 && x < m_width && y >= 0 && (y - 1) < m_height)
+	{
+		int topTileIndex = ((y - 1) * m_height) + x;
+		adjTiles.push_back(m_ppGrid[topTileIndex]);
+	}
 
-	int topTileIndex = ((y - 1) * m_height) + x;
-	adjTiles.push_back(m_ppGrid[topTileIndex]);
+	if(x >= 0 && x < m_width && (y + 1) < m_height && y >= 0)
+	{
+		int botTileIndex = ((y + 1) * m_height) + x;
+		adjTiles.push_back(m_ppGrid[botTileIndex]);
+	}
 
-	int botTileIndex = ((y + 1) * m_height) + x;
-	adjTiles.push_back(m_ppGrid[botTileIndex]);
+	if(x >= 0 && (x - 1) < m_width && y >= 0 && y < m_height)
+	{
+		int leftTileIndex = (y * m_height) + (x - 1);
+		adjTiles.push_back(m_ppGrid[leftTileIndex]);
+	}
 
-	int leftTileIndex = (y * m_height) + (x - 1);
-	adjTiles.push_back(m_ppGrid[leftTileIndex]);
-
-	int rightTileIndex = (y * m_height) + (x + 1);
-	adjTiles.push_back(m_ppGrid[rightTileIndex]);
-
+	if(x >= 0 && (x + 1) < m_width && y >= 0 && y < m_height)
+	{
+		int rightTileIndex = (y * m_height) + (x + 1);
+		adjTiles.push_back(m_ppGrid[rightTileIndex]);
+	}
+	
 	return adjTiles;
 }
 

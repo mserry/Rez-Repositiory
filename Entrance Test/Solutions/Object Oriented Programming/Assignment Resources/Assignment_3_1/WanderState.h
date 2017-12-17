@@ -16,8 +16,7 @@ public:
 	virtual void OnEnter() override;
 	virtual void OnExit() override;
 
-protected:
-	bool IsPlayerDetectedForEntity(AIEntity* pOwnerEntity) const;
+	virtual bool ShouldExitState(AIEntity* pOwnerEntity) override;
 
 private:
 	void Wander(AIEntity* pThisEntity);

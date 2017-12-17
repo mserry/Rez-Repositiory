@@ -159,7 +159,7 @@
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
       <LINE>131</LINE>
-      <COLUMN>34</COLUMN>
+      <COLUMN>23</COLUMN>
     </SFA>
     <DEFECTCODE>26409</DEFECTCODE>
     <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
@@ -173,7 +173,7 @@
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
       <LINE>132</LINE>
-      <COLUMN>31</COLUMN>
+      <COLUMN>18</COLUMN>
     </SFA>
     <DEFECTCODE>26409</DEFECTCODE>
     <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
@@ -187,7 +187,7 @@
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
       <LINE>137</LINE>
-      <COLUMN>40</COLUMN>
+      <COLUMN>27</COLUMN>
     </SFA>
     <DEFECTCODE>26409</DEFECTCODE>
     <DESCRIPTION>Avoid calling new and delete explicitly, use std::make_unique&lt;T&gt; instead. (r.11 http://go.microsoft.com/fwlink/?linkid=845485)</DESCRIPTION>
@@ -480,34 +480,6 @@
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>247</LINE>
-      <COLUMN>40</COLUMN>
-    </SFA>
-    <DEFECTCODE>26481</DEFECTCODE>
-    <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
-    <FUNCTION>World::Update</FUNCTION>
-    <DECORATED>?Update@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>222</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>world.cpp</FILENAME>
-      <LINE>262</LINE>
-      <COLUMN>30</COLUMN>
-    </SFA>
-    <DEFECTCODE>26481</DEFECTCODE>
-    <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
-    <FUNCTION>World::Update</FUNCTION>
-    <DECORATED>?Update@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>222</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>world.cpp</FILENAME>
       <LINE>234</LINE>
       <COLUMN>8</COLUMN>
     </SFA>
@@ -536,42 +508,56 @@
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>337</LINE>
+      <LINE>247</LINE>
+      <COLUMN>40</COLUMN>
+    </SFA>
+    <DEFECTCODE>26481</DEFECTCODE>
+    <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
+    <FUNCTION>World::Update</FUNCTION>
+    <DECORATED>?Update@World@@QAEXXZ</DECORATED>
+    <FUNCLINE>222</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>263</LINE>
+      <COLUMN>23</COLUMN>
+    </SFA>
+    <DEFECTCODE>26481</DEFECTCODE>
+    <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
+    <FUNCTION>World::Update</FUNCTION>
+    <DECORATED>?Update@World@@QAEXXZ</DECORATED>
+    <FUNCLINE>222</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>265</LINE>
+      <COLUMN>31</COLUMN>
+    </SFA>
+    <DEFECTCODE>26481</DEFECTCODE>
+    <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
+    <FUNCTION>World::Update</FUNCTION>
+    <DECORATED>?Update@World@@QAEXXZ</DECORATED>
+    <FUNCLINE>222</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>341</LINE>
       <COLUMN>37</COLUMN>
     </SFA>
     <DEFECTCODE>26481</DEFECTCODE>
     <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
     <FUNCTION>World::GetNeighbourTiles</FUNCTION>
     <DECORATED>?GetNeighbourTiles@World@@ABE?AV?$vector@PAVTile@@V?$allocator@PAVTile@@@std@@@std@@HH@Z</DECORATED>
-    <FUNCLINE>321</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>world.cpp</FILENAME>
-      <LINE>358</LINE>
-      <COLUMN>19</COLUMN>
-    </SFA>
-    <DEFECTCODE>26481</DEFECTCODE>
-    <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
-    <FUNCTION>World::GetAdjacentTiles</FUNCTION>
-    <DECORATED>?GetAdjacentTiles@World@@QBE?AV?$vector@PAVTile@@V?$allocator@PAVTile@@@std@@@std@@HH@Z</DECORATED>
-    <FUNCLINE>349</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>world.cpp</FILENAME>
-      <LINE>361</LINE>
-      <COLUMN>19</COLUMN>
-    </SFA>
-    <DEFECTCODE>26481</DEFECTCODE>
-    <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
-    <FUNCTION>World::GetAdjacentTiles</FUNCTION>
-    <DECORATED>?GetAdjacentTiles@World@@QBE?AV?$vector@PAVTile@@V?$allocator@PAVTile@@@std@@@std@@HH@Z</DECORATED>
-    <FUNCLINE>349</FUNCLINE>
+    <FUNCLINE>325</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
@@ -579,111 +565,139 @@
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
       <LINE>364</LINE>
-      <COLUMN>19</COLUMN>
+      <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26481</DEFECTCODE>
     <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
     <FUNCTION>World::GetAdjacentTiles</FUNCTION>
     <DECORATED>?GetAdjacentTiles@World@@QBE?AV?$vector@PAVTile@@V?$allocator@PAVTile@@@std@@@std@@HH@Z</DECORATED>
-    <FUNCLINE>349</FUNCLINE>
+    <FUNCLINE>353</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>367</LINE>
-      <COLUMN>19</COLUMN>
+      <LINE>370</LINE>
+      <COLUMN>20</COLUMN>
     </SFA>
     <DEFECTCODE>26481</DEFECTCODE>
     <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
     <FUNCTION>World::GetAdjacentTiles</FUNCTION>
     <DECORATED>?GetAdjacentTiles@World@@QBE?AV?$vector@PAVTile@@V?$allocator@PAVTile@@@std@@@std@@HH@Z</DECORATED>
-    <FUNCLINE>349</FUNCLINE>
+    <FUNCLINE>353</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>392</LINE>
-      <COLUMN>5</COLUMN>
+      <LINE>376</LINE>
+      <COLUMN>20</COLUMN>
     </SFA>
-    <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'y' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
-    <FUNCTION>World::DetectAdjacentMimics</FUNCTION>
-    <DECORATED>?DetectAdjacentMimics@World@@QBEXXZ</DECORATED>
-    <FUNCLINE>387</FUNCLINE>
+    <DEFECTCODE>26481</DEFECTCODE>
+    <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
+    <FUNCTION>World::GetAdjacentTiles</FUNCTION>
+    <DECORATED>?GetAdjacentTiles@World@@QBE?AV?$vector@PAVTile@@V?$allocator@PAVTile@@@std@@@std@@HH@Z</DECORATED>
+    <FUNCLINE>353</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>391</LINE>
+      <LINE>382</LINE>
+      <COLUMN>20</COLUMN>
+    </SFA>
+    <DEFECTCODE>26481</DEFECTCODE>
+    <DESCRIPTION>Don't use pointer arithmetic. Use span instead. (bounds.1: http://go.microsoft.com/fwlink/p/?LinkID=620413)</DESCRIPTION>
+    <FUNCTION>World::GetAdjacentTiles</FUNCTION>
+    <DECORATED>?GetAdjacentTiles@World@@QBE?AV?$vector@PAVTile@@V?$allocator@PAVTile@@@std@@@std@@HH@Z</DECORATED>
+    <FUNCLINE>353</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>407</LINE>
       <COLUMN>5</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'x' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>World::DetectAdjacentMimics</FUNCTION>
     <DECORATED>?DetectAdjacentMimics@World@@QBEXXZ</DECORATED>
-    <FUNCLINE>387</FUNCLINE>
+    <FUNCLINE>403</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>427</LINE>
+      <LINE>408</LINE>
+      <COLUMN>5</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'y' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>World::DetectAdjacentMimics</FUNCTION>
+    <DECORATED>?DetectAdjacentMimics@World@@QBEXXZ</DECORATED>
+    <FUNCLINE>403</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>443</LINE>
       <COLUMN>6</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'roll' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>World::GenerateEntities</FUNCTION>
     <DECORATED>?GenerateEntities@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>422</FUNCLINE>
+    <FUNCLINE>438</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>world.cpp</FILENAME>
-      <LINE>428</LINE>
-      <COLUMN>13</COLUMN>
-    </SFA>
-    <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'spawnedEntityType' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
-    <FUNCTION>World::GenerateEntities</FUNCTION>
-    <DECORATED>?GenerateEntities@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>422</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>world.cpp</FILENAME>
-      <LINE>430</LINE>
-      <COLUMN>6</COLUMN>
-    </SFA>
-    <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'rndXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
-    <FUNCTION>World::GenerateEntities</FUNCTION>
-    <DECORATED>?GenerateEntities@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>422</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>world.cpp</FILENAME>
-      <LINE>431</LINE>
+      <LINE>447</LINE>
       <COLUMN>6</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'rndYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>World::GenerateEntities</FUNCTION>
     <DECORATED>?GenerateEntities@World@@QAEXXZ</DECORATED>
-    <FUNCLINE>422</FUNCLINE>
+    <FUNCLINE>438</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>446</LINE>
+      <COLUMN>6</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'rndXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>World::GenerateEntities</FUNCTION>
+    <DECORATED>?GenerateEntities@World@@QAEXXZ</DECORATED>
+    <FUNCLINE>438</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>world.cpp</FILENAME>
+      <LINE>444</LINE>
+      <COLUMN>13</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'spawnedEntityType' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>World::GenerateEntities</FUNCTION>
+    <DECORATED>?GenerateEntities@World@@QAEXXZ</DECORATED>
+    <FUNCLINE>438</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
 </DEFECTS>

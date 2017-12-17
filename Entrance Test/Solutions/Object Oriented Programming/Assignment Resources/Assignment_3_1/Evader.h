@@ -9,6 +9,6 @@ public:
 	virtual ~Evader();
 
 	virtual void Render() override;
-	virtual void HandleStateTransition(EntityStateName currentState) override;
+	virtual void TransitionToState(EntityStateName currentState) override;
 };
 

@@ -26,14 +26,15 @@ void WanderState::OnUpdate(AIEntity* pThisEntity)
 	{
 		Wander(pThisEntity);
 	}
-	else 
-	{
-		pThisEntity->HandleStateTransition(GetStateName());
-	}
 }
 
 
 void WanderState::OnExit() {}
+
+bool WanderState::ShouldExitState(AIEntity* pOwnerEntity)
+{
+	return StateUtils::IsPlayerDetectedForEntity(pOwnerEntity);
+}
 
 void WanderState::Wander(AIEntity* pThisEntity)
 {

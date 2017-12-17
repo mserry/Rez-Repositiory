@@ -30,11 +30,11 @@ public:
 
 	Tile();
 	Tile(int xPos, int yPos);
-	virtual ~Tile() = 0;
+	virtual ~Tile();
 
     virtual void Render() = 0;
 
-	virtual void OnEnter(Entity* pEntity);
+	virtual void OnEnter(Entity* pEntity) = 0;
 	virtual TileType GetType() const;
 	
 	//getters and setters.

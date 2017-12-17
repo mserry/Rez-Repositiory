@@ -22,6 +22,8 @@ public:
 	virtual void OnEnter()  = 0;
 	virtual void OnExit()   = 0;
 
+	virtual bool ShouldExitState(AIEntity* pOwnerEntity) = 0;
+
 protected:
 	bool m_isInit;
 };

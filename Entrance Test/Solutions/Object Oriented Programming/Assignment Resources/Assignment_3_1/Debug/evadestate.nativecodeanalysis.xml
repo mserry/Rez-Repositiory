@@ -4,42 +4,28 @@
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>evadestate.cpp</FILENAME>
-      <LINE>44</LINE>
-      <COLUMN>5</COLUMN>
-    </SFA>
-    <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'thisEntityXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
-    <FUNCTION>EvadeState::Evade</FUNCTION>
-    <DECORATED>?Evade@EvadeState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>42</FUNCLINE>
-    <PATH></PATH>
-  </DEFECT>
-  <DEFECT>
-    <SFA>
-      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
-      <FILENAME>evadestate.cpp</FILENAME>
-      <LINE>47</LINE>
+      <LINE>51</LINE>
       <COLUMN>5</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'playerXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>EvadeState::Evade</FUNCTION>
     <DECORATED>?Evade@EvadeState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>42</FUNCLINE>
+    <FUNCLINE>46</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>evadestate.cpp</FILENAME>
-      <LINE>45</LINE>
+      <LINE>49</LINE>
       <COLUMN>5</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'thisEntityYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>EvadeState::Evade</FUNCTION>
     <DECORATED>?Evade@EvadeState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>42</FUNCLINE>
+    <FUNCLINE>46</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
@@ -50,24 +36,38 @@
       <COLUMN>5</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
-    <DESCRIPTION>Variable 'playerYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <DESCRIPTION>Variable 'thisEntityXPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>EvadeState::Evade</FUNCTION>
     <DECORATED>?Evade@EvadeState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>42</FUNCLINE>
+    <FUNCLINE>46</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
   <DEFECT>
     <SFA>
       <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
       <FILENAME>evadestate.cpp</FILENAME>
-      <LINE>59</LINE>
+      <LINE>52</LINE>
+      <COLUMN>5</COLUMN>
+    </SFA>
+    <DEFECTCODE>26496</DEFECTCODE>
+    <DESCRIPTION>Variable 'playerYPos' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
+    <FUNCTION>EvadeState::Evade</FUNCTION>
+    <DECORATED>?Evade@EvadeState@@AAEXPAVAIEntity@@@Z</DECORATED>
+    <FUNCLINE>46</FUNCLINE>
+    <PATH></PATH>
+  </DEFECT>
+  <DEFECT>
+    <SFA>
+      <FILEPATH>f:\mentorship\git repo\rez-repositiory\entrance test\solutions\object oriented programming\assignment resources\assignment_3_1\</FILEPATH>
+      <FILENAME>evadestate.cpp</FILENAME>
+      <LINE>63</LINE>
       <COLUMN>9</COLUMN>
     </SFA>
     <DEFECTCODE>26496</DEFECTCODE>
     <DESCRIPTION>Variable 'tempDist' is assigned only once, mark it as const. (con.4: https://go.microsoft.com/fwlink/p/?LinkID=784969)</DESCRIPTION>
     <FUNCTION>EvadeState::Evade</FUNCTION>
     <DECORATED>?Evade@EvadeState@@AAEXPAVAIEntity@@@Z</DECORATED>
-    <FUNCLINE>42</FUNCLINE>
+    <FUNCLINE>46</FUNCLINE>
     <PATH></PATH>
   </DEFECT>
 </DEFECTS>

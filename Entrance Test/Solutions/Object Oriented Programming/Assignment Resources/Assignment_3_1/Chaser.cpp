@@ -21,7 +21,7 @@ Chaser::~Chaser()
 	m_pCurrentState = nullptr;
 }
 
-void Chaser::HandleStateTransition(EntityStateName currentState)
+void Chaser::TransitionToState(EntityStateName currentState)
 {
 	switch(currentState) 
 	{
