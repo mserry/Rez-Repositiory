@@ -66,3 +66,5 @@ Entrance Test/Solutions/Object Oriented Programming/Assignment Resources/.vs/Ass
 Entrance Test/Solutions/Object Oriented Programming/Assignment Resources/Assignment_3_1/Assignment_3_1.vcxproj
 Entrance Test/Solutions/Object Oriented Programming/Assignment Resources/.vs/Assignment_3_1/v15/Browse.VC.opendb
 *.tmp
+*.xml
+Entrance Test/Solutions/Object Oriented Programming/Assignment Resources/Assignment_3_1/Debug/vc.nativecodeanalysis.all.xml

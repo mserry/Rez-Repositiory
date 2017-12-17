@@ -34,7 +34,7 @@ public:
 
     virtual void Render() = 0;
 
-	virtual void OnEnter(Entity* pEntity) = 0;
+	virtual void OnEnter(Entity* pEntity) {}
 	virtual TileType GetType() const;
 	
 	//getters and setters.

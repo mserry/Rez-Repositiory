@@ -50,9 +50,6 @@ World::~World()
     delete[] m_ppGrid;
     m_ppGrid = nullptr;
 
-    delete m_pPlayer;
-    m_pPlayer = nullptr;
-
 	//de-allocating entities.
 	for(size_t j = 0 ;j < m_entities.size(); ++j)
 	{
