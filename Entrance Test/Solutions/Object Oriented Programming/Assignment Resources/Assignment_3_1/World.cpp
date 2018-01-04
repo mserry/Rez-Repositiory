@@ -36,7 +36,7 @@ World::World()
 	  , m_height(0)
 	  , m_entityCount(0), m_ppGrid(nullptr)
 	  , m_pPlayer(nullptr)
-	  , m_gameOver(false), m_playerTileIndex(0)
+	  , m_gameOver(false)
 {
 	//
 }
@@ -56,6 +56,10 @@ World::~World()
 		delete m_entities[j];
 	}
 	m_entities.clear();
+
+	//deleting player.
+	delete m_pPlayer;
+	m_pPlayer = nullptr;
 }
 
 
@@ -92,7 +96,6 @@ void World::CreatePlayer(int x, int y)
     assert(y >= 0 && y < m_height);
 
     m_pPlayer = new Player(x, y);
-	m_entities.push_back(m_pPlayer);
 }
 
 Entity* World::CreateEntity(int x, int y, const EntityType type) const
@@ -107,8 +110,6 @@ Entity* World::CreateEntity(int x, int y, const EntityType type) const
 
 		case EntityType::k_evader:
 			return new Evader(x,y);
-
-		default: ;
 	}
 
 	return nullptr;
@@ -240,8 +241,8 @@ void World::Update()
     }
 
     // process the tile the player is on
-    m_playerTileIndex = (y * m_width) + x;
-    m_ppGrid[m_playerTileIndex]->OnEnter(m_pPlayer);
+    int playerTileIndex = (y * m_width) + x;
+    m_ppGrid[playerTileIndex]->OnEnter(m_pPlayer);
 
 
 	//process entities.
@@ -250,23 +251,18 @@ void World::Update()
 		const int xPos = pEntity->GetX();
 		const int yPos = pEntity->GetY();
 
-		if (!pEntity->Update() || (xPos < 0 || yPos < 0 || xPos >= m_width || yPos >= m_height))
+		if (!pEntity->Update())
 		{
+			cout << "Killing Entity !!";
+
 			pEntity->Kill();
 		}
-
-
-		int tileIndex = (yPos * m_width) + xPos;
-		if(m_ppGrid[tileIndex] != nullptr && tileIndex < (m_width * m_height))
+		else
 		{
+			int tileIndex = (yPos * m_width) + xPos;
 			m_ppGrid[tileIndex]->OnEnter(pEntity);
 		}
 	}
-}
-
-std::vector<Entity*> World::GetEntities() const
-{
-	return m_entities;
 }
 
 int World::GetWorldWidth() const
@@ -297,16 +293,6 @@ void World::EndGame()
 Player* World::GetPlayer() const
 {
 	return (!m_pPlayer) ? nullptr : m_pPlayer;
-}
-
-Tile** World::GetTiles() const
-{
-	return (!m_ppGrid) ? nullptr : m_ppGrid;
-}
-
-int World::GetPlayerTileIndex() const
-{
-	return m_playerTileIndex;
 }
 
 int World::GetPlayerXPos() const
@@ -438,13 +424,14 @@ void World::GenerateEntities()
 	for (int i = 0; i < m_entityCount; ++i)
 	{
 		int roll = rand() % 100;
-		EntityType spawnedEntityType = roll > s_evaderEntityProbability ? EntityType::k_evader : EntityType::k_chaser;
+		EntityType spawnedEntityType = EntityType::k_chaser;
+			//roll > s_evaderEntityProbability ? EntityType::k_evader : EntityType::k_chaser;
 
 		int rndXPos = rand() % m_width;
 		int rndYPos = rand() % m_height;
 
 		Entity* newEntity = CreateEntity(rndXPos, rndYPos, spawnedEntityType);
-		if (newEntity)
+		if (newEntity != nullptr)
 		{
 			m_entities.push_back(newEntity);
 			cout << "Added Entities !";

@@ -1,7 +1,6 @@
 #include "Tile.h"
 
-Tile::Tile(): m_interaction(nullptr), m_state(TileState::k_ready), m_type(TileType::k_default), m_xPos(0), m_yPos(0) {}
-Tile::Tile(int xPos, int yPos) : m_interaction(nullptr), m_state(TileState::k_ready), m_type(TileType::k_default), m_xPos(xPos), m_yPos(yPos) {}
+Tile::Tile():  m_state(TileState::k_ready), m_type(TileType::k_default), m_xPos(0), m_yPos(0) {}
 Tile::~Tile() {}
 
 

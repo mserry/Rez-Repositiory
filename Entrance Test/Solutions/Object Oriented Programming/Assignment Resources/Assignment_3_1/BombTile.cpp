@@ -6,17 +6,21 @@
 
 const BombTile::DamageRange BombTile::s_damageRange(3, 6);
 
-BombTile::BombTile()
+BombTile::BombTile() : Tile()
 {
 	m_type = k_bomb;
 	m_state = TileState::k_active;
-	m_interaction = new DamageInteraction(s_damageRange);
+
+	m_dmgInteraction = new DamageInteraction(s_damageRange);
 }
 
 BombTile::~BombTile()
 {
-	delete m_interaction;
-	m_interaction = nullptr;
+	if(m_dmgInteraction)
+	{
+		delete m_dmgInteraction;
+		m_dmgInteraction = nullptr;
+	}
 }
 
 Tile::TileType BombTile::GetType() const
@@ -34,18 +38,10 @@ void BombTile::Render()
 
 void BombTile::OnEnter(Entity* pEntity)
 {
-	switch (m_state)
+	if(m_state == TileState::k_active)
 	{
-		case TileState::k_active:
-			m_interaction->ExecuteOn(pEntity);
-			m_state = TileState::k_dead;
-	    break;
-
-		case TileState::k_dead:
-			break;
-
-		default:
-			break;
+		m_dmgInteraction->ExecuteOn(pEntity);
+		m_state = TileState::k_dead;
 	}
 }
 

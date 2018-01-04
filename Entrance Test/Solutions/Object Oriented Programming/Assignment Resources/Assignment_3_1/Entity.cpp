@@ -8,7 +8,7 @@ Entity::~Entity() {}
 
 void Entity::Damage(int amount)
 {
-	if (m_hitPoints <= 0) return;
+	if (IsDead()) return;
 
 	m_hitPoints -= amount;
 }

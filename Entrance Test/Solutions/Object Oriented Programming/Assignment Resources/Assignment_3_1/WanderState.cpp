@@ -43,9 +43,10 @@ void WanderState::Wander(AIEntity* pThisEntity)
 
 	for (int i = 0; i < adjTiles.size(); ++i) 
 	{
-		if (adjTiles[i]->GetType() != Tile::TileType::k_floor) continue;
-
-		floorTileIndices.push_back(i);
+		if (adjTiles[i]->GetType() == Tile::TileType::k_floor)
+		{
+			floorTileIndices.push_back(i);
+		}
 	}
 
 	int selectedIndex = rand() % floorTileIndices.size();

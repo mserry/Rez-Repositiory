@@ -29,7 +29,6 @@ public:
 	};
 
 	Tile();
-	Tile(int xPos, int yPos);
 	virtual ~Tile();
 
     virtual void Render() = 0;
@@ -49,7 +48,6 @@ public:
 
 
 protected:
-	TileInteraction* m_interaction;
 	TileState m_state;
 	TileType m_type;
 

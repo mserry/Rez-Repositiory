@@ -5,17 +5,10 @@
 
 extern World* g_pWorld;  // let's us access a global variable declared in another CPP
 
-EndTile::EndTile()
+EndTile::EndTile() : Tile()
 {
 	m_type = k_end;
 	m_state = TileState::k_ready;
-	m_interaction = nullptr;
-}
-
-EndTile::EndTile(int xPos, int yPos)
-{
-	m_xPos = xPos;
-	m_yPos = yPos;
 }
 
 EndTile::~EndTile() {}

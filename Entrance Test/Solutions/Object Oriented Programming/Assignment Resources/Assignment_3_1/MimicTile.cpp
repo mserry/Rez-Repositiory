@@ -6,7 +6,7 @@
 
 using std::cout;
 
-MimicTile::MimicTile()
+MimicTile::MimicTile() : BombTile()
 {
 	m_state = TileState::k_hidden;
 	m_type = k_mimic;
@@ -23,7 +23,6 @@ void MimicTile::Render()
             break;
 
 		case TileState::k_revealed:
-        case TileState::k_active:
             cout << "*";
             break;
 

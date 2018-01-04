@@ -4,17 +4,10 @@
 
 using std::cout;
 
-FloorTile::FloorTile()
+FloorTile::FloorTile() : Tile()
 {
 	m_state = TileState::k_ready;
 	m_type = k_floor;
-	m_interaction = nullptr;
-}
-
-FloorTile::FloorTile(int xPos, int yPos)
-{
-	m_xPos = xPos;
-	m_yPos = yPos;
 }
 
 FloorTile::~FloorTile() {}

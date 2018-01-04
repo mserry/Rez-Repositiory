@@ -8,7 +8,6 @@ class EndTile : public Tile
 {
 public:
 	EndTile();
-	EndTile(int xPos, int yPos);
 	virtual ~EndTile();
 
     virtual void Render() override;

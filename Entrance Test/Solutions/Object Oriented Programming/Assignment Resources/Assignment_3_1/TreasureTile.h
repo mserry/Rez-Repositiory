@@ -5,6 +5,9 @@
 #include "Tile.h"
 #include <utility>
 
+//TODO: refactor architecture !
+class TreasureInteraction;
+
 class TreasureTile : public Tile
 {
     typedef std::pair<int, int> TreasureRange;
@@ -17,6 +20,11 @@ public:
     virtual void Render() override;
     virtual void OnEnter(Entity* pEntity) override;
 	virtual TileType GetType() const override;
+
+
+private:
+
+	TreasureInteraction* m_treasureInteraction;
 };
 
 #endif

@@ -10,7 +10,7 @@ using std::cout;
 
 Chaser::Chaser(int x, int y) : AIEntity(x,y)
 {
-	m_hitPoints = 5;
+	m_hitPoints = 10;
 
 	m_pCurrentState = new WanderState;
 }
@@ -27,11 +27,11 @@ void Chaser::TransitionToState(EntityStateName currentState)
 	{
 		case EntityStateName::k_wandering:
 			SetState(new ChaseState);
-			break;
+		break;
 
 		case EntityStateName::k_chasing:
 			SetState(new WanderState);
-			break;
+		break;
 	}
 }
 

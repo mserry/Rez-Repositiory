@@ -5,6 +5,8 @@
 #include "Tile.h"
 #include <utility>
 
+class DamageInteraction;
+
 class BombTile : public Tile
 {
     typedef std::pair<int, int> DamageRange;
@@ -18,6 +20,9 @@ public:
     virtual void Render() override;
     virtual void OnEnter(Entity* pEntity) override;
 	virtual TileType GetType() const override;
+
+private:
+	DamageInteraction* m_dmgInteraction;
 };
 
 #endif

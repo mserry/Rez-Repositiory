@@ -13,7 +13,10 @@ EntityStateName ChaseState::GetStateName()
 
 void ChaseState::OnUpdate(AIEntity* pOwnerEntity)
 {
-	if (pOwnerEntity->IsDead()) return;
+	if (pOwnerEntity->IsDead())
+	{
+		return;
+	}
 	
 	if(StateUtils::IsPlayerDetectedForEntity(pOwnerEntity)) 
 	{

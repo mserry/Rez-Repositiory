@@ -8,7 +8,6 @@ class FloorTile : public Tile
 {
 public:
 	FloorTile();
-	FloorTile(int xPos, int yPos);
 
 	virtual ~FloorTile();
 

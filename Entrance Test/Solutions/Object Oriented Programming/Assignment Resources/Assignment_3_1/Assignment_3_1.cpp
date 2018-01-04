@@ -119,7 +119,7 @@ void main()
     // now that the player has been placed, generate the world
     g_pWorld->GenerateWorld();
 
-	//generate enemies for the player;
+	//generate enemies for the player
 	g_pWorld->GenerateEntities();
 
     // main game loop
