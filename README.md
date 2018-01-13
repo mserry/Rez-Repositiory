@@ -1,4 +1,4 @@
-# Rez-Repositiory
+# Rez-University
 Repo for Course Work
 
 
