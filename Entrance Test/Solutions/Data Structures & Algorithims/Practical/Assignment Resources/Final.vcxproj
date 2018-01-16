@@ -84,11 +84,13 @@
     <ClCompile Include="Tactigo\TechTree.cpp" />
     <ClCompile Include="Tactigo\TechTreeBase\Tech.cpp" />
     <ClCompile Include="Tactigo\TechTreeBase\TechTreeBase.cpp" />
+    <ClCompile Include="TheoryTestFunctions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Tactigo\TechTree.h" />
     <ClInclude Include="Tactigo\TechTreeBase\Tech.h" />
     <ClInclude Include="Tactigo\TechTreeBase\TechTreeBase.h" />
+    <ClInclude Include="TheoryTestFunctions.h" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="Tactigo\TechTree.png" />

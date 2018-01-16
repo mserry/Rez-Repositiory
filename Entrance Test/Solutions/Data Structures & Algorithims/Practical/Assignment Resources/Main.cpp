@@ -3,6 +3,7 @@
 
 #include "Tactigo/TechTree.h"
 #include "Tactigo/TechTreeBase/Tech.h"
+#include "TheoryTestFunctions.h"
 
 #include <iostream>
 #include <conio.h>
@@ -11,14 +12,26 @@ using std::cout;
 
 void TestTechTree();
 
+void TechTree_Main();
+
 int main()
 {
-    TestTechTree();
+	Test_CheckForDuplicates();
 
-    cout << "\nAll tests complete\n";
-    _getch();
     return 0;
 }
+
+
+
+void TechTree_Main() 
+{
+	TestTechTree();
+
+	cout << "\nAll tests complete\n";
+	_getch();
+}
+
+
 
 //---------------------------------------------------------------------------------------------------------------------
 // Test cases for the tech tree problem.

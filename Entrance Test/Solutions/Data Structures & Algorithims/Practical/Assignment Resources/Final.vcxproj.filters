@@ -11,6 +11,9 @@
     <ClCompile Include="Tactigo\TechTreeBase\TechTreeBase.cpp">
       <Filter>Tactigo\TechTreeBase</Filter>
     </ClCompile>
+    <ClCompile Include="TheoryTestFunctions.cpp">
+      <Filter>Theory Test Functions</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Tactigo">
@@ -18,6 +21,9 @@
     </Filter>
     <Filter Include="Tactigo\TechTreeBase">
       <UniqueIdentifier>{54ea1abf-7d7c-4d95-97f8-2ad2a7f8bf34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Theory Test Functions">
+      <UniqueIdentifier>{8b1aa851-b701-4fc1-9fbb-374ba41d9057}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -29,6 +35,9 @@
     </ClInclude>
     <ClInclude Include="Tactigo\TechTreeBase\TechTreeBase.h">
       <Filter>Tactigo\TechTreeBase</Filter>
+    </ClInclude>
+    <ClInclude Include="TheoryTestFunctions.h">
+      <Filter>Theory Test Functions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
