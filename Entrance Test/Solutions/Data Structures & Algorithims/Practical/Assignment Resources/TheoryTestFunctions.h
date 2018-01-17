@@ -16,4 +16,3 @@ bool IsMultiple(int number, int factor);
 bool CheckForDuplicates(int* pArray, int size);
 
 int FindIndex(const int* pArray, int size, int valueToFind);
-

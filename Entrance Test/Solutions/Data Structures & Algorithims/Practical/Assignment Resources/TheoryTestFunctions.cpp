@@ -2,6 +2,8 @@
 
 #include <iostream>
 #include <cassert>
+#include <vector>
+#include <map>
 
 void Test_CheckForDuplicates()
 {
@@ -103,16 +105,18 @@ std::string GetPrintMessage(int number)
 	{
 		return "Fizz";
 	}
-	if (IsMultiple(number, 4))
+	else if (IsMultiple(number, 4))
 	{
 		return "Buzz";
 	}
-	if (IsMultiple(number, 4) && IsMultiple(number, 3))
+	else if (IsMultiple(number, 4) && IsMultiple(number, 3))
 	{
 		return "FizzBuzz";
 	}
-
-	return "Number is: " + number;
+	else
+	{
+		return "Number is: " + number;
+	}
 }
 
 bool IsMultiple(int number, int factor)
