@@ -11,5 +11,7 @@
 //---------------------------------------------------------------------------------------------------------------------
 void TechTree::FindBestPath(int goalTech, Path& bestPath)
 {
-    //
+	auto targetTech = GetTechByIndex(goalTech);
+	
+	//
 }
