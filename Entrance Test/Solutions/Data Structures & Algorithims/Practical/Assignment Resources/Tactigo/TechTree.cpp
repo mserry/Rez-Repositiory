@@ -11,7 +11,15 @@
 //---------------------------------------------------------------------------------------------------------------------
 void TechTree::FindBestPath(int goalTech, Path& bestPath)
 {
-	auto targetTech = GetTechByIndex(goalTech);
+	const Tech* targetTech = GetTechByIndex(goalTech);
+	std::string techName = targetTech->GetTechName();
+
 	
-	//
 }
+
+//Step 1: Identify Search Starting Point (Existing Techs, Closest base tech).
+//Step 2: Searching Algorithim (Best First Search / Greedy First Search, search from closest start point to find cheapest cost path to the target tech).
+
+//Identifiying starting point:
+// -> the best path takes two heurstics into it's account (our existing techs & the cheapest costs)
+// -> optimially it starts from our purchases techs if the existing techs: have a way to reach our goal.
